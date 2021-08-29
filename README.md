@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Timgiasu
+## What is it?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Timgiasu is a platform where students can help students teachers knows each other and made appointments for the class with the teachers online or offline. 
 
-## Available Scripts
+## Why need it?
 
-In the project directory, you can run:
+- Almost all students in Vietnam go to cram school,  supplemental education/lessons or English centers to study after school
+    - IZA institute research: ( In terms of students’ study efforts, the proportion of Vietnamese students
+    who spend more than four hours per week on out-of-school lessons in all three subjects
+    is the highest one among all study countries. Complementary learning inputs are also
+    offered at the family level. Vietnamese students engage in 17 hours of extracurricular
+    learning activities, the fourth highest rate among countries participating in PISA (after
+    Kazakhstan, China-Shanghai, and Russia). This is in line with the well-known
+    phenomenon of primary and high school children taking extra classes to supplement to
+    in-school instruction in Vietnam. [link](http://ftp.iza.org/dp13066.pdf)
+    - 75% Vietnamese parents admit that they let their children go to the extracurricular learning activity - [link](https://thanhnien.vn/giao-duc/gan-75-phu-huynh-cho-con-hoc-them-453775.html)
+- Almost the tutor and student meet each other through an acquaintance or the tutor's popularity. They don't know about each other very well from the beginning
+- Due to Covid-19. Students have to limit the school hours at school, and learning online 1 teacher with 30 students in class online —> less efficiency.
+- The first website connects students and teachers in Vietnam.
 
-### `npm start`
+## How Timgiasu works?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Peer to peer website
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Students can do:
 
-### `npm test`
+- Students or parents who are looking for private teachers, tutors can go to the website and search teachers/tutors profiles, review, prices and choose teachers/tutors
+- Make the appointments, and chatting with teachers to know more about each other.
+- Paying for the class
+- Online student: =⇒ zoom link
+- Offline student: address to study
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tutor teacher can do:
 
-### `npm run build`
+- Upload profile, schedule for teaching
+- Chatting with students
+- Receive money
+- Online student: =⇒ zoom link
+- Offline student: address to study
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Who will use Timgiasu?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Students in Vietnam ( Primary - Second - High)
+- The tutor is teachers, tutors (University, School, Institute)
