@@ -23,7 +23,12 @@ function Register() {
                     <label for="exampleFormControlSelect1">Bạn là?</label>
                   </div>
                   <div className="form-floating mb-3">
-                    <input className="form-control" type="text" />
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="name"
+                      data-sb-validations="required,email"
+                    />
                     <label for="text">Họ và Tên</label>
                     <div
                       className="invalid-feedback"

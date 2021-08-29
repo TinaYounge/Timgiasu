@@ -1,10 +1,9 @@
 import React from "react";
-import Filter from "../../components/Filter/Filter.js";
 import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
-import Schedule from "../../components/Schedule/Schedule.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import TeacherCard from "../../components/TeacherCard/TeacherCard.js";
+import Test from "../../components/TeacherCard/Test.js";
 
 function Homepage() {
   return (
@@ -18,6 +17,7 @@ function Homepage() {
             <div class="container px-5 my-5">
               <div class="row gx-5">
                 <TeacherCard />
+                <Test />
               </div>
             </div>
           </div>

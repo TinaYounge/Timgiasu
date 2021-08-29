@@ -2,12 +2,13 @@ import React from "react";
 
 function TimNav() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div className="">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container px-5">
           <a className="navbar-brand" href="/">
             Timgiasu{" "}
           </a>
+
           <button
             className="navbar-toggler"
             type="button"

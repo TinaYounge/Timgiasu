@@ -69,7 +69,7 @@ function Login() {
 
                   <div className="d-grid">
                     <button
-                      className="btn btn-success btn-lg disabled"
+                      className="btn btn-success btn-lg "
                       id="submitButton"
                       type="submit"
                     >

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Style.css";
 
 function TeacherCard() {
   return (
@@ -40,6 +41,7 @@ function TeacherCard() {
         </div>
       </div> */}
       {/* test */}
+
       <div className="col-lg-4 mb-5  px-4 px-lg-5 mt-5 ">
         <div className="card h-100 shadow border-0 ">
           <img

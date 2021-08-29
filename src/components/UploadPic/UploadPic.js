@@ -25,11 +25,10 @@ class UploadPic extends Component {
       <div>
         <div>
           <div>
+            <input type="file" name="myImage" onChange={this.onImageChange} />
             <Col xs={12} md={12}>
               <Image src={this.state.image} className=" img-thumbnail" />
             </Col>
-            <h5>Cập nhật ảnh đại diện</h5>
-            <input type="file" name="myImage" onChange={this.onImageChange} />
           </div>
         </div>
       </div>
