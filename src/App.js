@@ -6,6 +6,7 @@ import Homepage from "./page/Homepage/Homepage";
 import LoginPage from "./page/LoginPage/LoginPage";
 import RegisterPage from "./page/RegisterPage/RegisterPage";
 import TeacherDetailPage from "./page/TeacherDetailPage/TeacherDetailPage";
+import UploadInfoPage from "./page/UploadInfoPage/UploadInfoPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/TeacherDetailPage" component={TeacherDetailPage} />
         <Route exact path="/LoginPage" component={LoginPage} />
         <Route exact path="/RegisterPage" component={RegisterPage} />
+        <Route exact path="/UploadInfoPage" component={UploadInfoPage} />
       </Switch>
       <Footer />
     </Router>

@@ -23,14 +23,8 @@ function Register() {
                     <label for="exampleFormControlSelect1">Bạn là?</label>
                   </div>
                   <div className="form-floating mb-3">
-                    <input
-                      className="form-control"
-                      id="email"
-                      type="email"
-                      placeholder="name@example.com"
-                      data-sb-validations="required,email"
-                    />
-                    <label for="email">Họ và Tên</label>
+                    <input className="form-control" type="text" />
+                    <label for="text">Họ và Tên</label>
                     <div
                       className="invalid-feedback"
                       data-sb-feedback="email:required"
@@ -106,13 +100,12 @@ function Register() {
                   </div>
 
                   <div className="d-grid">
-                    <button
-                      className="btn btn-success btn-lg disabled"
-                      id="submitButton"
-                      type="submit"
+                    <a
+                      className="btn  btn-success btn-lg mt-auto"
+                      href="/UploadInfoPage"
                     >
                       Đăng ký{" "}
-                    </button>
+                    </a>
                     <br />
                     <p>
                       Bạn đã có tải khoản? Vui lòng{" "}
