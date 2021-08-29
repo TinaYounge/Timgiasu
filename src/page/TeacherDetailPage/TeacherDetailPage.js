@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import CommentBox from "../../components/CommentBox/CommentBox";
 import Introduction from "../../components/Introduction/Introduction";
 import Pricebox from "../../components/Pricebox/Pricebox";
