@@ -1,25 +1,25 @@
 import React from "react";
-import Filter from "../Filter/Filter";
 
 function SearchBox() {
   return (
-    <div>
-      <aside className="bg-secondary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+    <div className="">
+      <aside class="bg-light  rounded-3  p-sm-2 ">
         <div
-          className="
+          class="
                 d-flex
                 align-items-center
-                justify-content-between
+                justify-content-around
                 flex-column flex-xl-row
                 text-center text-xl-start
               "
         >
-          <div className="mb-4 mb-xl-0">
-            <div className="fs-3 fw-bold text-white">Bạn muốn học môn gì?</div>
-            <div className="text-white-50">
+          <div class="mb-4 mb-xl-0">
+            <div class="fs-4 fw-bold ">Bạn muốn học môn gì?</div>
+            <div class="text-50">
               Đăng kí học để lựa chọn được giáo viên tốt nhất.{" "}
             </div>
-            <br />
+          </div>
+          <div class="ms-xl-4">
             <div class="input-group mb-2">
               <input
                 class="form-control"
@@ -29,16 +29,14 @@ function SearchBox() {
                 aria-describedby="button-newsletter"
               />
               <button
-                class="btn btn-outline-light"
+                class="btn btn-outline-dark"
                 id="button-newsletter"
                 type="button"
               >
                 Tìm
               </button>
             </div>
-          </div>
-          <div className="ms-xl-4">
-            <Filter />
+            <div class="small text-50"></div>
           </div>
         </div>
       </aside>

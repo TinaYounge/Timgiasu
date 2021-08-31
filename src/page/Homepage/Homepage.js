@@ -1,6 +1,8 @@
 import React from "react";
+import Chip from "../../components/Chip/Chip.js";
 import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
+import RenderInput from "../../components/RenderInput/RenderInput.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import SubjectCard from "../../components/SubjectCard/SubjectCard.js";
 import TeacherCard from "../../components/TeacherCard/TeacherCard.js";
@@ -10,16 +12,21 @@ function Homepage() {
   return (
     <div>
       <LandingPage />
-      <br></br>
       <div className="">
         <div className=" ">
           <SearchBox />
-          <div class="py-5">
-            <div class="container px-5 my-5">
-              <div class="row gx-5">
+          <div className=" ">
+            <div className=" ">
+              <div className="row ">
+                <div class="fs-3 fw-bold container px-5  ">Gợi ý môn học</div>
                 <SubjectCard />
+                <div class="fs-3 fw-bold container px-5  ">
+                  Giáo viên được đánh giá cao
+                </div>
                 <TeacherCard />
                 {/* <Test /> */}
+                {/* <RenderInput /> */}
+                {/* <Chip /> */}
               </div>
             </div>
           </div>

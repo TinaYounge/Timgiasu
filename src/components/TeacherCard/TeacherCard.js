@@ -2,7 +2,7 @@ import React from "react";
 import "./StyleTeacherCard.css";
 function TeacherCard() {
   return (
-    <div>
+    <div className="">
       <a target="_blank" href="/TeacherDetailPage">
         <div className="col-lg-4 mb-5  px-4 px-lg-5 mt-5 ">
           <div className="card h-100 shadow border-0 container_foto">
@@ -15,7 +15,7 @@ function TeacherCard() {
               <div class="ver_mas text-center">
                 <span class="">
                   {" "}
-                  <p>
+                  <p style={{ color: "blue" }} className="fs-4  ">
                     Với 2 năm kinh nghiệm dạy toán lớp 6 tại trường tư thục,
                     bằng đại học sư phạm
                   </p>

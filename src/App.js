@@ -5,6 +5,8 @@ import TimNav from "./components/TimNav/TimNav";
 import Homepage from "./page/Homepage/Homepage";
 import LoginPage from "./page/LoginPage/LoginPage";
 import RegisterPage from "./page/RegisterPage/RegisterPage";
+import StudentDetailPage from "./page/StudentDetailPage/StudentDetailPage";
+import StudentUploadInfo from "./page/StudentUploadInfo/StudentUploadInfo";
 import TeacherDetailPage from "./page/TeacherDetailPage/TeacherDetailPage";
 import UploadInfoPage from "./page/UploadInfoPage/UploadInfoPage";
 
@@ -18,6 +20,8 @@ function App() {
         <Route exact path="/LoginPage" component={LoginPage} />
         <Route exact path="/RegisterPage" component={RegisterPage} />
         <Route exact path="/UploadInfoPage" component={UploadInfoPage} />
+        <Route exact path="/StudentDetailPage" component={StudentDetailPage} />
+        <Route exact path="/StudentUploadInfo" component={StudentUploadInfo} />
       </Switch>
       <Footer />
     </Router>

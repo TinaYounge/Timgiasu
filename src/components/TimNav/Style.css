@@ -1,0 +1,13 @@
+.normal {
+  background-color: rgba(117, 79, 254);
+}
+
+.active {
+  background-color: rgba(117, 79, 254);
+  height: 55px;
+}
+
+.active2 {
+  background-color: rgb(108, 79, 216);
+  height: 55px;
+}

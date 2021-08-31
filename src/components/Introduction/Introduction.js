@@ -2,9 +2,9 @@ import React from "react";
 
 function Introduction() {
   return (
-    <div>
+    <div className="">
       <article>
-        <header className="mb-4">
+        <header className="mb-4 ">
           <h1 className="fw-bolder mb-1">Xin chào, Minh Nguyệt!</h1>
           <div className="text-muted fst-italic mb-2">January 1, 2021</div>
           <a

@@ -5,7 +5,7 @@ class UploadPic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: null,
+      image: " https://dummyimage.com/200x100/a9acd6/ffff",
     };
 
     this.onImageChange = this.onImageChange.bind(this);
@@ -25,10 +25,15 @@ class UploadPic extends Component {
       <div>
         <div>
           <div>
-            <input type="file" name="myImage" onChange={this.onImageChange} />
             <Col xs={12} md={12}>
               <Image src={this.state.image} className=" img-thumbnail" />
             </Col>
+            <input
+              type="file"
+              name="myImage"
+              onChange={this.onImageChange}
+              multiple
+            />
           </div>
         </div>
       </div>

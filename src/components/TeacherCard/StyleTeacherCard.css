@@ -42,7 +42,7 @@ a {
   width: 100% !important;
   top: 0 !important;
   left: 0 !important;
-  opacity: 0.4 !important;
+  opacity: 1 !important;
   -webkit-transition: all 4s ease !important;
   -moz-transition: all 4s ease !important;
   -o-transition: all 4s ease !important;
@@ -90,11 +90,16 @@ a {
 }
 
 .container_foto:hover img {
-  opacity: 0.1 !important;
-  transform: scale(1.5) !important;
+  opacity: 0.3 !important;
+  /* transform: scale(1.2) !important; */
+  -webkit-transition: all ease-in-out !important;
+  -moz-transition: all ease-in-out !important;
+  -o-transition: all ease-in-out !important;
+  -ms-transition: all ease-in-out !important;
+  transition: all ease-in-out !important;
 }
 
-.container_foto:hover article {
+.container_foto:hover h1 {
   transform: translate(2px, -69px) !important;
   -webkit-transform: translate(2px, -69px) !important;
   -moz-transform: translate(2px, -69px) !important;

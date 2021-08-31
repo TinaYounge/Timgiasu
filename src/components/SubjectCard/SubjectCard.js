@@ -2,10 +2,10 @@ import React from "react";
 
 function SubjectCard() {
   return (
-    <div class="col-lg-3 ">
+    <div class="col-lg-3  mb-5  px-4 px-lg-5 mt-5 ">
       <div
         class="position-relative mb-5 text-center"
-        style={{ backgroundColor: "grey" }}
+        style={{ backgroundColor: "", borderRadius: "5px" }}
       >
         <img
           class="img-fluid rounded-3 mb-3"

@@ -1,56 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Style.css";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import logo from "../../Images/logo.png";
 
 function TimNav() {
+  const [navbar, setNavbar] = useState(false);
+  const ChangeBackGround = () => {
+    if (window.scrollY >= 55) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", ChangeBackGround);
   return (
     <div className="">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div className="container px-5">
-          <a className="navbar-brand" href="/">
-            Timgiasu{" "}
-          </a>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Trang chủ
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="about.html">
-                  Về chúng tôi
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="contact.html">
-                  Liên hệ
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/LoginPage">
-                  Đăng nhập
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/RegisterPage">
-                  Đăng Ký
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        variant="dark"
+        className={navbar ? "active fixed-top" : "active fixed-top "}
+      >
+        <Container className="normal">
+          <Navbar.Brand href="/">
+            <img src={logo} height={45} />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav normal " />
+          <Navbar.Collapse id="responsive-navbar-nav ">
+            <Nav className="me-auto "></Nav>
+            <Nav>
+              <Nav.Link href="/">Trang chủ</Nav.Link>
+              <Nav.Link href="/StudentUploadInfo"> Về chúng tôi</Nav.Link>
+              <Nav.Link href="/LoginPage">Đăng nhập</Nav.Link>
+              <Nav.Link href="/RegisterPage">Đăng ký</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   );
 }

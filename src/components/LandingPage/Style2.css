@@ -1,0 +1,18 @@
+.bg-img {
+  background-image: url("../../Images/hero-img.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  /* background-size: 90vh; */
+
+  background-color: rgba(117, 79, 254) !important;
+}
+@media only screen and (max-width: 600px) {
+  .res {
+    background-image: url("") !important;
+    background-position: center bottom;
+    background-size: 60vh;
+  }
+  .box {
+    background-color: ;
+  }
+}
