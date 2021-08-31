@@ -23,7 +23,7 @@ function TimNav() {
       >
         <Container className="normal">
           <Navbar.Brand href="/">
-            <img src={logo} height={45} />
+            <img src={logo} height={45} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav normal " />
           <Navbar.Collapse id="responsive-navbar-nav ">

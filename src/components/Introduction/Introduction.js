@@ -7,14 +7,6 @@ function Introduction() {
         <header className="mb-4 ">
           <h1 className="fw-bolder mb-1">Xin chào, Minh Nguyệt!</h1>
           <div className="text-muted fst-italic mb-2">January 1, 2021</div>
-          <a
-            className="badge bg-secondary text-decoration-none link-light"
-            href="#!"
-          />
-          <a
-            className="badge bg-secondary text-decoration-none link-light"
-            href="#!"
-          />
         </header>
         <figure className="mb-4"></figure>
         <section className="mb-5">
