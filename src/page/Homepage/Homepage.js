@@ -1,12 +1,9 @@
 import React from "react";
-import Chip from "../../components/Chip/Chip.js";
 import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
-import RenderInput from "../../components/RenderInput/RenderInput.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import SubjectCard from "../../components/SubjectCard/SubjectCard.js";
 import TeacherCard from "../../components/TeacherCard/TeacherCard.js";
-import Test from "../../components/TeacherCard/Test.js";
 
 function Homepage() {
   return (

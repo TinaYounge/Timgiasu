@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Style.css";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 
 function TimNav() {
