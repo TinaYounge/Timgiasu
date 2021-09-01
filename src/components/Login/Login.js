@@ -67,14 +67,13 @@ function Login() {
                     </div>
                   </div>
 
-                  <div className="d-grid">
-                    <button
-                      className="btn btn-success btn-lg "
-                      id="submitButton"
-                      type="submit"
+                  <div className="d-grid ">
+                    <a
+                      className=" btn-blue btn-lg px-4 me-sm-3 text-center"
+                      href="/StudentUploadInfo"
                     >
-                      Đăng Nhập{" "}
-                    </button>
+                      Đăng nhập{" "}
+                    </a>
                     <br />
                     <p>
                       Bạn đã chưa tải khoản? Vui lòng{" "}

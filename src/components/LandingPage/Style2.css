@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   /* background-size: 90vh; */
 
-  background-color: rgba(117, 79, 254) !important;
+  background-color: rgb(95, 63, 211) !important;
 }
 @media only screen and (max-width: 600px) {
   .res {
@@ -13,6 +13,6 @@
     background-size: 60vh;
   }
   .box {
-    background-color: ;
+    background-color: "";
   }
 }

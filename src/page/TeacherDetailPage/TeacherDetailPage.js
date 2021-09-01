@@ -7,10 +7,7 @@ import Profile from "../../components/Profile/Profile";
 function TeacherDetailPage() {
   return (
     <div>
-      <div
-        className="py-5 bg-light"
-        //  style ={{ backgroundColor: "rgba(117, 79, 254)", height: "40vh" }}
-      >
+      <div className="py-5 bg-light">
         <div className="container px-5 my-5">
           <div className="row gx-5">
             <div className="col-lg-2">

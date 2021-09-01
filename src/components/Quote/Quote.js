@@ -2,7 +2,7 @@ import React from "react";
 
 function Quote() {
   return (
-    <div class="py-5 bg-light">
+    <div class="py-5 " style={{ background: "rgb(248, 245, 238)" }}>
       <div class="container px-5 my-5">
         <div class="row gx-5 justify-content-center">
           <div class="col-lg-10 col-xl-7">

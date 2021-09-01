@@ -32,11 +32,8 @@ function StudentUploadInfo() {
             </div>
           </div>
           <div className="d-grid">
-            <div className="text-center">
-              <a
-                className="btn btn-outline-success mt-auto"
-                href="/TeacherDetailPage"
-              >
+            <div className="text-center ">
+              <a className="btn btn-blue mt-auto" href="/TeacherDetailPage">
                 Hoàn thành{" "}
               </a>
             </div>

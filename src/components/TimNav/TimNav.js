@@ -19,7 +19,7 @@ function TimNav() {
         collapseOnSelect
         expand="lg"
         variant="dark"
-        className={navbar ? "active fixed-top" : "active fixed-top "}
+        className={navbar ? "active fixed-top " : "active2  "}
       >
         <Container className="normal">
           <Navbar.Brand href="/">

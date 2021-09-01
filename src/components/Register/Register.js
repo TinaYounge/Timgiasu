@@ -106,8 +106,8 @@ function Register() {
 
                   <div className="d-grid">
                     <a
-                      className="btn  btn-success btn-lg mt-auto"
-                      href="/UploadInfoPage"
+                      className=" btn-blue btn-lg px-4 me-sm-3 text-center"
+                      href="/RegisterPage"
                     >
                       Đăng ký{" "}
                     </a>

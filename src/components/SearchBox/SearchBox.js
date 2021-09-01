@@ -3,7 +3,7 @@ import React from "react";
 function SearchBox() {
   return (
     <div className="">
-      <aside class="bg-light  rounded-3  p-sm-2 ">
+      <aside class="  rounded-3  p-sm-2 " style={{ background: "#F2C305" }}>
         <div
           class="
                 d-flex
