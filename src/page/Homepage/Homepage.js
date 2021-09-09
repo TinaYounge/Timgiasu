@@ -3,7 +3,7 @@ import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import SubjectCard from "../../components/SubjectCard/SubjectCard.js";
-import TeacherCard from "../../components/TeacherCard/TeacherCard.js";
+import RenderTeacherCard from "../../components/TeacherCard/RenderTeacherCard.js";
 
 function Homepage() {
   return (
@@ -20,7 +20,7 @@ function Homepage() {
                 <div class="fs-3 fw-bold container px-5  ">
                   Giáo viên được đánh giá cao
                 </div>
-                <TeacherCard />
+                <RenderTeacherCard />
                 {/* <Test /> */}
                 {/* <RenderInput /> */}
                 {/* <Chip /> */}
@@ -29,6 +29,7 @@ function Homepage() {
           </div>
         </div>
       </div>
+      {/* <Test /> */}
       <Quote />
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import "./StyleTeacherCard.css";
-function TeacherCard() {
+function TeacherCard({ teacherInfo }) {
+  console.log("teacherInfo", teacherInfo);
   return (
     <div className="">
       <a target="_blank" href="/TeacherDetailPage">
@@ -8,7 +9,7 @@ function TeacherCard() {
           <div className="card h-100 shadow border-0 container_foto">
             <img
               className="card-img-top "
-              src="https://znews-photo.zadn.vn/w660/Uploaded/rugtzn/2016_02_22/1_WLIC_thumb.jpg"
+              src={teacherInfo.profilePicture}
               alt="..."
             />
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -27,7 +28,7 @@ function TeacherCard() {
                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">
                   Toán
                 </div>
-                <h5 className="fw-bolder">Minh Nguyệt</h5>
+                <h5 className="fw-bolder">{teacherInfo.username}</h5>
                 <div className=" d-flex justify-content-center small text-warning mb-2">
                   <div className="bi-star-fill"></div>
                   <div className="bi-star-fill"></div>
@@ -42,7 +43,7 @@ function TeacherCard() {
               <div className="text-center">
                 <a
                   className="btn btn-outline-dark mt-auto"
-                  href="/TeacherDetailPage"
+                  href={"/TeacherDetailPage/" + teacherInfo._id}
                 >
                   Học Ngay{" "}
                 </a>

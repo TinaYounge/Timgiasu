@@ -1,6 +1,17 @@
-import React from "react";
+import Button from "@restart/ui/esm/Button";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../redux/User/RegisterAction";
 
 function Register() {
+  const [userRegiState, setUserRegiState] = useState({
+    accountType: 2,
+    username: "",
+    email: "",
+    password: "",
+  });
+  console.log(userRegiState);
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="py-5">
@@ -14,11 +25,19 @@ function Register() {
             </div>
             <div className="row gx-5 justify-content-center">
               <div className="col-lg-8 col-xl-6">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm">
                   <div className="form-group form-floating mb-3">
-                    <select className="form-control">
+                    <select
+                      className="form-control"
+                      onChange={(e) =>
+                        setUserRegiState({
+                          ...userRegiState,
+                          accountType: e.target.value,
+                        })
+                      }
+                    >
                       <option>Gia sư</option>
-                      <option>Học Sinh</option>
+                      <option>Học sinh</option>
                     </select>
                     <label for="exampleFormControlSelect1">Bạn là?</label>
                   </div>
@@ -28,6 +47,12 @@ function Register() {
                       type="text"
                       placeholder="name"
                       data-sb-validations="required,email"
+                      onChange={(e) =>
+                        setUserRegiState({
+                          ...userRegiState,
+                          username: e.target.value,
+                        })
+                      }
                     />
                     <label for="text">Họ và Tên</label>
                     <div
@@ -44,6 +69,12 @@ function Register() {
                       type="email"
                       placeholder="name@example.com"
                       data-sb-validations="required,email"
+                      onChange={(e) =>
+                        setUserRegiState({
+                          ...userRegiState,
+                          email: e.target.value,
+                        })
+                      }
                     />
                     <label for="email">Địa chỉ email</label>
                     <div
@@ -66,6 +97,12 @@ function Register() {
                       type="password"
                       placeholder="(123) 456-7890"
                       data-sb-validations="required"
+                      onChange={(e) =>
+                        setUserRegiState({
+                          ...userRegiState,
+                          password: e.target.value,
+                        })
+                      }
                     />
                     <label for="phone">Mật khẩu</label>
                     <div
@@ -75,42 +112,20 @@ function Register() {
                       Mật khẩu bắt buộc{" "}
                     </div>
                   </div>
-                  <div className="form-floating mb-3">
-                    <input
-                      className="form-control"
-                      id="phone"
-                      type="password"
-                      placeholder="(123) 456-7890"
-                      data-sb-validations="required"
-                    />
-                    <label for="phone">Nhập lại mật khẩu</label>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="phone:required"
-                    >
-                      Mật khẩu bắt buộc{" "}
-                    </div>
-                  </div>
-                  <div className="d-none" id="submitSuccessMessage">
-                    <div className="text-center mb-3">
-                      <div className="fw-bolder">
-                        Form submission successful!
-                      </div>
-                      To activate this form, sign up at
-                      <br />
-                      <a href="https://startbootstrap.com/solution/contact-forms">
-                        https://startbootstrap.com/solution/contact-forms
-                      </a>
-                    </div>
-                  </div>
 
                   <div className="d-grid">
                     <a
                       className=" btn-blue btn-lg px-4 me-sm-3 text-center"
-                      href="/RegisterPage"
+                      href="#id"
+                      onClick={() => dispatch(registerUser(userRegiState))}
                     >
                       Đăng ký{" "}
                     </a>
+                    <Button
+                      onClick={() => dispatch(registerUser(userRegiState))}
+                    >
+                      Register
+                    </Button>
                     <br />
                     <p>
                       Bạn đã có tải khoản? Vui lòng{" "}

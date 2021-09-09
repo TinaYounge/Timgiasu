@@ -1,6 +1,7 @@
 import React from "react";
 
-function Introduction() {
+function Introduction(id) {
+  console.log("id", id);
   return (
     <div className="">
       <article>
