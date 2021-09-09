@@ -3,16 +3,16 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import getAllTeacherReducer from "./AllTeachers/GetAllTeacherReducer";
+import GetSingleUserReducer from "./SingleUser/GetSingleUserReducer";
 import RegisterReducer from "./User/RegisterReducer";
 
-// const rootReducer = combineReducers({
-//   userRegister: RegisterReducer,
-//   allTeachers: getAllTeacherReducer,
-// });
+const rootReducer = combineReducers({
+  userRegister: RegisterReducer,
+  allTeachers: getAllTeacherReducer,
+  singleUserInfo: GetSingleUserReducer,
+});
 const store = createStore(
-  getAllTeacherReducer,
-  // RegisterReducer,
-  // rootReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(logger, thunk))
 );
 export default store;

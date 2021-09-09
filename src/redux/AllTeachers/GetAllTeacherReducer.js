@@ -15,7 +15,7 @@ function getAllTeacherReducer(state = initialAllTeachers, action) {
     case GET_ALL_TEACHER_FAIL:
       return state;
     default:
-      break;
+      return state;
   }
 }
 

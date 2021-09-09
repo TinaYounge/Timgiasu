@@ -16,7 +16,11 @@ function App() {
       <TimNav />
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/TeacherDetailPage" component={TeacherDetailPage} />
+        <Route
+          exact
+          path="/TeacherDetailPage/:id"
+          component={TeacherDetailPage}
+        />
         <Route exact path="/LoginPage" component={LoginPage} />
         <Route exact path="/RegisterPage" component={RegisterPage} />
         <Route exact path="/UploadInfoPage" component={UploadInfoPage} />

@@ -7,23 +7,25 @@ function RenderTeacherCard() {
   useEffect(() => {
     dispatch(getAllTeachers());
   }, [dispatch]);
-  const allTeacherInfo = useSelector((state) => state);
-  // const allTeacherUser = allTeacherInfo.user;
-  // console.log("user", allTeacherUser);
-  // console.log("allTeacherInfo", allTeacherInfo.user);
-  return allTeacherInfo ? (
-    allTeacherInfo.user.map((item) => {
+  const allTeacherInfo = useSelector((state) => state.allTeachers);
+  let RenderCard;
+  if (allTeacherInfo) {
+    RenderCard = allTeacherInfo.user.map((item) => {
       return (
         <div>
           <TeacherCard teacherInfo={item} />
         </div>
       );
-    })
-  ) : (
-    <div className="spinner-border text-primary" role="status">
-      <span className="sr-only">Loading...</span>
-    </div>
-  );
+    });
+  } else {
+    RenderCard = (
+      <div className="spinner-border text-primary" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
+
+  return <div className="card-group">{RenderCard}</div>;
 }
 
 export default RenderTeacherCard;

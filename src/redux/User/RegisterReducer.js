@@ -15,7 +15,7 @@ function RegisterReducer(state = initialState, action) {
     case REGISTER_FAIL:
       return state;
     default:
-      break;
+      return state;
   }
 }
 

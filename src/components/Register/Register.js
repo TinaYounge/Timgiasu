@@ -116,16 +116,12 @@ function Register() {
                   <div className="d-grid">
                     <a
                       className=" btn-blue btn-lg px-4 me-sm-3 text-center"
-                      href="#id"
+                      href="/LoginPage"
                       onClick={() => dispatch(registerUser(userRegiState))}
                     >
                       Đăng ký{" "}
                     </a>
-                    <Button
-                      onClick={() => dispatch(registerUser(userRegiState))}
-                    >
-                      Register
-                    </Button>
+
                     <br />
                     <p>
                       Bạn đã có tải khoản? Vui lòng{" "}

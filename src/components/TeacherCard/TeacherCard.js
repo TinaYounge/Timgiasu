@@ -3,16 +3,16 @@ import "./StyleTeacherCard.css";
 function TeacherCard({ teacherInfo }) {
   console.log("teacherInfo", teacherInfo);
   return (
-    <div className="">
+    <div>
       <a target="_blank" href="/TeacherDetailPage">
-        <div className="col-lg-4 mb-5  px-4 px-lg-5 mt-5 ">
+        <div className=" mb-5 px-4 mt-5 ">
           <div className="card h-100 shadow border-0 container_foto">
             <img
               className="card-img-top "
               src={teacherInfo.profilePicture}
               alt="..."
             />
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="">
               <div class="ver_mas text-center">
                 <span class="">
                   {" "}

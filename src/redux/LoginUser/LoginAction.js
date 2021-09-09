@@ -1,37 +1,37 @@
-import {
-  GET_SINGLE_USER_FAIL,
-  GET_SINGLE_USER_REQUEST,
-  GET_SINGLE_USER_SUCCESS,
-} from "./GetSingleUserType";
+import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from "./loginType";
+
 import api from "../../App.api";
 
 export const getSingleUserRequest = () => {
   return {
-    type: GET_SINGLE_USER_REQUEST,
+    type: LOGIN_REQUEST,
   };
 };
 
 export const getSingleUserSuccess = (state) => {
   return {
-    type: GET_SINGLE_USER_SUCCESS,
+    type: LOGIN_SUCCESS,
     payload: state,
   };
 };
 
 export const getSingleUserFail = () => {
   return {
-    type: GET_SINGLE_USER_FAIL,
+    type: LOGIN_FAIL,
     payload: Error,
   };
 };
 
-export const getSingleUser = (id) => {
+export const Login = (state) => {
   console.log(process.env.REACT_APP_BACKEND_API);
   return (dispatch) => {
     dispatch(getSingleUserRequest);
-    const getSingleUserResponse = async () => {
+    const loginUser = async () => {
       try {
-        const res = await api.get(`api/user/${id}`);
+        const res = await api.post(`api/auth/login`, {
+          email: state.email,
+          password: state.password,
+        });
         const data = await res.data;
         dispatch(getSingleUserSuccess(data));
       } catch (error) {
@@ -39,6 +39,6 @@ export const getSingleUser = (id) => {
         dispatch(getSingleUserFail(errorMge));
       }
     };
-    getSingleUserResponse();
+    loginUser();
   };
 };

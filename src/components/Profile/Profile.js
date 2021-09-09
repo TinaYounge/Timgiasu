@@ -1,13 +1,14 @@
 import React from "react";
 
-function Profile() {
+function Profile({ singleTeacherInfo }) {
+  console.log("kakak", singleTeacherInfo);
   return (
     <div>
       <div>
         <div className=" align-items-center mt-lg-5 mb-4">
           <img
             className="img-fluid rounded-circle"
-            src="https://znews-photo.zadn.vn/w660/Uploaded/rugtzn/2016_02_22/1_WLIC_thumb.jpg"
+            src={singleTeacherInfo.profilePicture}
             alt="..."
           />
           <div className="d-flex justify-content-center small text-warning mb-2">
@@ -17,9 +18,11 @@ function Profile() {
             <div className="bi-star-fill"></div>
           </div>
           <div className="ms-3">
-            <div className="fw-bold text-center ">Minh Nguyệt</div>
+            <div className="fw-bold text-center ">
+              {/* {singleTeacherInfo.username} */}
+            </div>
             <div className="text-muted text-center">
-              Giáo viên dạy toán trường THPT Thủ Đức
+              {singleTeacherInfo.company}{" "}
             </div>
           </div>
         </div>
