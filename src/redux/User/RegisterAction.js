@@ -27,8 +27,6 @@ export const registerFail = () => {
 };
 
 export const registerUser = (state) => {
-  console.log(process.env.REACT_APP_BACKEND_API);
-  console.log("chay toi day", state);
   return (dispatch) => {
     dispatch(registerRequest);
     const registerResponse = async () => {
@@ -47,5 +45,37 @@ export const registerUser = (state) => {
       }
     };
     registerResponse();
+  };
+};
+
+//Update info user
+export const UpdateInfoUser = (state, id) => {
+  console.log("update info chay toi day", state);
+  console.log("id update info chay toi day", id);
+  return (dispatch) => {
+    dispatch(registerRequest);
+
+    const UpdateResponse = async () => {
+      try {
+        const res = await api.put(`api/user/${id}`, {
+          fullname: state.fullname,
+          profilePicture: state.profilePicture,
+          desc: state.desc,
+          city: state.city,
+          district: state.district,
+          sex: state.sex,
+          company: state.company,
+          typeOfTeaching: state.typeOfTeaching,
+          phoneNumber: state.phoneNumber,
+        });
+        console.log("tina");
+        const data = await res.data;
+        dispatch(registerSuccess(data));
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(registerFail(errorMge));
+      }
+    };
+    UpdateResponse();
   };
 };

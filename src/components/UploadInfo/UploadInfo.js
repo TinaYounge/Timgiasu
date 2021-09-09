@@ -2,20 +2,24 @@ import React from "react";
 import ExperienceInfo from "../ExperienceInfo/ExperienceInfo";
 import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import "./Style.css";
-function UploadInfo() {
+function UploadInfo({ singleUserInfoCombine }) {
+  const singleUserInfo = singleUserInfoCombine[0];
+  console.log("check", singleUserInfo);
   return (
     <div className="py-5">
       <div className=" bg-light   px-4 px-md-5 mb-5 py-5">
         <div className=" px-5 my-5  mb-5">
           <div className=" px-5 my-5">
             <div className="text-center section-separator">
-              <h2 className="fw-bolder">Chào mừng Minh Nguyệt!</h2>
+              <h2 className="fw-bolder">
+                Chào mừng {singleUserInfo.username}!
+              </h2>
               <p className="lead fw-normal text-muted mb-5">
                 Giới thiệu bản thân để học sinh đánh giá cao bạn{" "}
               </p>
             </div>
           </div>
-          <PersonalInfo />
+          <PersonalInfo singleUserInfoCombine={singleUserInfoCombine} />
           <br />
           <div className="px-5 my-5 section-separator "></div>
           <ExperienceInfo />

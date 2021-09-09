@@ -1,44 +1,43 @@
-import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from "./loginType";
+import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from "./LoginType";
 
 import api from "../../App.api";
 
-export const getSingleUserRequest = () => {
+export const LoginRequest = () => {
   return {
     type: LOGIN_REQUEST,
   };
 };
 
-export const getSingleUserSuccess = (state) => {
+export const LoginSuccess = (state) => {
   return {
     type: LOGIN_SUCCESS,
     payload: state,
   };
 };
 
-export const getSingleUserFail = () => {
+export const LoginFail = () => {
   return {
     type: LOGIN_FAIL,
     payload: Error,
   };
 };
 
-export const Login = (state) => {
-  console.log(process.env.REACT_APP_BACKEND_API);
+export const LoginAction = (state) => {
   return (dispatch) => {
-    dispatch(getSingleUserRequest);
-    const loginUser = async () => {
+    dispatch(LoginRequest);
+    const loginResponse = async () => {
       try {
         const res = await api.post(`api/auth/login`, {
           email: state.email,
           password: state.password,
         });
         const data = await res.data;
-        dispatch(getSingleUserSuccess(data));
+        dispatch(LoginSuccess(data));
       } catch (error) {
         const errorMge = Error.message;
-        dispatch(getSingleUserFail(errorMge));
+        dispatch(LoginFail(errorMge));
       }
     };
-    loginUser();
+    loginResponse();
   };
 };

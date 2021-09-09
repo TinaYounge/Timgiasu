@@ -11,14 +11,14 @@ function TeacherCard({ teacherInfo }) {
               className="card-img-top "
               src={teacherInfo.profilePicture}
               alt="..."
+              height="200"
             />
             <div class="">
               <div class="ver_mas text-center">
                 <span class="">
                   {" "}
                   <p style={{ color: "blue" }} className="fs-4  ">
-                    Với 2 năm kinh nghiệm dạy toán lớp 6 tại trường tư thục,
-                    bằng đại học sư phạm
+                    {teacherInfo.desc}
                   </p>
                 </span>
               </div>

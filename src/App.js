@@ -23,7 +23,7 @@ function App() {
         />
         <Route exact path="/LoginPage" component={LoginPage} />
         <Route exact path="/RegisterPage" component={RegisterPage} />
-        <Route exact path="/UploadInfoPage" component={UploadInfoPage} />
+        <Route exact path="/UploadInfoPage/:id" component={UploadInfoPage} />
         <Route exact path="/StudentDetailPage" component={StudentDetailPage} />
         <Route exact path="/StudentUploadInfo" component={StudentUploadInfo} />
       </Switch>

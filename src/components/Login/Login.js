@@ -1,6 +1,14 @@
-import React from "react";
+import Button from "@restart/ui/esm/Button";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { LoginAction } from "../../redux/LoginUser/LoginAction";
 
 function Login() {
+  const dispatch = useDispatch();
+  const [userLoginState, setUserLoginState] = useState({
+    email: "",
+    password: "",
+  });
   return (
     <div>
       <div className="py-5 ">
@@ -22,6 +30,12 @@ function Login() {
                       type="email"
                       placeholder="name@example.com"
                       data-sb-validations="required,email"
+                      onChange={(e) =>
+                        setUserLoginState({
+                          ...userLoginState,
+                          email: e.target.value,
+                        })
+                      }
                     />
                     <label for="email">Địa chỉ email</label>
                     <div
@@ -44,6 +58,12 @@ function Login() {
                       type="password"
                       placeholder="(123) 456-7890"
                       data-sb-validations="required"
+                      onChange={(e) =>
+                        setUserLoginState({
+                          ...userLoginState,
+                          password: e.target.value,
+                        })
+                      }
                     />
                     <label for="phone">Mật khẩu</label>
                     <div
@@ -54,26 +74,23 @@ function Login() {
                     </div>
                   </div>
 
-                  <div className="d-none" id="submitSuccessMessage">
-                    <div className="text-center mb-3">
-                      <div className="fw-bolder">
-                        Form submission successful!
-                      </div>
-                      To activate this form, sign up at
-                      <br />
-                      <a href="https://startbootstrap.com/solution/contact-forms">
-                        https://startbootstrap.com/solution/contact-forms
-                      </a>
-                    </div>
-                  </div>
-
                   <div className="d-grid ">
                     <a
                       className=" btn-blue btn-lg px-4 me-sm-3 text-center"
                       href="/StudentUploadInfo"
+                      onClick={() => {
+                        dispatch(LoginAction(userLoginState));
+                      }}
                     >
                       Đăng nhập{" "}
                     </a>
+                    <Button
+                      onClick={() => {
+                        dispatch(LoginAction(userLoginState));
+                      }}
+                    >
+                      Đăng nhập{" "}
+                    </Button>
                     <br />
                     <p>
                       Bạn đã chưa tải khoản? Vui lòng{" "}
