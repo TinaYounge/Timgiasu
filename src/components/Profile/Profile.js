@@ -8,7 +8,7 @@ function Profile({ singleTeacherInfo }) {
           <img
             className="img-fluid rounded-circle"
             src={singleTeacherInfo.profilePicture}
-            alt="..."
+            alt="profile"
           />
           <div className="d-flex justify-content-center small text-warning mb-2">
             <div className="bi-star-fill"></div>
@@ -18,7 +18,8 @@ function Profile({ singleTeacherInfo }) {
           </div>
           <div className="ms-3">
             <div className="fw-bold text-center ">
-              {/* {singleTeacherInfo.username} */}
+              {singleTeacherInfo.highestCertificate}-
+              {singleTeacherInfo.universityGotCert}
             </div>
             <div className="text-muted text-center">
               {singleTeacherInfo.company}{" "}

@@ -20,14 +20,14 @@ function RenderSubject() {
     });
   } else {
     RenderCard = (
-      <div className="spinner-border text-primary" role="status">
+      <div className="spinner-border text-primary " role="status">
         <span className="sr-only">Loading...</span>
       </div>
     );
   }
 
   return (
-    <div className="card-group" style={{ background: "rgb(248, 245, 238)" }}>
+    <div className="card-group " style={{ background: "rgb(248, 245, 238)" }}>
       {RenderCard}
     </div>
   );

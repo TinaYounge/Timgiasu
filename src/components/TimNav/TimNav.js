@@ -14,7 +14,7 @@ function TimNav() {
   };
   window.addEventListener("scroll", ChangeBackGround);
   return (
-    <div className="">
+    <div className="fixed">
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -25,7 +25,7 @@ function TimNav() {
           <Navbar.Brand href="/">
             <img src={logo} height={45} alt="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav normal " />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav  " />
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="me-auto "></Nav>
             <Nav>

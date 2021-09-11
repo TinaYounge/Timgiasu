@@ -1,8 +1,10 @@
 .bg-img {
-  background-image: url("../../Images/hero-img.png");
-  background-position: right bottom;
+  background-image: url("../../Images/girl-vietnam.png"),
+    url("../../Images/flower-sakura.png");
+
+  background-position: bottom -80px right 100px, bottom 50px right 100px;
   background-repeat: no-repeat;
-  /* background-size: 90vh; */
+  /* background-size: 580px 650px, 900px 650px; */
 
   background-color: rgb(95, 63, 211) !important;
 }
