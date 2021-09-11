@@ -1,8 +1,25 @@
-import React from "react";
+import Button from "@restart/ui/esm/Button";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { UpdateInfoExUser } from "../../redux/User/RegisterAction";
 import TeacherPriceInput from "../TeacherPriceInput/TeacherPriceInput";
 import UploadPic from "../UploadPic/UploadPic";
 
-function ExperienceInfo() {
+function ExperienceInfo({ id }) {
+  const dispatch = useDispatch();
+
+  const [userUpdateExInfo, setUserUpdateExInfo] = useState({
+    company: "",
+    typeOfTeaching: 2,
+    phoneNumber: "",
+    teachingPrice: [],
+    timeTable: [],
+    highestCertificate: "",
+    certificate: [],
+    bankCard: "",
+    universityGotCert: "",
+  });
+
   return (
     <div>
       <h2>Kinh nghiệm dạy học</h2>
@@ -12,7 +29,17 @@ function ExperienceInfo() {
             Bằng cấp cao nhất{" "}
           </label>{" "}
           <select id="inputState" className="form-control  ">
-            <option selected>Chọn...</option>
+            <option
+              selected
+              onChange={(e) =>
+                setUserUpdateExInfo({
+                  ...userUpdateExInfo,
+                  highestCertificate: e.target.value,
+                })
+              }
+            >
+              Chọn...
+            </option>
             <option>Cao đẳng</option>
             <option>Đại học</option>
             <option>Thạc sĩ</option>
@@ -27,6 +54,12 @@ function ExperienceInfo() {
             className="form-control"
             id="inputAddress"
             placeholder="Ví dụ: Trường ĐH sư phạm Hà Nội"
+            onChange={(e) =>
+              setUserUpdateExInfo({
+                ...userUpdateExInfo,
+                universityGotCert: e.target.value,
+              })
+            }
           />{" "}
         </div>
       </div>
@@ -50,7 +83,9 @@ function ExperienceInfo() {
         </div>
       </div>
       <br />
-
+      <Button onClick={() => dispatch(UpdateInfoExUser(userUpdateExInfo, id))}>
+        test
+      </Button>
       <TeacherPriceInput />
     </div>
   );

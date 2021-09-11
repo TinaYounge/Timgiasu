@@ -4,6 +4,7 @@ import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import "./Style.css";
 function UploadInfo({ singleUserInfoCombine }) {
   const singleUserInfo = singleUserInfoCombine[0];
+  const id = singleUserInfoCombine[1];
   return (
     <div className="py-5">
       <div className=" bg-light   px-4 px-md-5 mb-5 py-5">
@@ -18,10 +19,10 @@ function UploadInfo({ singleUserInfoCombine }) {
               </p>
             </div>
           </div>
-          <PersonalInfo singleUserInfoCombine={singleUserInfoCombine} />
+          <PersonalInfo id={id} />
           <br />
           <div className="px-5 my-5 section-separator "></div>
-          <ExperienceInfo />
+          <ExperienceInfo id={id} />
 
           <div className="px-5 my-5 section-separator "></div>
 

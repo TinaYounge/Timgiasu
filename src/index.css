@@ -18,6 +18,9 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.125);
   margin: 2vh;
 }
+.btn-warning {
+  width: 80px !important;
+}
 .btn-pink {
   color: #ffffff;
   background-color: #a511b0;

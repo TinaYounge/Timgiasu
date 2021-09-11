@@ -57,7 +57,6 @@ export const UpdateInfoUser = (state, id) => {
       try {
         const res = await api.put(`api/user/${id}`, {
           fullname: state.fullname,
-          profilePicture: state.profilePicture,
           desc: state.desc,
           city: state.city,
           district: state.district,
@@ -75,5 +74,53 @@ export const UpdateInfoUser = (state, id) => {
       }
     };
     UpdateResponse();
+  };
+};
+
+export const UpdateProfileInfoUser = (state, id) => {
+  return (dispatch) => {
+    dispatch(registerRequest);
+
+    const UpdateProfileResponse = async () => {
+      try {
+        const res = await api.put(`api/user/${id}`, {
+          profilePicture: state,
+        });
+
+        const data = await res.data;
+        dispatch(registerSuccess(data));
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(registerFail(errorMge));
+      }
+    };
+    UpdateProfileResponse();
+  };
+};
+
+export const UpdateInfoExUser = (state, id) => {
+  return (dispatch) => {
+    dispatch(registerRequest);
+
+    const UpdateExResponse = async () => {
+      try {
+        const res = await api.put(`api/user/${id}`, {
+          company: state.company,
+          typeOfTeaching: state.typeOfTeaching,
+          teachingPrice: [],
+          timeTable: [],
+          highestCertificate: state.highestCertificate,
+          certificate: [],
+          universityGotCert: state.universityGotCert,
+        });
+
+        const data = await res.data;
+        dispatch(registerSuccess(data));
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(registerFail(errorMge));
+      }
+    };
+    UpdateExResponse();
   };
 };

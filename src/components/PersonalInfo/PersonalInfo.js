@@ -5,9 +5,7 @@ import { useDispatch } from "react-redux";
 import Button from "@restart/ui/esm/Button";
 import { UpdateInfoUser } from "../../redux/User/RegisterAction";
 
-function PersonalInfo({ singleUserInfoCombine }) {
-  const id = singleUserInfoCombine[1];
-
+function PersonalInfo({ id }) {
   const dispatch = useDispatch();
 
   const [userUpdateInfo, setUserUpdateInfo] = useState({
@@ -18,13 +16,8 @@ function PersonalInfo({ singleUserInfoCombine }) {
     city: "",
     district: "",
     sex: "",
-    company: "",
     typeOfTeaching: 2,
     phoneNumber: "",
-    teachingPrice: [],
-    timeTable: [],
-    certificate: [],
-    bankCard: "",
   });
   return (
     <div>
@@ -97,7 +90,7 @@ function PersonalInfo({ singleUserInfoCombine }) {
         </div>
       </div>
       <br />
-      <div className="group col-md-12 row">
+      {/* <div className="group col-md-12 row">
         <label for="inputAddress" className="col-sm-2 col-form-label fw-bold">
           Giới tính{" "}
         </label>
@@ -139,7 +132,7 @@ function PersonalInfo({ singleUserInfoCombine }) {
             </label>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="row  ">
         <div className="form-group col-md-3">
           <label for="inputAddress" className=" col-form-label fw-bold">

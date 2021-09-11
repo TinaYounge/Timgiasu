@@ -1,9 +1,11 @@
 import React from "react";
 import PersonalInfo from "../../components/PersonalInfo/PersonalInfo";
+import RenderBox from "../../components/TimeBox/RenderBox";
 function StudentUploadInfo() {
   return (
     <div>
-      <div className="py-5 ">
+      <RenderBox />
+      {/* <div className="py-5 ">
         <div className=" bg-light container  px-4 px-md-5 mb-5 py-5">
           <div className="container px-5 my-5  mb-5">
             <div className="container px-5 my-5">
@@ -39,7 +41,7 @@ function StudentUploadInfo() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
