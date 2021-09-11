@@ -4,9 +4,9 @@ function TeacherCard({ teacherInfo }) {
   return (
     <div>
       <a target="_blank" href="/TeacherDetailPage">
-        <div className="  mb-5 px-4 mt-5 " style={{ width: "18rem" }}>
+        <div className=" px-3 mt-4 ">
           <div className="card h-100 shadow border-0 container_foto">
-            <div style={{ width: "100%", height: "150px" }}>
+            <div style={{ width: "100%", height: "200px" }}>
               {" "}
               <img
                 className="card-img-top "
@@ -44,7 +44,6 @@ function TeacherCard({ teacherInfo }) {
             </div>
             <div className="card-footer pt-0 border-top-0 bg-transparent">
               <div className="text-center">
-              
                 <a
                   className="btn-grad p-1"
                   href={"/TeacherDetailPage/" + teacherInfo._id}

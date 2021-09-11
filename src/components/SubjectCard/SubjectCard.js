@@ -2,7 +2,7 @@ import React from "react";
 
 function SubjectCard({ allSubjectsInfo }) {
   return (
-    <div className="  mb-5 px-4 mt-5 " style={{ width: "18rem" }}>
+    <div className="   px-4 mt-2 " style={{ width: "12rem" }}>
       <div
         className="position-relative mb-5 text-center"
         style={{ backgroundColor: "rgb(95, 63, 211)", borderRadius: "5px" }}

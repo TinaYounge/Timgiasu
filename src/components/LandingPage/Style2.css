@@ -2,30 +2,83 @@
   background-image: url("../../Images/girl-vietnam.png"),
     url("../../Images/flower-sakura.png");
 
-  background-position: bottom -80px right 100px, bottom 50px right 100px,0;
+  background-position: bottom -80px right 100px, bottom 50px right 100px, 0;
   background-repeat: no-repeat;
   /* background: rgb(131,58,180); */
   /* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
   /* background: rgb(36,0,33); */
   /* background-image:url("../../Images/girl-vietnam.png") ,url("../../Images/flower-sakura.png"),linear-gradient( 105.5deg,  rgba(255,106,0,1) 11%, rgba(238,9,121,1) 74.9% ); */
-  background-image:url("../../Images/girl-vietnam.png") ,url("../../Images/flower-sakura.png"),linear-gradient( 105.5deg,  rgba(31,212,248,1) 11%, rgba(218,15,183,1) 74.9% );
+  background-image: url("../../Images/girl-vietnam.png"),
+    url("../../Images/flower-sakura.png"),
+    linear-gradient(
+      105.5deg,
+      rgba(31, 212, 248, 1) 11%,
+      rgba(218, 15, 183, 1) 74.9%
+    );
 
   /* background-color: rgb(95, 63, 211) !important; */
- 
-
 }
-
-
-
-
+.box {
+  /* margin-left: 50px; */
+}
 @media only screen and (max-width: 600px) {
   .res {
-    background-image:linear-gradient( 105.5deg,  rgba(31,212,248,1) 11%, rgba(218,15,183,1) 74.9% );
+    background-image: linear-gradient(
+      105.5deg,
+      rgba(31, 212, 248, 1) 11%,
+      rgba(218, 15, 183, 1) 74.9%
+    );
 
     background-position: center bottom;
     background-size: 60vh;
   }
   .box {
-    background-color: "";
+    margin-left: "";
   }
+}
+.btn-pink {
+  color: #ffffff;
+  background-color: #a511b0;
+  border-color: #a511b0;
+  border: 1px solid #a511b0;
+}
+
+.btn-pink:hover,
+.btn-pink:focus,
+.btn-pink:active,
+.btn-pink.active,
+.open .dropdown-toggle.btn-pink {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.btn-pink:active,
+.btn-pink.active,
+.open .dropdown-toggle.btn-pink {
+  background-image: none;
+}
+
+.btn-pink.disabled,
+.btn-pink[disabled],
+fieldset[disabled] .btn-pink,
+.btn-pink.disabled:hover,
+.btn-pink[disabled]:hover,
+fieldset[disabled] .btn-pink:hover,
+.btn-pink.disabled:focus,
+.btn-pink[disabled]:focus,
+fieldset[disabled] .btn-pink:focus,
+.btn-pink.disabled:active,
+.btn-pink[disabled]:active,
+fieldset[disabled] .btn-pink:active,
+.btn-pink.disabled.active,
+.btn-pink[disabled].active,
+fieldset[disabled] .btn-pink.active {
+  background-color: #a511b0;
+  border-color: #a511b0;
+}
+
+.btn-pink .badge {
+  color: #a511b0;
+  background-color: #ffffff;
 }

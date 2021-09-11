@@ -18,89 +18,30 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.125);
   margin: 2vh;
 }
-.btn-warning {
-  width: 80px !important;
-  font-size: 12px;
-  /* background-color: transparent; */
-  /* border: none; */
-  /* border-bottom: 2px solid orange !important; */
-}
-.btn-warning:hover,
-.btn-warning:focus,
-.btn-warning:active,
-.btn-warning.active,
-.open .dropdown-toggle.btn-warning {
-  color: black;
-  background-color: transparent;
-  border-color: orange;
-}
-
-.btn-pink {
-  color: #ffffff;
-  background-color: #a511b0;
-  border-color: #a511b0;
-  border: 1px solid #a511b0;
-}
-
-.btn-pink:hover,
-.btn-pink:focus,
-.btn-pink:active,
-.btn-pink.active,
-.open .dropdown-toggle.btn-pink {
-  color: #ffffff;
-  background-color: transparent;
-  border-color: #ffffff;
-}
-
-.btn-pink:active,
-.btn-pink.active,
-.open .dropdown-toggle.btn-pink {
-  background-image: none;
-}
-
-.btn-pink.disabled,
-.btn-pink[disabled],
-fieldset[disabled] .btn-pink,
-.btn-pink.disabled:hover,
-.btn-pink[disabled]:hover,
-fieldset[disabled] .btn-pink:hover,
-.btn-pink.disabled:focus,
-.btn-pink[disabled]:focus,
-fieldset[disabled] .btn-pink:focus,
-.btn-pink.disabled:active,
-.btn-pink[disabled]:active,
-fieldset[disabled] .btn-pink:active,
-.btn-pink.disabled.active,
-.btn-pink[disabled].active,
-fieldset[disabled] .btn-pink.active {
-  background-color: #a511b0;
-  border-color: #a511b0;
-}
-
-.btn-pink .badge {
-  color: #a511b0;
-  background-color: #ffffff;
-}
-
 .bg-light {
   background-color: rgb(248, 245, 238) !important;
 }
-.btn-grad {background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%)}
 .btn-grad {
-   margin: 10px;
-   text-align: center;
-   /* text-transform: uppercase; */
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 5px;
-   display: block;
- }
+  background-image: linear-gradient(
+    to right,
+    #da22ff 0%,
+    #9733ee 51%,
+    #da22ff 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 5px;
+  display: block;
+}
 
- .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
- 
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

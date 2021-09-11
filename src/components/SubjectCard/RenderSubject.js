@@ -26,11 +26,7 @@ function RenderSubject() {
     );
   }
 
-  return (
-    <div className="card-group " style={{ background: "rgb(248, 245, 238)" }}>
-      {RenderCard}
-    </div>
-  );
+  return <div className="card-group ">{RenderCard}</div>;
 }
 
 export default RenderSubject;
