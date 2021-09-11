@@ -1,7 +1,6 @@
 import React from "react";
 
 function Profile({ singleTeacherInfo }) {
-  console.log("kakak", singleTeacherInfo);
   return (
     <div>
       <div>

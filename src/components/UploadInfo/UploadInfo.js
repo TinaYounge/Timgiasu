@@ -4,7 +4,6 @@ import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import "./Style.css";
 function UploadInfo({ singleUserInfoCombine }) {
   const singleUserInfo = singleUserInfoCombine[0];
-  console.log("check", singleUserInfo);
   return (
     <div className="py-5">
       <div className=" bg-light   px-4 px-md-5 mb-5 py-5">

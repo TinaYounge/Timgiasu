@@ -15,7 +15,6 @@ function TeacherDetailPage() {
     dispatch(getSingleUser(id));
   }, [dispatch, id]);
   const singleTeacherInfo = useSelector((state) => state.singleUserInfo.user);
-  console.log("singleTeacherInfo", singleTeacherInfo);
   return (
     <div>
       <div className="py-5 bg-light">

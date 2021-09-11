@@ -50,8 +50,6 @@ export const registerUser = (state) => {
 
 //Update info user
 export const UpdateInfoUser = (state, id) => {
-  console.log("update info chay toi day", state);
-  console.log("id update info chay toi day", id);
   return (dispatch) => {
     dispatch(registerRequest);
 
@@ -68,7 +66,7 @@ export const UpdateInfoUser = (state, id) => {
           typeOfTeaching: state.typeOfTeaching,
           phoneNumber: state.phoneNumber,
         });
-        console.log("tina");
+
         const data = await res.data;
         dispatch(registerSuccess(data));
       } catch (error) {

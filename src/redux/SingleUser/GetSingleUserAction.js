@@ -26,7 +26,6 @@ export const getSingleUserFail = () => {
 };
 
 export const getSingleUser = (id) => {
-  console.log(process.env.REACT_APP_BACKEND_API);
   return (dispatch) => {
     dispatch(getSingleUserRequest);
     const getSingleUserResponse = async () => {

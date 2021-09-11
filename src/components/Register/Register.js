@@ -10,7 +10,6 @@ function Register() {
     email: "",
     password: "",
   });
-  console.log(userRegiState);
   const dispatch = useDispatch();
   return (
     <div>

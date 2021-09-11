@@ -1,18 +1,21 @@
 import React from "react";
 import "./StyleTeacherCard.css";
 function TeacherCard({ teacherInfo }) {
-  console.log("teacherInfo", teacherInfo);
   return (
     <div>
       <a target="_blank" href="/TeacherDetailPage">
-        <div className=" mb-5 px-4 mt-5 ">
+        <div className="  mb-5 px-4 mt-5 " style={{ width: "18rem" }}>
           <div className="card h-100 shadow border-0 container_foto">
-            <img
-              className="card-img-top "
-              src={teacherInfo.profilePicture}
-              alt="..."
-              height="200"
-            />
+            <div style={{ width: "100%", height: "200px" }}>
+              {" "}
+              <img
+                className="card-img-top "
+                src={teacherInfo.profilePicture}
+                alt="..."
+                height="100%"
+              />
+            </div>
+
             <div class="">
               <div class="ver_mas text-center">
                 <span class="">

@@ -7,7 +7,6 @@ import { UpdateInfoUser } from "../../redux/User/RegisterAction";
 
 function PersonalInfo({ singleUserInfoCombine }) {
   const id = singleUserInfoCombine[1];
-  console.log("hehe", id);
 
   const dispatch = useDispatch();
 
@@ -27,7 +26,6 @@ function PersonalInfo({ singleUserInfoCombine }) {
     certificate: [],
     bankCard: "",
   });
-  console.log(userUpdateInfo);
   return (
     <div>
       {" "}
@@ -57,7 +55,7 @@ function PersonalInfo({ singleUserInfoCombine }) {
           Cập nhật ảnh đại diện{" "}
         </label>
         <div className="col-sm-4">
-          <UploadPic />
+          <UploadPic id={id} />
         </div>
       </div>
       <div className="group col-md-12 ">

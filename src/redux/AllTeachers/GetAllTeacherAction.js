@@ -27,8 +27,6 @@ export const getAllTeacherFail = () => {
 };
 
 export const getAllTeachers = () => {
-  console.log(process.env.REACT_APP_BACKEND_API);
-  console.log("chay vao action");
   return (dispatch) => {
     dispatch(getAllTeacherRequest);
     const getAllTeachersResponse = async () => {
