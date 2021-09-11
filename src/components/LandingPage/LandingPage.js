@@ -3,7 +3,7 @@ import "./Style2.css";
 function LandingPage() {
   return (
     <div>
-      <div className=" py-5 bg-img res">
+      <div className=" py-5 bg-img bg-clor res">
         <div className="container  my-5">
           <div className="row gx-5  ">
             <div className="col-lg-5 col-xl-5 col-xxl-5 box">

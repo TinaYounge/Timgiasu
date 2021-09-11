@@ -3,7 +3,7 @@ import React from "react";
 function TimeBox({ time }) {
   return (
     <div>
-      <button type="button" class="btn btn-warning">
+      <button  className=" btn btn-warning mt-auto">
         {time}
       </button>
     </div>

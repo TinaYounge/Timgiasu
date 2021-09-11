@@ -45,7 +45,7 @@ function TeacherCard({ teacherInfo }) {
             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
               <div className="text-center">
                 <a
-                  className="btn btn-outline-dark mt-auto"
+                  className="btn btn-grad mt-auto"
                   href={"/TeacherDetailPage/" + teacherInfo._id}
                 >
                   Học Ngay{" "}
