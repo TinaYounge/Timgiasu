@@ -114,7 +114,7 @@ function Register() {
 
                   <div className="d-grid">
                     <a
-                      className=" btn-blue btn-lg px-4 me-sm-3 text-center"
+                      className=" btn-grad btn-lg px-4 me-sm-3 text-center"
                       href="/LoginPage"
                       onClick={() => dispatch(registerUser(userRegiState))}
                     >

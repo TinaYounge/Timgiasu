@@ -6,7 +6,7 @@ function TeacherCard({ teacherInfo }) {
       <a target="_blank" href="/TeacherDetailPage">
         <div className="  mb-5 px-4 mt-5 " style={{ width: "18rem" }}>
           <div className="card h-100 shadow border-0 container_foto">
-            <div style={{ width: "100%", height: "200px" }}>
+            <div style={{ width: "100%", height: "150px" }}>
               {" "}
               <img
                 className="card-img-top "
@@ -42,13 +42,14 @@ function TeacherCard({ teacherInfo }) {
                 60.000-120.000 VND
               </div>
             </div>
-            <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div className="card-footer pt-0 border-top-0 bg-transparent">
               <div className="text-center">
+              
                 <a
-                  className="btn btn-grad mt-auto"
+                  className="btn-grad p-1"
                   href={"/TeacherDetailPage/" + teacherInfo._id}
                 >
-                  Học Ngay{" "}
+                  HỌC NGAY{" "}
                 </a>
               </div>
             </div>

@@ -58,7 +58,7 @@ function DayBox({ day }) {
           <th style={{ color: "grey", fontSize: "20px" }}>{day}</th>
         </thead>
         <tbody>
-          <td class="table-primary"> {RenderCard}</td>
+          <td class="table-primary" > {RenderCard}</td>
         </tbody>
       </table>
     </div>

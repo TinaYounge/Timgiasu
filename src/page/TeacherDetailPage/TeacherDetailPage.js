@@ -26,11 +26,13 @@ function TeacherDetailPage() {
             <div className="col-lg-7">
               {" "}
               <Introduction singleTeacherInfo={singleTeacherInfo} />
-              <CommentBox />
             </div>
             <div className="col-lg-3 ">
               {" "}
               <Pricebox />
+            </div>
+            <div className="col-lg-9">
+              <CommentBox />
             </div>
           </div>
         </div>

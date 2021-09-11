@@ -16,7 +16,7 @@ function Homepage() {
             <div className=" ">
               <div className="row ">
                 <div
-                  class="fs-3 fw-bold container px-5  "
+                  className="fs-3 fw-bold container px-5  "
                   style={{ background: "rgb(248, 245, 238)" }}
                 >
                   Gợi ý môn học

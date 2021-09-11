@@ -81,52 +81,7 @@ fieldset[disabled] .btn-pink.active {
   color: #a511b0;
   background-color: #ffffff;
 }
-.btn-blue {
-  color: #ffffffff;
-  background-color: #5f3fd3;
-  border-color: #5f3fd3;
-}
 
-.btn-blue:hover,
-.btn-blue:focus,
-.btn-blue:active,
-.btn-blue.active,
-.open .dropdown-toggle.btn-blue {
-  color: #ffffffff;
-  background-color: #3d2c96;
-  border-color: #5f3fd3;
-}
-
-.btn-blue:active,
-.btn-blue.active,
-.open .dropdown-toggle.btn-blue {
-  background-image: none;
-  color: #ffffffff;
-}
-
-.btn-blue.disabled,
-.btn-blue[disabled],
-fieldset[disabled] .btn-blue,
-.btn-blue.disabled:hover,
-.btn-blue[disabled]:hover,
-fieldset[disabled] .btn-blue:hover,
-.btn-blue.disabled:focus,
-.btn-blue[disabled]:focus,
-fieldset[disabled] .btn-blue:focus,
-.btn-blue.disabled:active,
-.btn-blue[disabled]:active,
-fieldset[disabled] .btn-blue:active,
-.btn-blue.disabled.active,
-.btn-blue[disabled].active,
-fieldset[disabled] .btn-blue.active {
-  background-color: #5f3fd3;
-  border-color: #5f3fd3;
-}
-
-.btn-blue .badge {
-  color: #5f3fd3;
-  background-color: #ffffff;
-}
 .bg-light {
   background-color: rgb(248, 245, 238) !important;
 }
@@ -134,12 +89,12 @@ fieldset[disabled] .btn-blue.active {
 .btn-grad {
    margin: 10px;
    text-align: center;
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    transition: 0.5s;
    background-size: 200% auto;
    color: white;            
    box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
+   border-radius: 5px;
    display: block;
  }
 

@@ -76,7 +76,7 @@ function Login() {
 
                   <div className="d-grid ">
                     <a
-                      className=" btn-blue btn-lg px-4 me-sm-3 text-center"
+                      className=" btn-grad btn-lg text-center"
                       href="/StudentUploadInfo"
                       onClick={() => {
                         dispatch(LoginAction(userLoginState));

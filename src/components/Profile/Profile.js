@@ -6,9 +6,10 @@ function Profile({ singleTeacherInfo }) {
       <div>
         <div className=" align-items-center mt-lg-5 mb-4">
           <img
-            className="img-fluid rounded-circle"
+            className="img-fluid rounded-circle img-thumbnail"
             src={singleTeacherInfo.profilePicture}
             alt="profile"
+
           />
           <div className="d-flex justify-content-center small text-warning mb-2">
             <div className="bi-star-fill"></div>
