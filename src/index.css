@@ -20,7 +20,21 @@ code {
 }
 .btn-warning {
   width: 80px !important;
+  font-size: 12px;
+  /* background-color: transparent; */
+  /* border: none; */
+  /* border-bottom: 2px solid orange !important; */
 }
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  color: black;
+  background-color: transparent;
+  border-color: orange;
+}
+
 .btn-pink {
   color: #ffffff;
   background-color: #a511b0;
