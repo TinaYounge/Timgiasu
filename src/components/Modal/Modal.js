@@ -1,27 +1,23 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import { render } from "react-dom";
+import RenderBox from "../TimeBox/RenderBox";
 
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
       size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
+      aria-labelledby="contained-modal-title-center"
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+        <Modal.Title id="contained-modal-title-center">
+          Chọn lịch với gia sư
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        {/* <h4>Centered Modal</h4> */}
+        <RenderBox />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -36,9 +32,8 @@ function ModalTim() {
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
+        Book lịch với gia sư
       </Button>
-
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -47,4 +42,3 @@ function ModalTim() {
   );
 }
 export default ModalTim;
-// render(<ModalTim />);

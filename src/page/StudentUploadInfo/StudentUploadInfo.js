@@ -1,14 +1,12 @@
 import React from "react";
 import PersonalInfo from "../../components/PersonalInfo/PersonalInfo";
-import RenderBox from "../../components/TimeBox/RenderBox";
 function StudentUploadInfo() {
   return (
     <div>
-      <RenderBox />
-      {/* <div className="py-5 ">
+      <div className="py-5 ">
         <div className=" bg-light container  px-4 px-md-5 mb-5 py-5">
-          <div className="container px-5 my-5  mb-5">
-            <div className="container px-5 my-5">
+          <div className="  my-5  mb-5">
+            <div className=" px-5 my-5">
               <div className="text-center section-separator">
                 <h2 className="fw-bolder">Chào mừng Minh Nguyệt!</h2>
                 <p className="lead fw-normal text-muted mb-5">
@@ -35,13 +33,16 @@ function StudentUploadInfo() {
           </div>
           <div className="d-grid">
             <div className="text-center ">
-              <a className="btn btn-blue mt-auto" href="/TeacherDetailPage">
+              <a
+                className="  btn-grad btn-lg mt-auto"
+                href="/TeacherDetailPage"
+              >
                 Hoàn thành{" "}
               </a>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

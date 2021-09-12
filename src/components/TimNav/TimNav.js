@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Style.css";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Badge, Container, Nav, Navbar, Button } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 
 function TimNav() {
@@ -20,11 +20,11 @@ function TimNav() {
         expand="lg"
         variant="dark"
         // className={navbar ? "active fixed-top " : "active2  "}
-     className="active"
+        className="active"
       >
         <Container className="">
-          <Navbar.Brand href="/" >
-            {/* <img src={logo} height={45} alt="logo" /> */}
+          <Navbar.Brand href="/">
+            <img src={logo} height={45} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav  " />
           <Navbar.Collapse id="responsive-navbar-nav ">
@@ -34,12 +34,17 @@ function TimNav() {
               <Nav.Link href="/StudentUploadInfo"> Về chúng tôi</Nav.Link>
               <Nav.Link href="/LoginPage">Đăng nhập</Nav.Link>
               <Nav.Link href="/RegisterPage">Đăng ký</Nav.Link>
+              <Nav.Link href="/RegisterPage">
+                <a>
+                  Your profile <Badge bg="primary">9</Badge>
+                  <span className="visually-hidden">unread messages</span>
+                </a>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
-  
   );
 }
 

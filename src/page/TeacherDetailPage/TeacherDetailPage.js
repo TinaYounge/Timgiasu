@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import CommentBox from "../../components/CommentBox/CommentBox";
 import Introduction from "../../components/Introduction/Introduction";
-import Pricebox from "../../components/Pricebox/Pricebox";
+import ModalTim from "../../components/Modal/Modal";
 import Profile from "../../components/Profile/Profile";
 import SubjectAcc from "../../components/SubjectAcc/SubjectAcc";
+import ToastTim from "../../components/ToastTim/ToastTim";
 import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function TeacherDetailPage() {
@@ -25,11 +26,10 @@ function TeacherDetailPage() {
               <Profile singleTeacherInfo={singleTeacherInfo} />
             </div>
             <div className="col-lg-7">
-              {" "}
               <Introduction singleTeacherInfo={singleTeacherInfo} />
+              <ModalTim />
             </div>
             <div className="col-lg-3">
-              {" "}
               <SubjectAcc />
             </div>
             <div className="col-lg-9">
