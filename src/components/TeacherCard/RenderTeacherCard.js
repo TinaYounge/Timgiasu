@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
-import { Card, Placeholder } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Card, Carousel, Placeholder } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllTeachers } from "../../redux/AllTeachers/GetAllTeacherAction";
 import TeacherCard from "./TeacherCard";
-function RenderTeacherCard() {
+function RenderTeacherCard({ page, limit }) {
+  console.log("limt", page);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllTeachers());
-  }, [dispatch]);
+    dispatch(getAllTeachers(page.page, page.limit));
+  }, [dispatch, page.page, page.limit]);
   const allTeacherInfo = useSelector((state) => state.allTeachers);
   let RenderCard;
   if (allTeacherInfo) {

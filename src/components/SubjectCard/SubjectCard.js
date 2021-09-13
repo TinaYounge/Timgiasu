@@ -1,25 +1,23 @@
 import React from "react";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function SubjectCard({ allSubjectsInfo }) {
   return (
-    <div className="   px-4 mt-2 " style={{ width: "12rem" }}>
-      <div
-        className="position-relative mb-5 text-center"
-        style={{ backgroundColor: "rgb(95, 63, 211)", borderRadius: "5px" }}
-      >
-        <img
-          className="img-fluid rounded-3 mb-3"
-          src="https://i.pinimg.com/564x/9f/9e/8d/9f9e8dc7787fabf094581ce56e83647a.jpg"
-          alt="..."
-        />
-        <a
-          className="h5 fw-bolder text-decoration-none link-dark stretched-link"
-          href="/"
-        >
-          {allSubjectsInfo}
-        </a>
+    <Link class="card-text " to="./haha">
+      <div className="px-2 mt-2 py-3 ">
+        <Card style={{ width: "12rem" }}>
+          <Card.Img
+            variant="top"
+            src="https://unix.edu.vn/wp-content/uploads/2019/10/gia-su-lop-12-1.jpg"
+          />
+          <Card.Body>
+            <Card.Title>{allSubjectsInfo}</Card.Title>
+            <Card.Text></Card.Text>
+          </Card.Body>
+        </Card>
       </div>
-    </div>
+    </Link>
   );
 }
 

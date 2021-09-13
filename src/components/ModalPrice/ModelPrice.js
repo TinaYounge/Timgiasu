@@ -10,8 +10,8 @@ function ModalPrice({ priceInfo }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
-    setShow(false);
     notifyCart();
+    setShow(false);
   };
   const handleCloseAndYes = () => {
     setShow(false);
@@ -36,6 +36,8 @@ function ModalPrice({ priceInfo }) {
           {" "}
           <p>bạn chắc chắn ?</p>
         </Modal.Body>
+        <ToastContainer />
+
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Thêm vào lớp học mong ước
@@ -43,7 +45,6 @@ function ModalPrice({ priceInfo }) {
           <Button variant="primary" onClick={handleCloseAndYes}>
             Đồng ý
           </Button>
-          <ToastContainer />
         </Modal.Footer>
       </Modal>
     </>

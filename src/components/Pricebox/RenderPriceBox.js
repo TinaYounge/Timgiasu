@@ -18,7 +18,7 @@ function RenderPriceBox() {
       );
     });
   } else {
-    RenderCard = <div>heheh</div>;
+    RenderCard = <div>Loading</div>;
   }
 
   return <div className="">{RenderCard}</div>;

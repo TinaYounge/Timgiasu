@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import TimNav from "./components/TimNav/TimNav";
+import AllTeacherPage from "./page/AllTeacherPage/AllTeacherPage";
 import Carosel from "./page/Carosel/Carosel";
 import Homepage from "./page/Homepage/Homepage";
 import LoginPage from "./page/LoginPage/LoginPage";
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/UploadInfoPage/:id" component={UploadInfoPage} />
         <Route exact path="/StudentDetailPage" component={StudentDetailPage} />
         <Route exact path="/StudentUploadInfo" component={StudentUploadInfo} />
+        <Route exact path="/AllTeacherPage" component={AllTeacherPage} />
         <Route exact path="/test" component={Carosel} />
       </Switch>
       <Footer />

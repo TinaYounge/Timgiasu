@@ -3,7 +3,7 @@ import RenderPriceBox from "./RenderPriceBox";
 
 function Pricebox() {
   return (
-    <div className="d-grid ">
+    <div className=" ">
       <RenderPriceBox />
     </div>
   );

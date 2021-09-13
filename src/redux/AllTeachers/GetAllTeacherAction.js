@@ -26,12 +26,15 @@ export const getAllTeacherFail = () => {
   };
 };
 
-export const getAllTeachers = () => {
+export const getAllTeachers = (page, limit) => {
+  console.log("page", page);
   return (dispatch) => {
     dispatch(getAllTeacherRequest);
     const getAllTeachersResponse = async () => {
       try {
-        const res = await api.get(`api/user/teachers`);
+        const res = await api.get(
+          `api/user/teachers?page=${page}&limit=${limit}`
+        );
         const data = await res.data;
         dispatch(getAllTeacherSuccess(data));
       } catch (error) {

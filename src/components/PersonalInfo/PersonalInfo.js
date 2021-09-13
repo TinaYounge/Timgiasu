@@ -4,10 +4,11 @@ import Daypicker from "../Daypicker/Daypicker";
 import { useDispatch } from "react-redux";
 import Button from "@restart/ui/esm/Button";
 import { UpdateInfoUser } from "../../redux/User/RegisterAction";
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import "react-day-picker/lib/style.css";
 
 function PersonalInfo({ id }) {
   const dispatch = useDispatch();
-
   const [userUpdateInfo, setUserUpdateInfo] = useState({
     fullname: "",
     profilePicture: "",
@@ -18,7 +19,14 @@ function PersonalInfo({ id }) {
     sex: "",
     typeOfTeaching: 2,
     phoneNumber: "",
+    birthday: undefined,
   });
+  const handleDayChange = (day) =>
+    setUserUpdateInfo({
+      ...userUpdateInfo,
+      birthday: day,
+    });
+  console.log("statecheck", userUpdateInfo);
   return (
     <div>
       {" "}
@@ -90,12 +98,19 @@ function PersonalInfo({ id }) {
         </div>
       </div>
       <br />
+      {/* <Daypicker />{" "} */}
       <div className="row  ">
         <div className="form-group col-md-3">
           <label for="inputAddress" className=" col-form-label fw-bold">
             Ngày sinh
           </label>{" "}
-          <Daypicker />{" "}
+          <div>
+            {userUpdateInfo.birthday && (
+              <p>Day: {userUpdateInfo.birthday.toLocaleDateString()}</p>
+            )}
+            {!userUpdateInfo.birthday}
+            <DayPickerInput onDayChange={handleDayChange} />
+          </div>{" "}
         </div>
         <div className="form-group col-md-4">
           <label for="inputPhone" className=" col-form-label fw-bold">

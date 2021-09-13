@@ -26,7 +26,7 @@ function RenderSubject() {
     );
   }
 
-  return <div className="card-group ">{RenderCard}</div>;
+  return <div className="card-group">{RenderCard}</div>;
 }
 
 export default RenderSubject;

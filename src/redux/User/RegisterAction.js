@@ -3,7 +3,6 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
 } from "./RegisterType";
-
 import api from "../../App.api";
 
 export const registerRequest = () => {
@@ -52,7 +51,6 @@ export const registerUser = (state) => {
 export const UpdateInfoUser = (state, id) => {
   return (dispatch) => {
     dispatch(registerRequest);
-
     const UpdateResponse = async () => {
       try {
         const res = await api.put(`api/user/${id}`, {
@@ -64,6 +62,7 @@ export const UpdateInfoUser = (state, id) => {
           company: state.company,
           typeOfTeaching: state.typeOfTeaching,
           phoneNumber: state.phoneNumber,
+          birthday: state.birthday,
         });
 
         const data = await res.data;
@@ -73,6 +72,7 @@ export const UpdateInfoUser = (state, id) => {
         dispatch(registerFail(errorMge));
       }
     };
+
     UpdateResponse();
   };
 };
@@ -98,6 +98,7 @@ export const UpdateProfileInfoUser = (state, id) => {
   };
 };
 
+//Update user Experience
 export const UpdateInfoExUser = (state, id) => {
   return (dispatch) => {
     dispatch(registerRequest);
@@ -124,3 +125,5 @@ export const UpdateInfoExUser = (state, id) => {
     UpdateExResponse();
   };
 };
+
+//Update user birthday

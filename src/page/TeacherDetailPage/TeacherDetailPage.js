@@ -7,7 +7,6 @@ import Introduction from "../../components/Introduction/Introduction";
 import ModalTim from "../../components/Modal/Modal";
 import Profile from "../../components/Profile/Profile";
 import SubjectAcc from "../../components/SubjectAcc/SubjectAcc";
-import ToastTim from "../../components/ToastTim/ToastTim";
 import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function TeacherDetailPage() {
@@ -25,14 +24,14 @@ function TeacherDetailPage() {
             <div className="col-lg-2">
               <Profile singleTeacherInfo={singleTeacherInfo} />
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-6">
               <Introduction singleTeacherInfo={singleTeacherInfo} />
               <ModalTim />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <SubjectAcc />
             </div>
-            <div className="col-lg-9">
+            <div className="col-lg-8">
               <CommentBox />
             </div>
           </div>
