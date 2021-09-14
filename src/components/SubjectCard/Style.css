@@ -1,12 +1,9 @@
-a {
-  text-decoration: none !important;
-}
-.res2 {
-  width: 15rem;
+.res1 {
+  width: 12rem;
 }
 
 @media only screen and (max-width: 600px) {
-  .res2 {
+  .res1 {
     width: 100% !important;
   }
 }

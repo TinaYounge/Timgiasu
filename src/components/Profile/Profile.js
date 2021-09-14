@@ -1,6 +1,8 @@
 import React from "react";
+import UploadPic from "../UploadPic/UploadPic";
 
-function Profile({ singleTeacherInfo }) {
+function Profile({ singleTeacherInfoAll }) {
+  const singleTeacherInfo = singleTeacherInfoAll.singleTeacherInfo;
   return (
     <div>
       <div>
@@ -9,8 +11,10 @@ function Profile({ singleTeacherInfo }) {
             className="img-fluid rounded-circle img-thumbnail"
             src={singleTeacherInfo.profilePicture}
             alt="profile"
-
+            style={{ height: "186px" }}
           />
+          <UploadPic id={singleTeacherInfoAll.id} />
+
           <div className="d-flex justify-content-center small text-warning mb-2">
             <div className="bi-star-fill"></div>
             <div className="bi-star-fill"></div>

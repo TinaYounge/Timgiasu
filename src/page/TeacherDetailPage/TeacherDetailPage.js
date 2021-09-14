@@ -22,7 +22,7 @@ function TeacherDetailPage() {
         <div className=" px-5 my-5">
           <div className="row gx-5">
             <div className="col-lg-2">
-              <Profile singleTeacherInfo={singleTeacherInfo} />
+              <Profile singleTeacherInfoAll={{ singleTeacherInfo, id }} />
             </div>
             <div className="col-lg-6">
               <Introduction singleTeacherInfo={singleTeacherInfo} />

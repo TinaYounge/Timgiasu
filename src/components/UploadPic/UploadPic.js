@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Col, Image } from "react-bootstrap";
+import React from "react";
+import { Col } from "react-bootstrap";
 import "./Style.css";
 // import cloudApi from "../../App.cloudApi";
 import axios from "axios";
@@ -14,7 +14,15 @@ function UploadPic({ id }) {
     axios
       .post("https://api.cloudinary.com/v1_1/dzkwpk3uc/image/upload/", formData)
       .then((urlPicture) => {
-        dispatch(UpdateProfileInfoUser(`${urlPicture.data.url}`, id));
+        let url = urlPicture.data.url;
+        let stringUrl = url.toString();
+        let urlPicturea = stringUrl.split("/upload/");
+        let final = [
+          urlPicturea[0],
+          "/upload/w_450,c_scale/",
+          urlPicturea[1],
+        ].join("");
+        dispatch(UpdateProfileInfoUser(final, id));
       });
   };
 
@@ -31,44 +39,3 @@ function UploadPic({ id }) {
 }
 
 export default UploadPic;
-
-// class UploadPic extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       image: " https://dummyimage.com/200x100/a9acd6/ffff",
-//     };
-
-//     this.onImageChange = this.onImageChange.bind(this);
-//   }
-
-//   onImageChange = (event) => {
-//     if (event.target.files && event.target.files[0]) {
-//       let img = event.target.files[0];
-//       this.setState({
-//         image: URL.createObjectURL(img),
-//       });
-//     }
-//   };
-
-//   render() {
-//     return (
-//       <div>
-//         <div>
-//           <div>
-//             <Col xs={12} md={12}>
-//               <Image src={this.state.image} className=" img-thumbnail" />
-//             </Col>
-//             <input
-//               type="file"
-//               name="myImage"
-//               onChange={this.onImageChange}
-//               multiple
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-// export default UploadPic;

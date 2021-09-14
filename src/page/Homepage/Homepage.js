@@ -4,22 +4,20 @@ import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import RenderSubject from "../../components/SubjectCard/RenderSubject.js";
-import OverLay from "../../components/TeacherCard/OverLay.js";
 import RenderTeacherCard from "../../components/TeacherCard/RenderTeacherCard.js";
 function Homepage() {
   const [page, setPage] = useState(1);
-  let limit = 5;
+  let limit = 4;
   return (
     <div>
       <LandingPage />
       <div className="">
         <div className=" ">
           <SearchBox />
-          <OverLay />
           <div className=" ">
             <div className=" ">
               <div className=" ">
-                <div class="fs-3 fw-bold px-5  ">Gợi ý môn học </div>
+                <div class="fs-3 fw-bold py-5  px-5">Gợi ý môn học </div>
                 <div style={{ background: "" }}>
                   <div className="row ">
                     <div className="col-lg-1 align-self-center ">
@@ -48,7 +46,7 @@ function Homepage() {
                   </div>
                 </div>
                 <HowItWork />
-                <div class="fs-3 fw-bold px-5  ">
+                <div class="fs-3 fw-bold px-5  py-5">
                   Giáo viên được đánh giá cao
                 </div>
                 <div className="row ">
@@ -81,10 +79,10 @@ function Homepage() {
                       }}
                     >
                       Thêm
-                    </i>{" "}
+                    </i>
                   </div>
 
-                  <center>
+                  <center className="py-5">
                     <a
                       className="  btn-grad btn-lg "
                       style={{ width: "200px" }}
