@@ -23,9 +23,17 @@ function ModalPrice({ priceInfo }) {
   return (
     <>
       <a className="btn-grad btn-lg" onClick={handleShow}>
-        {priceInfo}{" "}
+        {priceInfo.price30}VND/30phút
       </a>
-
+      <a className="btn-grad btn-lg" onClick={handleShow}>
+        {priceInfo.price50}VND/50phút
+      </a>
+      <a className="btn-grad btn-lg" onClick={handleShow}>
+        {priceInfo.price5X50}VND/5buổi{" "}
+      </a>
+      <a className="btn-grad btn-lg" onClick={handleShow}>
+        {priceInfo.price10x50}VND/10buổi
+      </a>
       <Modal show={show} onHide={handleClose} animation={false} centered>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-center">

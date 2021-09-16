@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Pagination } from "react-bootstrap";
+import FilterTypeOfTeaching from "../../components/FilterTypeOfTeaching/FilterTypeOfTeaching";
 import RenderTeacherCard from "../../components/TeacherCard/RenderTeacherCard";
 
 function AllTeacherPage() {
   const [page, setPage] = useState(1);
-  let limit = 10;
+  let limit = 12;
 
   const HandleNext = () => {
     setPage(page + 1);
@@ -18,7 +19,8 @@ function AllTeacherPage() {
   return (
     <div>
       <div className="py-5 container ">
-        {" "}
+        <FilterTypeOfTeaching />
+        <br />
         <RenderTeacherCard page={{ page, limit }} />
       </div>
 

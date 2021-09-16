@@ -29,7 +29,7 @@ function TeacherDetailPage() {
               <ModalTim />
             </div>
             <div className="col-lg-4">
-              <SubjectAcc />
+              <SubjectAcc ClassesTeacherInfo={singleTeacherInfo.classes} />
             </div>
             <div className="col-lg-8">
               <CommentBox />

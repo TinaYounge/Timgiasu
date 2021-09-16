@@ -1,6 +1,6 @@
 import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LoginAction } from "../../redux/LoginUser/LoginAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const notify = () => toast("Chúc mừng bạn đăng nhập thành công!");
   const dispatch = useDispatch();
+  const loginInfo = useSelector((state) => state.userLogin.user);
+  console.log("kkekke", loginInfo);
   const [userLoginState, setUserLoginState] = useState({
     email: "",
     password: "",
@@ -80,11 +82,12 @@ function Login() {
                   <div className="d-grid ">
                     <a
                       className=" btn-grad btn-lg text-center"
-                      href="/StudentUploadInfo"
+                      // href="/StudentUploadInfo"
                       onClick={() => {
                         dispatch(LoginAction(userLoginState));
                         notify();
                       }}
+                      href={"/UploadInfoPage/" + loginInfo._id}
                     >
                       Đăng nhập{" "}
                     </a>

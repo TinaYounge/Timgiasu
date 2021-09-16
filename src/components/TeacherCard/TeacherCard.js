@@ -1,30 +1,39 @@
 import React from "react";
+import { OverlayTrigger, Popover } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./StyleTeacherCard.css";
-import { Card, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
 
 function TeacherCard({ teacherInfo }) {
   const renderTooltip = (props) => (
-    <Tooltip
-      id="button-tooltip"
+    <Popover
+      id="popover-basic"
       {...props}
       style={{
-        backgroundColor: "purple",
+        backgroundColor: "grey",
+        padding: "2px 10px",
         borderRadius: 3,
+        width: "18rem",
+        height: "420px",
         ...props.style,
       }}
     >
-      {teacherInfo.desc}
-    </Tooltip>
+      <Popover.Header as="h3" style={{ backgroundColor: "grey" }}>
+        <strong>Gia sư: </strong>
+        {teacherInfo.fullname}
+      </Popover.Header>
+      <Popover.Body>{teacherInfo.desc}</Popover.Body>
+    </Popover>
+    // </Tooltip>
   );
   return (
     <div>
       <OverlayTrigger
-        placement="top"
+        placement="right"
         delay={{ show: 0, hide: 0 }}
         overlay={renderTooltip}
       >
         <div className="  mt-4 px-2 ">
-          <div className="card   border-1 shadow res2  ">
+          <div className="card     res2  ">
             <div style={{ width: "100%", height: "180px" }}>
               {" "}
               <img
@@ -39,7 +48,12 @@ function TeacherCard({ teacherInfo }) {
                 <div class="badge bg-primary bg-gradient rounded-pill mb-1">
                   Toán
                 </div>
-                <h5 className="fw-bolder">{teacherInfo.username}</h5>
+                <h5
+                  className="fw-bolder"
+                  style={{ textTransform: "uppercase" }}
+                >
+                  {teacherInfo.fullname}
+                </h5>
                 <div className=" d-flex justify-content-center small text-warning mb-2">
                   <div className="bi-star-fill"></div>
                   <div className="bi-star-fill"></div>
@@ -52,13 +66,13 @@ function TeacherCard({ teacherInfo }) {
             </div>
             <div className="align-self-center ">
               <div className="text-center">
-                <a
-                  className="btn-grad p-1 "
+                <Link
+                  className=" btn-grad p-1"
                   style={{ width: "150px" }}
-                  href={"/TeacherDetailPage/" + teacherInfo._id}
+                  to={"/TeacherDetailPage/" + teacherInfo._id}
                 >
                   HỌC NGAY{" "}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

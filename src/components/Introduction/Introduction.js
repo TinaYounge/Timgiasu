@@ -6,7 +6,7 @@ function Introduction({ singleTeacherInfo }) {
       <article>
         <header className="mb-4 ">
           <h1 className="fw-bolder mb-1">
-            Xin chào,{singleTeacherInfo.username}!
+            Xin chào,{singleTeacherInfo.fullname}!
           </h1>
           <div className="text-muted fst-italic mb-2">
             {singleTeacherInfo.createdAt}

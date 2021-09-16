@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import BecomeTeacher from "../../components/BecomeTeacher/BecomeTeacher.js";
 import HowItWork from "../../components/HowItWork/HowItWork.js";
 import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
@@ -7,7 +10,9 @@ import RenderSubject from "../../components/SubjectCard/RenderSubject.js";
 import RenderTeacherCard from "../../components/TeacherCard/RenderTeacherCard.js";
 function Homepage() {
   const [page, setPage] = useState(1);
+
   let limit = 4;
+
   return (
     <div>
       <LandingPage />
@@ -17,7 +22,7 @@ function Homepage() {
           <div className=" ">
             <div className=" ">
               <div className=" ">
-                <div class="fs-3 fw-bold py-5  px-5">Gợi ý môn học </div>
+                <div class="fs-3 fw-bold py-5  px-5">Môn học ưa thích</div>
                 <div style={{ background: "" }}>
                   <div className="row ">
                     <div className="col-lg-1 align-self-center ">
@@ -83,13 +88,13 @@ function Homepage() {
                   </div>
 
                   <center className="py-5">
-                    <a
-                      className="  btn-grad btn-lg "
-                      style={{ width: "200px" }}
-                      href="/AllTeacherPage"
+                    <Link
+                      className=" py-2 mt-4 gx-0"
+                      style={{ width: "150px" }}
+                      to="./AllTeacherPage"
                     >
-                      Nhiều gia sư hơn
-                    </a>
+                      THÊM GIA SƯ{" "}
+                    </Link>
                   </center>
                 </div>
               </div>
@@ -97,6 +102,7 @@ function Homepage() {
           </div>
         </div>
       </div>
+      <BecomeTeacher />
       <Quote />
     </div>
   );

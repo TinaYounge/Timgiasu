@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Style2.css";
 function LandingPage() {
   return (
@@ -8,25 +9,27 @@ function LandingPage() {
           <div className="row gx-5  ">
             <div className="col-lg-5 col-xl-5 col-xxl-5 box ">
               <div className="my-5 text-center text-xl-start mx-3">
-                <h1 className="display-5  fw-bolder text-white mb-2">
+                <h1 className="display-4  fw-bolder text-white mb-2 ">
                   Tìm gia sư nơi kết nối tri thức{" "}
                 </h1>
                 <p className="lead fw-normal text-white-50 mb-4">
                   Đăng ký ngay để nhận được ưu đãi
                 </p>
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                  <a
+                  <Link
                     className=" btn-pink btn-lg px-4 me-sm-3"
-                    href="/RegisterPage"
+                    style={{ width: "" }}
+                    to="/RegisterPage"
                   >
                     Giáo viên{" "}
-                  </a>
-                  <a
-                    className="btn btn-outline-light btn-lg px-4"
-                    href="/RegisterPage"
+                  </Link>
+                  <Link
+                    className=" btn btn-outline-light btn-lg px-4"
+                    style={{ width: "" }}
+                    to="/RegisterPage"
                   >
-                    Học Sinh{" "}
-                  </a>
+                    Học sinh{" "}
+                  </Link>
                 </div>
               </div>
             </div>

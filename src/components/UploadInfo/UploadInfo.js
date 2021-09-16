@@ -42,7 +42,7 @@ function UploadInfo({ singleUserInfoCombine }) {
         </div>
         <div className="">
           <div className="text-center">
-            <a className="btn-lg btn-grad" href="/TeacherDetailPage">
+            <a className="btn-lg btn-grad" href={"/TeacherDetailPage/" + id}>
               Hoàn thành{" "}
             </a>
           </div>

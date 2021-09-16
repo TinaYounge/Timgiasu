@@ -1,24 +1,38 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
-import Pricebox from "../Pricebox/Pricebox";
+import ModalPrice from "../ModalPrice/ModelPrice";
 
-function SubjectAcc() {
+function SubjectAcc({ ClassesTeacherInfo }) {
+  console.log("ClassesTeacherInfo", ClassesTeacherInfo);
+  let RenderCard;
+  if (ClassesTeacherInfo) {
+    RenderCard = ClassesTeacherInfo.map((item) => {
+      return (
+        <div>
+          {" "}
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>
+              {item.subject}-{item.grade}
+            </Accordion.Header>
+            <Accordion.Body>
+              <ModalPrice priceInfo={item} />
+            </Accordion.Body>
+          </Accordion.Item>
+        </div>
+      );
+    });
+  } else {
+    RenderCard = (
+      <div className="spinner-border text-primary " role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Toán-Lớp 9</Accordion.Header>
-          <Accordion.Body>
-            <Pricebox />
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Hóa-Tất cả</Accordion.Header>
-          <Accordion.Body>
-            <Pricebox />
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
+      {" "}
+      <Accordion defaultActiveKey="0">{RenderCard} </Accordion>
     </div>
   );
 }

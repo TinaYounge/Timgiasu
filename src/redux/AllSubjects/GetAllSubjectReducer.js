@@ -4,7 +4,7 @@ import {
   GET_ALL_SUBJECT_SUCCESS,
 } from "./GetAllSubjectType";
 
-const initialAllSubjects = { loading: false, user: [], err: "" };
+const initialAllSubjects = { loading: false, subject: [], err: "" };
 
 function getAllSubjectReducer(state = initialAllSubjects, action) {
   switch (action.type) {

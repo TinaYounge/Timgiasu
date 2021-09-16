@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllSubjects } from "../../redux/AllSubjects/GetAllSubjectAction";
+import React from "react";
 import SubjectCard from "./SubjectCard";
 
 function RenderSubject() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getAllSubjects());
-  // }, [dispatch]);
-  const allSubjectsInfo = ["Toán", "Lý", "Hóa", "Tiếng Anh", "Văn"];
+  const allSubjectsInfo = [
+    "Toán",
+    "Lý",
+    "Hóa",
+    "Tiếng Anh",
+    "Văn",
+    "Hội họa",
+    "Tiếng Nhật",
+    "Piano",
+    "Hội họa",
+    "Tiếng Pháp",
+  ];
   let RenderCard;
   if (allSubjectsInfo) {
     RenderCard = allSubjectsInfo.map((item) => {

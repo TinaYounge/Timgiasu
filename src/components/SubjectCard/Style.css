@@ -1,5 +1,6 @@
 .res1 {
   width: 12rem;
+  background-color: rgba(150, 79, 216, 0.842) !important;
 }
 
 @media only screen and (max-width: 600px) {
