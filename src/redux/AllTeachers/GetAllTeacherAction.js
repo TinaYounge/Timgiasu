@@ -27,7 +27,6 @@ export const getAllTeacherFail = () => {
 };
 
 export const getAllTeachers = (page, limit) => {
-  console.log("page", page);
   return (dispatch) => {
     dispatch(getAllTeacherRequest);
     const getAllTeachersResponse = async () => {

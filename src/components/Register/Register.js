@@ -1,11 +1,9 @@
-import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/User/RegisterAction";
 
 function Register() {
   const [userRegiState, setUserRegiState] = useState({
-    accountType: 2,
     username: "",
     email: "",
     password: "",
@@ -25,21 +23,6 @@ function Register() {
             <div className="row gx-5 justify-content-center">
               <div className="col-lg-8 col-xl-6">
                 <form id="contactForm">
-                  <div className="form-group form-floating mb-3">
-                    <select
-                      className="form-control"
-                      onChange={(e) =>
-                        setUserRegiState({
-                          ...userRegiState,
-                          accountType: e.target.value,
-                        })
-                      }
-                    >
-                      <option>Gia sư</option>
-                      <option>Học sinh</option>
-                    </select>
-                    <label for="exampleFormControlSelect1">Bạn là?</label>
-                  </div>
                   <div className="form-floating mb-3">
                     <input
                       className="form-control"

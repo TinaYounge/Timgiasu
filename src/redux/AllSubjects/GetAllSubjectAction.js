@@ -26,13 +26,16 @@ export const getAllSubjectFail = () => {
   };
 };
 
-export const getAllSubjects = () => {
+export const getAllSubjects = ({ subjectFilter }) => {
   console.log(process.env.REACT_APP_BACKEND_API);
   return (dispatch) => {
     dispatch(getAllSubjectRequest);
     const getAllSubjectsResponse = async () => {
       try {
-        const res = await api.get(`/api/subject/`);
+        const res = await api.get(
+          `api/subject/getFilterSubjects?subjectFilter=${subjectFilter}`
+        );
+
         const data = await res.data;
         dispatch(getAllSubjectSuccess(data));
       } catch (error) {
