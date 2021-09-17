@@ -15,21 +15,28 @@ function TeacherDetailPage() {
   useEffect(() => {
     dispatch(getSingleUser(id));
   }, [dispatch, id]);
-  const singleTeacherInfo = useSelector((state) => state.singleUserInfo.user);
-  return (
+  const singleTeacherInfo1 = useSelector((state) => state.singleUserInfo.user);
+  console.log("thu day xem", singleTeacherInfo1);
+  const singleTeacherInfo = singleTeacherInfo1;
+  return singleTeacherInfo[id] ? (
     <div>
       <div className="py-5 bg-light">
         <div className=" px-5 my-5">
           <div className="row gx-5">
             <div className="col-lg-2">
-              <Profile singleTeacherInfoAll={{ singleTeacherInfo, id }} />
+              <Profile
+                singleTeacherInfoAll={{
+                  singleTeacherInfo: singleTeacherInfo[id],
+                  id,
+                }}
+              />
             </div>
             <div className="col-lg-6">
-              <Introduction singleTeacherInfo={singleTeacherInfo} />
+              <Introduction singleTeacherInfo={singleTeacherInfo[id]} />
               <ModalTim />
             </div>
             <div className="col-lg-4">
-              <SubjectAcc ClassesTeacherInfo={singleTeacherInfo.classes} />
+              <SubjectAcc ClassesTeacherInfo={singleTeacherInfo[id].classes} />
             </div>
             <div className="col-lg-8">
               <CommentBox />
@@ -38,6 +45,8 @@ function TeacherDetailPage() {
         </div>
       </div>
     </div>
+  ) : (
+    <div>khong co</div>
   );
 }
 

@@ -70,7 +70,6 @@ function Homepage() {
                   </div>
 
                   <div className="col-lg-10">
-                    {" "}
                     <RenderTeacherCard page={{ page, limit }} />
                   </div>
                   <div className="col-lg-1 align-self-center">

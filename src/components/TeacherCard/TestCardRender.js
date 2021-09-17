@@ -5,9 +5,16 @@ import { Link } from "react-router-dom";
 import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function TestCardRender({ userIdOfSubject }) {
-  console.log("test giong id ", userIdOfSubject);
+  // console.log("userId ", userIdOfSubject);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSingleUser(userIdOfSubject));
+  }, [dispatch, userIdOfSubject]);
   const userInfo = useSelector((state) => state.singleUserInfo.user);
-  console.log("userInfoOfSubject", userInfo);
+  // const userInfo = userInfo1[userIdOfSubject]; // const price30a = userInfo.classes[0];
+  console.log("userInfo", userInfo);
+
+  // console.log("jee", price30a);
   const renderTooltip = (props) => (
     <Popover
       id="popover-basic"
@@ -22,62 +29,75 @@ function TestCardRender({ userIdOfSubject }) {
       }}
     >
       <Popover.Header as="h3" style={{ backgroundColor: "grey" }}>
-        <strong>Gia sư:kekek </strong>
+        <strong>Gia sư:{userInfo[userIdOfSubject].fullname}</strong>
       </Popover.Header>
-      <Popover.Body>hahah</Popover.Body>
+      <Popover.Body>{userInfo[userIdOfSubject].desc}</Popover.Body>
     </Popover>
     // </Tooltip>
   );
-  return (
+
+  return userInfo[userIdOfSubject] ? (
     <div>
-      <OverlayTrigger
-        placement="right"
-        delay={{ show: 0, hide: 0 }}
-        overlay={renderTooltip}
-      >
-        <div className="  mt-4 px-2 ">
-          <div className="card     res2  ">
-            <div style={{ width: "100%", height: "180px" }}>
-              {" "}
-              <img className="card-img-top " src="" alt="..." height="180px" />
-            </div>
-            <div className="card-body p-4">
-              <div className="text-center">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-1">
-                  Toán
-                </div>
-                <h5
-                  className="fw-bolder"
-                  style={{ textTransform: "uppercase" }}
-                >
-                  {userInfo.fullname}
-                </h5>
-                <div className=" d-flex justify-content-center small text-warning mb-2">
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <span style={{ color: "black" }}> - 26 classes</span>
-                </div>
-                60.000-120.000 VND
+      {" "}
+      <div>
+        <OverlayTrigger
+          placement="right"
+          delay={{ show: 0, hide: 0 }}
+          overlay={renderTooltip}
+        >
+          <div className="  mt-4 px-2 ">
+            <div className="card     res2  ">
+              <div style={{ width: "100%", height: "180px" }}>
+                {" "}
+                <img
+                  className="card-img-top "
+                  src={userInfo[userIdOfSubject].profilePicture}
+                  alt="..."
+                  height="180px"
+                />
               </div>
-            </div>
-            <div className="align-self-center ">
-              <div className="text-center">
-                <Link
-                  className=" btn-grad p-1"
-                  style={{ width: "150px" }}
-                  to="/TeacherDetailPage/"
-                >
-                  HỌC NGAY{" "}
-                </Link>
+              <div className="card-body p-4">
+                <div className="text-center">
+                  <div class="badge bg-primary bg-gradient rounded-pill mb-1">
+                    Toán
+                  </div>
+                  <h5
+                    className="fw-bolder"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {userInfo[userIdOfSubject].fullname}
+                  </h5>
+                  <div className=" d-flex justify-content-center small text-warning mb-2">
+                    <div className="bi-star-fill"></div>
+                    <div className="bi-star-fill"></div>
+                    <div className="bi-star-fill"></div>
+                    <div className="bi-star-fill"></div>
+                    <span style={{ color: "black" }}> - 26 classes</span>
+                  </div>
+                  {/* {price30a.price30}{" "} */}
+                </div>
+              </div>
+              <div className="align-self-center ">
+                <div className="text-center">
+                  <Link
+                    className=" btn-grad p-1"
+                    style={{ width: "150px" }}
+                    to={"/TeacherDetailPage/" + userInfo[userIdOfSubject]._id}
+                  >
+                    HỌC NGAY{" "}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </OverlayTrigger>
+        </OverlayTrigger>
+      </div>
     </div>
+  ) : (
+    <div>Không</div>
   );
+
+  // );
 }
 
 export default TestCardRender;

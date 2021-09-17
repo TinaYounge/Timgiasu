@@ -4,16 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoginAction } from "../../redux/LoginUser/LoginAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Redirect } from "react-router";
+import LoginPage from "../../page/LoginPage/LoginPage";
 
 function Login() {
   const notify = () => toast("Chúc mừng bạn đăng nhập thành công!");
   const dispatch = useDispatch();
-  const loginInfo = useSelector((state) => state.userLogin.user);
-  console.log("kkekke", loginInfo);
+
   const [userLoginState, setUserLoginState] = useState({
     email: "",
     password: "",
   });
+
   return (
     <div>
       <div className="py-5 ">
@@ -82,24 +84,22 @@ function Login() {
                   <div className="d-grid ">
                     <a
                       className=" btn-grad btn-lg text-center"
-                      // href="/StudentUploadInfo"
                       onClick={() => {
                         dispatch(LoginAction(userLoginState));
                         notify();
                       }}
-                      href={"/UploadInfoPage/" + loginInfo._id}
                     >
                       Đăng nhập{" "}
                     </a>
                     <ToastContainer />
-                    <Button
+                    {/* <Button
                       onClick={() => {
                         dispatch(LoginAction(userLoginState));
-                        notify();
+                        // notify();
                       }}
                     >
                       Đăng nhập{" "}
-                    </Button>
+                    </Button> */}
                     <br />
                     <p>
                       Bạn đã chưa tải khoản? Vui lòng{" "}

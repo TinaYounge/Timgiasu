@@ -30,7 +30,6 @@ function TimNav() {
     dispatch(getSingleUser(id));
   }, [dispatch, id]);
   const singleTeacherInfo = useSelector((state) => state.singleUserInfo.user);
-  console.log("tke", singleTeacherInfo);
   return (
     <div className="">
       <Navbar

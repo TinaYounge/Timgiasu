@@ -7,7 +7,6 @@ import getAllTeacherReducer from "./AllTeachers/GetAllTeacherReducer";
 import LoginReducer from "./LoginUser/LoginReducer";
 import GetSingleUserReducer from "./SingleUser/GetSingleUserReducer";
 import RegisterReducer from "./User/RegisterReducer";
-
 const rootReducer = combineReducers({
   userRegister: RegisterReducer,
   allTeachers: getAllTeacherReducer,

@@ -6,7 +6,7 @@ import "./Style.css";
 
 function SubjectCard({ allSubjectsInfo }) {
   return (
-    <Link class="card-text" to="./haha">
+    <Link class="card-text" to="./AllTeacherPage">
       <div className="px-2 " style={{ height: "40vh" }}>
         <Card className="res1">
           <Card.Img variant="top" src={Logo} />

@@ -2,7 +2,12 @@ import React from "react";
 import UploadPic from "../UploadPic/UploadPic";
 
 function Profile({ singleTeacherInfoAll }) {
-  const singleTeacherInfo = singleTeacherInfoAll.singleTeacherInfo;
+  const singleTeacherInfo1 = singleTeacherInfoAll.singleTeacherInfo;
+  const id1 = singleTeacherInfoAll.id;
+  console.log("singleTeacherInfo1 tesst", singleTeacherInfo1);
+  const singleTeacherInfo = singleTeacherInfo1;
+  // console.log(`object`, singleTeacherInfo[id1].profilePicture);
+
   return (
     <div>
       <div>
@@ -13,7 +18,7 @@ function Profile({ singleTeacherInfoAll }) {
             alt="profile"
             style={{ height: "186px" }}
           />
-          <UploadPic id={singleTeacherInfoAll.id} />
+          {/* <UploadPic id={singleTeacherInfoAll.id} /> */}
 
           <div className="d-flex justify-content-center small text-warning mb-2">
             <div className="bi-star-fill"></div>

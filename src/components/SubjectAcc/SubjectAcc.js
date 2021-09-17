@@ -3,14 +3,13 @@ import { Accordion } from "react-bootstrap";
 import ModalPrice from "../ModalPrice/ModelPrice";
 
 function SubjectAcc({ ClassesTeacherInfo }) {
-  console.log("ClassesTeacherInfo", ClassesTeacherInfo);
   let RenderCard;
   if (ClassesTeacherInfo) {
-    RenderCard = ClassesTeacherInfo.map((item) => {
+    RenderCard = ClassesTeacherInfo.map((item, index) => {
       return (
         <div>
           {" "}
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey={index}>
             <Accordion.Header>
               {item.subject}-{item.grade}
             </Accordion.Header>

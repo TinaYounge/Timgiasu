@@ -8,24 +8,35 @@ function ModalPrice({ priceInfo }) {
   const notifyCart = () => toast("Đã thêm khóa học vào lớp học mơ ước");
 
   const [show, setShow] = useState(false);
-
+  const [packet, setPacket] = useState({ priceOfClass: "" });
   const handleClose = () => {
-    notifyCart();
+    // notifyCart();
     setShow(false);
   };
+
   const handleCloseAndYes = () => {
     setShow(false);
-    notify();
+    // notify();
   };
 
-  const handleShow = () => setShow(true);
+  const handleShow = (price) => () => {
+    setShow(true);
+    setPacket({ priceOfClass: price });
+    console.log("huhuh", price);
+  };
 
+  const handleShow1 = () => {
+    setShow(true);
+    setPacket({ priceOfClass: priceInfo.price30 });
+  };
+  console.log("packet", packet);
+  let a = packet.priceOfClass;
   return (
     <>
-      <a className="btn-grad btn-lg" onClick={handleShow}>
+      <a className="btn-grad btn-lg" onClick={handleShow1}>
         {priceInfo.price30}VND/30phút
       </a>
-      <a className="btn-grad btn-lg" onClick={handleShow}>
+      <a className="btn-grad btn-lg" onClick={handleShow(priceInfo.price50)}>
         {priceInfo.price50}VND/50phút
       </a>
       <a className="btn-grad btn-lg" onClick={handleShow}>
@@ -42,7 +53,7 @@ function ModalPrice({ priceInfo }) {
         </Modal.Header>
         <Modal.Body>
           {" "}
-          <p>bạn chắc chắn ?</p>
+          <p>bạn chắc chắn trị giá - {a}VND ?</p>
         </Modal.Body>
         <ToastContainer />
 

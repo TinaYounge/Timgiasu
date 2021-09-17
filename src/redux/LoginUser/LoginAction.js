@@ -32,6 +32,7 @@ export const LoginAction = (state) => {
           password: state.password,
         });
         const data = await res.data;
+
         dispatch(LoginSuccess(data));
       } catch (error) {
         const errorMge = Error.message;
