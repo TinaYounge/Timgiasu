@@ -1,11 +1,8 @@
-import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LoginAction } from "../../redux/LoginUser/LoginAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Redirect } from "react-router";
-import LoginPage from "../../page/LoginPage/LoginPage";
 
 function Login() {
   const notify = () => toast("Chúc mừng bạn đăng nhập thành công!");

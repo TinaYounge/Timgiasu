@@ -5,16 +5,12 @@ import { Link } from "react-router-dom";
 import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function TestCardRender({ userIdOfSubject }) {
-  // console.log("userId ", userIdOfSubject);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSingleUser(userIdOfSubject));
   }, [dispatch, userIdOfSubject]);
   const userInfo = useSelector((state) => state.singleUserInfo.user);
-  // const userInfo = userInfo1[userIdOfSubject]; // const price30a = userInfo.classes[0];
-  console.log("userInfo", userInfo);
 
-  // console.log("jee", price30a);
   const renderTooltip = (props) => (
     <Popover
       id="popover-basic"
@@ -33,7 +29,6 @@ function TestCardRender({ userIdOfSubject }) {
       </Popover.Header>
       <Popover.Body>{userInfo[userIdOfSubject].desc}</Popover.Body>
     </Popover>
-    // </Tooltip>
   );
 
   return userInfo[userIdOfSubject] ? (

@@ -26,7 +26,6 @@ function PersonalInfo({ id }) {
       ...userUpdateInfo,
       birthday: day,
     });
-  console.log("statecheck", userUpdateInfo);
   return (
     <div>
       {" "}

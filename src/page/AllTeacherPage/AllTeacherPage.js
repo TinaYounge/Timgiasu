@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Pagination } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router";
 import FilterTypeOfTeaching from "../../components/FilterTypeOfTeaching/FilterTypeOfTeaching";
 import TestCardRender from "../../components/TeacherCard/TestCardRender";
+import { getAllSubjects } from "../../redux/AllSubjects/GetAllSubjectAction";
 
 function AllTeacherPage() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
+  let query = useQuery();
   const [page, setPage] = useState(1);
+  let queryFun = query.get("subjectFilter");
+  console.log("queryFun", queryFun);
+
   let limit = 12;
 
   const HandleNext = () => {
@@ -18,14 +27,17 @@ function AllTeacherPage() {
       setPage(page - 1);
     }
   };
-  let RenderCard = <div>thu render nhung khong duoc </div>;
-
+  useEffect(() => {
+    if (queryFun) {
+      dispatch(getAllSubjects({ subjectFilter: queryFun }));
+    }
+  }, [queryFun, dispatch]);
+  let RenderCard;
   const subjectFilter = useSelector((state) => state.allSubjects.subject);
-
+  console.log("subjectFilter", subjectFilter);
   if (subjectFilter) {
     RenderCard = subjectFilter.map((item) => {
       const userId = item.userId;
-
       return (
         <div>
           <TestCardRender userIdOfSubject={userId} />

@@ -6,7 +6,6 @@ import Login from "../../components/Login/Login";
 function LoginPage() {
   const loginInfo1 = useSelector((state) => state.userLogin);
   const loginInfo = loginInfo1.user;
-  console.log("loginInfo", loginInfo);
   return loginInfo1.loggedIn ? (
     <Redirect to={"/UploadInfoPage/" + loginInfo._id} />
   ) : (

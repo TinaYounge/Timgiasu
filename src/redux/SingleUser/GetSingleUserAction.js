@@ -32,7 +32,6 @@ export const getSingleUser = (id) => {
       try {
         const res = await api.get(`api/user/${id}`);
         const data = await res.data;
-        console.log("CHECK ", data);
         dispatch(getSingleUserSuccess(data));
       } catch (error) {
         const errorMge = Error.message;

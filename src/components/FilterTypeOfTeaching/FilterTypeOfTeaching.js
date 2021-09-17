@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllSubjects } from "../../redux/AllSubjects/GetAllSubjectAction";
 
 function FilterTypeOfTeaching() {
-  const dispatch = useDispatch();
   const [filterState, setFilterState] = useState({
     subjectFilter: "",
     // typeOfTeaching: "",
@@ -28,7 +25,7 @@ function FilterTypeOfTeaching() {
         ></input>
       </div>
       <div className="form-group col-md-2 ">
-        <label for="inputAddress" className=" ciol-form-label fw-bold">
+        <label for="inputAddress" className=" col-form-label fw-bold">
           Phương pháp học{" "}
         </label>{" "}
         <select
@@ -79,13 +76,12 @@ function FilterTypeOfTeaching() {
         </select>
       </div>
       <div className=" col-md-2 ">
-        <button
-          onClick={() => {
-            dispatch(getAllSubjects(filterState));
-          }}
+        <a
+          className="btn-grad btn-lg"
+          href={"AllTeacherPage?subjectFilter=" + filterState.subjectFilter}
         >
-          Submit
-        </button>
+          Chọn
+        </a>
       </div>
     </div>
   );
