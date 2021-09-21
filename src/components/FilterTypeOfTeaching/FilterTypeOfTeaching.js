@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function FilterTypeOfTeaching() {
   const [filterState, setFilterState] = useState({
     subjectFilter: "",
-    // typeOfTeaching: "",
-    // city: "",
+    typeOfTeachingFilter: "",
+    cityFilter: "",
   });
 
   return (
@@ -76,12 +77,19 @@ function FilterTypeOfTeaching() {
         </select>
       </div>
       <div className=" col-md-2 ">
-        <a
+        <Link
           className="btn-grad btn-lg"
-          href={"AllTeacherPage?subjectFilter=" + filterState.subjectFilter}
+          to={
+            "AllTeacherPage?subjectFilter=" +
+            filterState.subjectFilter +
+            "&cityFilter=" +
+            filterState.cityFilter +
+            "&typeOfTeachingFilter=" +
+            filterState.typeOfTeachingFilter
+          }
         >
           Chọn
-        </a>
+        </Link>
       </div>
     </div>
   );

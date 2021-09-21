@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ExperienceInfo from "../ExperienceInfo/ExperienceInfo";
 import PersonalInfo from "../PersonalInfo/PersonalInfo";
 import "./Style.css";
@@ -44,9 +45,9 @@ function UploadInfo({ singleUserInfoCombine }) {
           </div>
           <div className="">
             <div className="text-center">
-              <a className="btn-lg btn-grad" href={"/TeacherDetailPage/" + id}>
-                Hoàn thành{" "}
-              </a>
+              <Link className="btn-lg btn-grad" to={"/TeacherDetailPage/" + id}>
+                Hoàn thành
+              </Link>
             </div>
           </div>
         </div>

@@ -54,7 +54,7 @@ function TestCardRender({ userIdOfSubject }) {
               <div className="card-body p-4">
                 <div className="text-center">
                   <div class="badge bg-primary bg-gradient rounded-pill mb-1">
-                    Toán
+                    {userInfo[userIdOfSubject].city}
                   </div>
                   <h5
                     className="fw-bolder"

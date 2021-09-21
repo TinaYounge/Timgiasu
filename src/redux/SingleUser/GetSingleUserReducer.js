@@ -15,13 +15,6 @@ function GetSingleUserReducer(state = initialState, action) {
     case GET_SINGLE_USER_REQUEST:
       return { ...state, loading: true };
     case GET_SINGLE_USER_SUCCESS:
-      //     reducer user
-      // data: {
-      // [userId]: {...}
-      // }
-
-      // return { loading: false, user: action.payload, error: "" };
-
       return {
         loading: false,
         user: { ...state.user, [action.payload._id]: action.payload },

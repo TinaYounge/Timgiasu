@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { LoginAction } from "../../redux/LoginUser/LoginAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
+import { LoginStudentAction } from "../../redux/LoginStudent/LoginStudentAction";
 
 function Login() {
   const notify = () => toast("Chúc mừng bạn đăng nhập thành công!");
@@ -79,19 +81,19 @@ function Login() {
                   </div>
 
                   <div className="d-grid ">
-                    <a
+                    <div
                       className=" btn-grad btn-lg text-center"
                       onClick={() => {
-                        dispatch(LoginAction(userLoginState));
+                        dispatch(LoginStudentAction(userLoginState));
                         notify();
                       }}
                     >
                       Đăng nhập{" "}
-                    </a>
+                    </div>
                     <ToastContainer />
                     {/* <Button
                       onClick={() => {
-                        dispatch(LoginAction(userLoginState));
+                        dispatch(LoginStudentAction(userLoginState));
                         // notify();
                       }}
                     >
@@ -100,7 +102,7 @@ function Login() {
                     <br />
                     <p>
                       Bạn đã chưa tải khoản? Vui lòng{" "}
-                      <a href="/RegisterPage">Đăng Ký</a>
+                      <Link to="/RegisterPage">Đăng Ký</Link>
                     </p>
                   </div>
                 </form>

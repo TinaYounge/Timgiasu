@@ -1,13 +1,14 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Logo from "../../Images/logo.png";
 import "./Style.css";
 
 function SubjectCard({ allSubjectsInfo }) {
   return (
-    <a
+    <Link
       className="card-text"
-      href={"./AllTeacherPage?subjectFilter=" + allSubjectsInfo}
+      to={"./AllTeacherPage?subjectFilter=" + allSubjectsInfo}
     >
       <div className="px-2 " style={{ height: "40vh" }}>
         <Card className="res1">
@@ -20,7 +21,7 @@ function SubjectCard({ allSubjectsInfo }) {
           </Card.Body>
         </Card>
       </div>
-    </a>
+    </Link>
   );
 }
 

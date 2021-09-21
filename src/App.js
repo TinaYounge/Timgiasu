@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import TimNav from "./components/TimNav/TimNav";
 import AllTeacherPage from "./page/AllTeacherPage/AllTeacherPage";
+import CardPage from "./page/CardPage/CardPage";
 import Carosel from "./page/Carosel/Carosel";
 import Homepage from "./page/Homepage/Homepage";
 import LoginPage from "./page/LoginPage/LoginPage";
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/StudentUploadInfo" component={StudentUploadInfo} />
         <Route exact path="/AllTeacherPage" component={AllTeacherPage} />
         <Route exact path="/test" component={Carosel} />
+        <Route exact path="/CardPage/:id" component={CardPage} />
       </Switch>
       <Footer />
     </Router>

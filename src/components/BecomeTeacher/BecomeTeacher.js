@@ -28,7 +28,7 @@ function BecomeTeacher() {
               <Link
                 className="btn-grad py-2 mt-4 gx-0"
                 style={{ width: "150px" }}
-                to="./RegisterPage"
+                to="/RegisterPage"
               >
                 ĐĂNG KÝ NGAY
               </Link>

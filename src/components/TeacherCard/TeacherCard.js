@@ -1,6 +1,8 @@
 import React from "react";
 import { OverlayTrigger, Popover } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+
 import "./StyleTeacherCard.css";
 
 function TeacherCard({ teacherInfo }) {
@@ -25,6 +27,7 @@ function TeacherCard({ teacherInfo }) {
     </Popover>
     // </Tooltip>
   );
+
   return (
     <div>
       <OverlayTrigger
@@ -46,7 +49,7 @@ function TeacherCard({ teacherInfo }) {
             <div className="card-body p-4">
               <div className="text-center">
                 <div class="badge bg-primary bg-gradient rounded-pill mb-1">
-                  Toán
+                  {teacherInfo.city}
                 </div>
                 <h5
                   className="fw-bolder"
@@ -55,11 +58,13 @@ function TeacherCard({ teacherInfo }) {
                   {teacherInfo.fullname}
                 </h5>
                 <div className=" d-flex justify-content-center small text-warning mb-2">
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <div className="bi-star-fill"></div>
-                  <span style={{ color: "black" }}> - 26 classes</span>
+                  <ReactStars
+                    count={teacherInfo.avgScore}
+                    onChange={null}
+                    size={24}
+                    color="#ffd700"
+                    edit={false}
+                  />
                 </div>
                 60.000-120.000 VND
               </div>

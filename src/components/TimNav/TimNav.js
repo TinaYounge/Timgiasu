@@ -12,7 +12,9 @@ import {
 import logo from "../../Images/logo.png";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
+
+import { Link, NavLink } from "react-router-dom";
+import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
 
 function TimNav() {
   // const [navbar, setNavbar] = useState(false);
@@ -25,11 +27,11 @@ function TimNav() {
   // };
   // window.addEventListener("scroll", ChangeBackGround);
   const dispatch = useDispatch();
-  const { id } = useParams();
+  // const { id } = useParams();
   useEffect(() => {
-    dispatch(getSingleUser(id));
-  }, [dispatch, id]);
-  const singleTeacherInfo = useSelector((state) => state.singleUserInfo.user);
+    dispatch(getSingleOwnUser());
+  }, [dispatch]);
+  const singleTeacherInfo = useSelector((state) => state.studentLogin.student);
   return (
     <div className="">
       <Navbar
@@ -47,12 +49,12 @@ function TimNav() {
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="me-auto "></Nav>
             <Nav>
-              <Nav.Link href="/">Trang chủ</Nav.Link>
-              <Nav.Link href="/StudentUploadInfo"> Về chúng tôi</Nav.Link>
-              <Nav.Link href="/LoginPage">Đăng nhập</Nav.Link>
-              <Nav.Link href="/RegisterPage">Đăng ký</Nav.Link>
-              <Nav.Link href="/RegisterPage">
-                <a>
+              <NavLink to="/">Trang chủ</NavLink>
+              <NavLink to="/StudentUploadInfo"> Về chúng tôi</NavLink>
+              <NavLink to="/LoginPage">Đăng nhập</NavLink>
+              <NavLink to="/RegisterPage">Đăng ký</NavLink>
+              <NavLink to="/RegisterPage">
+                <div>
                   <OverlayTrigger
                     placement="bottom"
                     overlay={
@@ -74,8 +76,8 @@ function TimNav() {
                   </OverlayTrigger>
                   <span className="visually-hidden">unread messages</span>
                   {singleTeacherInfo.lastName}{" "}
-                </a>
-              </Nav.Link>
+                </div>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

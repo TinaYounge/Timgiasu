@@ -32,7 +32,7 @@ export const getAllTeachers = (page, limit) => {
     const getAllTeachersResponse = async () => {
       try {
         const res = await api.get(
-          `api/user/teachers?page=${page}&limit=${limit}`
+          `api/user/favoriteUsers?page=${page}&limit=${limit}`
         );
         const data = await res.data;
         dispatch(getAllTeacherSuccess(data));

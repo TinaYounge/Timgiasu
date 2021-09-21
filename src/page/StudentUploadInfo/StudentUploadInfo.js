@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PersonalInfo from "../../components/PersonalInfo/PersonalInfo";
 function StudentUploadInfo() {
   return (
@@ -33,12 +34,12 @@ function StudentUploadInfo() {
           </div>
           <div className="d-grid">
             <div className="text-center ">
-              <a
+              <Link
                 className="  btn-grad btn-lg mt-auto"
-                href="/TeacherDetailPage"
+                to="/TeacherDetailPage"
               >
                 Hoàn thành{" "}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -15,7 +15,6 @@ function AllTeacherPage() {
   let query = useQuery();
   const [page, setPage] = useState(1);
   let queryFun = query.get("subjectFilter");
-  console.log("queryFun", queryFun);
 
   let limit = 12;
 
@@ -29,18 +28,24 @@ function AllTeacherPage() {
   };
   useEffect(() => {
     if (queryFun) {
-      dispatch(getAllSubjects({ subjectFilter: queryFun }));
+      dispatch(
+        getAllSubjects({ subjectFilter: queryFun, page: page, limit: limit })
+      );
     }
-  }, [queryFun, dispatch]);
+  }, [queryFun, dispatch, page, limit]);
   let RenderCard;
   const subjectFilter = useSelector((state) => state.allSubjects.subject);
-  console.log("subjectFilter", subjectFilter);
+
   if (subjectFilter) {
-    RenderCard = subjectFilter.map((item) => {
-      const userId = item.userId;
+    let userIdFilter = [];
+    subjectFilter.map((i) => {
+      userIdFilter.push(i.userId);
+    });
+    let uniqueUserId = [...new Set(userIdFilter)];
+    RenderCard = uniqueUserId.map((item) => {
       return (
         <div>
-          <TestCardRender userIdOfSubject={userId} />
+          <TestCardRender userIdOfSubject={item} />
         </div>
       );
     });
@@ -69,11 +74,12 @@ function AllTeacherPage() {
           <Pagination.Item onClick={() => setPage(2)} active={page === 2}>
             {2}
           </Pagination.Item>
-          <Pagination.Ellipsis />
+          <Pagination.Item onClick={() => setPage(3)} active={page === 3}>
+            {3}
+          </Pagination.Item>
           <Pagination.Item onClick={() => setPage(4)} active={page === 4}>
             {4}
           </Pagination.Item>
-          <Pagination.Ellipsis />
           <Pagination.Next onClick={HandleNext} />
           <Pagination.Last />
         </Pagination>

@@ -90,7 +90,7 @@ function Homepage() {
                     <Link
                       className=" py-2 mt-4 gx-0"
                       style={{ width: "150px" }}
-                      to="./AllTeacherPage"
+                      to="/AllTeacherPage"
                     >
                       THÊM GIA SƯ{" "}
                     </Link>
