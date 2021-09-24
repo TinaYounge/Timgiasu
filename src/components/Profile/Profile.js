@@ -4,7 +4,6 @@ import UploadPic from "../UploadPic/UploadPic";
 function Profile({ singleTeacherInfoAll }) {
   const singleTeacherInfo1 = singleTeacherInfoAll.singleTeacherInfo;
   const id1 = singleTeacherInfoAll.id;
-  console.log("singleTeacherInfo1 tesst", singleTeacherInfo1);
   const singleTeacherInfo = singleTeacherInfo1;
   // console.log(`object`, singleTeacherInfo[id1].profilePicture);
 

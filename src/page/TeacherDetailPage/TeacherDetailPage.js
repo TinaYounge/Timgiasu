@@ -16,7 +16,6 @@ function TeacherDetailPage() {
     dispatch(getSingleUser(id));
   }, [dispatch, id]);
   const singleTeacherInfo1 = useSelector((state) => state.singleUserInfo.user);
-  console.log("thu day xem", singleTeacherInfo1);
   const singleTeacherInfo = singleTeacherInfo1;
   return singleTeacherInfo[id] ? (
     <div>
@@ -30,11 +29,13 @@ function TeacherDetailPage() {
                   id,
                 }}
               />
+              <button>Follow</button> <button>Unfollow</button>
             </div>
             <div className="col-lg-6">
               <Introduction singleTeacherInfo={singleTeacherInfo[id]} />
-              <ModalTim />
+              <ModalTim singleTeacherInfo={singleTeacherInfo[id]} />
             </div>
+
             <div className="col-lg-4">
               <SubjectAcc ClassesTeacherInfo={singleTeacherInfo[id].classes} />
             </div>

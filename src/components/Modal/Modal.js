@@ -3,6 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import RenderBox from "../TimeBox/RenderBox";
 
 function MyVerticallyCenteredModal(props) {
+  const singleTeacherInfo = props.singleTeacherInfo;
   return (
     <Modal
       {...props}
@@ -16,8 +17,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* <h4>Centered Modal</h4> */}
-        <RenderBox />
+        <RenderBox singleTeacherInfo={singleTeacherInfo} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -26,17 +26,20 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function ModalTim() {
+function ModalTim({ singleTeacherInfo }) {
+  let availableTime = singleTeacherInfo.availableTime;
+  console.log("kekekeke", availableTime);
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Book lịch với gia sư
+        Book lịch
       </Button>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        singleTeacherInfo={singleTeacherInfo}
       />
     </>
   );

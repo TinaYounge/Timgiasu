@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 
 import getAllSubjectReducer from "./AllSubjects/GetAllSubjectReducer";
 import getAllTeacherReducer from "./AllTeachers/GetAllTeacherReducer";
+import GetSingleStudentReducer from "./GetSingleStudent/GetSingleStudentReducer";
 import LoginStudentReducer from "./LoginStudent/LoginStudentReducer";
 import LoginReducer from "./LoginUser/LoginReducer";
 import GetSingleUserReducer from "./SingleUser/GetSingleUserReducer";
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   userRegister: RegisterReducer,
   allTeachers: getAllTeacherReducer,
   singleUserInfo: GetSingleUserReducer,
+  singleStudentInfo: GetSingleStudentReducer,
   userLogin: LoginReducer,
   allSubjects: getAllSubjectReducer,
 });

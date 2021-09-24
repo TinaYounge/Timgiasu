@@ -1,0 +1,6 @@
+.cartBox {
+  background-color: pink;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 10px;
+  margin-top: 5px !important  ;
+}

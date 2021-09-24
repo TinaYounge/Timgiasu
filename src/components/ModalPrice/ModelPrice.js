@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AddCartToStudent } from "../../redux/GetSingleStudent/GetSingleStudentAction";
 
 function ModalPrice({ priceInfo }) {
-  const notify = () => toast("Bạn đa follow giáo viên!");
+  const dispatch = useDispatch();
   const notifyFollowing = () => toast("Bạn đẫ follow giáo viên!");
 
   const [show, setShow] = useState(false);
-  const [packet, setPacket] = useState({ idPrice: "", value: 0 });
-  console.log("packet", packet);
+  const [packet, setPacket] = useState({
+    classId: priceInfo._id,
+    userId: priceInfo.userId,
+    idPrice: "",
+    value: 0,
+    paid: "No",
+  });
   const handleClose = () => {
     setShow(false);
   };
@@ -19,13 +25,18 @@ function ModalPrice({ priceInfo }) {
   };
   const handleCloseAndYes = () => {
     setShow(false);
-    // notify();
+    dispatch(AddCartToStudent(packet));
   };
 
   const handleShow = (price) => () => {
     setShow(true);
-    setPacket(price);
+    setPacket({
+      ...packet,
+      idPrice: price.idPrice,
+      value: price.value,
+    });
   };
+  console.log("packet", packet);
 
   let RenderCard;
   if (priceInfo) {

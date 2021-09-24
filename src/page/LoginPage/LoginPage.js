@@ -8,7 +8,7 @@ function LoginPage() {
   const loginInfo = loginInfo1.student;
   return loginInfo1.loggedIn ? (
     // <Redirect to={"/StudentUploadInfo/" + loginInfo._id} />
-    <Redirect to="/StudentUploadInfo" />
+    <Redirect to="/" />
   ) : (
     <Login />
   );

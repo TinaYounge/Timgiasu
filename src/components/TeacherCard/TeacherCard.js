@@ -11,15 +11,15 @@ function TeacherCard({ teacherInfo }) {
       id="popover-basic"
       {...props}
       style={{
-        backgroundColor: "grey",
+        // backgroundColor: "grey",
         padding: "2px 10px",
         borderRadius: 3,
         width: "18rem",
-        height: "420px",
+        height: "520px",
         ...props.style,
       }}
     >
-      <Popover.Header as="h3" style={{ backgroundColor: "grey" }}>
+      <Popover.Header as="h3" style={{ backgroundColor: "transparent" }}>
         <strong>Gia sư: </strong>
         {teacherInfo.fullname}
       </Popover.Header>

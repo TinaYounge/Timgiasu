@@ -16,15 +16,16 @@ function TestCardRender({ userIdOfSubject }) {
       id="popover-basic"
       {...props}
       style={{
-        backgroundColor: "grey",
+        // backgroundColor: "grey",
+
         padding: "2px 10px",
         borderRadius: 3,
         width: "18rem",
-        height: "420px",
+        height: "500px",
         ...props.style,
       }}
     >
-      <Popover.Header as="h3" style={{ backgroundColor: "grey" }}>
+      <Popover.Header as="h3" style={{ backgroundColor: "transparent" }}>
         <strong>Gia sư:{userInfo[userIdOfSubject].fullname}</strong>
       </Popover.Header>
       <Popover.Body>{userInfo[userIdOfSubject].desc}</Popover.Body>

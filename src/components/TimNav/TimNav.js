@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Style.css";
 import {
   Container,
   Nav,
   Navbar,
-  Button,
   Image,
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
 import logo from "../../Images/logo.png";
-import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Link, NavLink } from "react-router-dom";
@@ -27,12 +25,16 @@ function TimNav() {
   // };
   // window.addEventListener("scroll", ChangeBackGround);
   const dispatch = useDispatch();
-  // const { id } = useParams();
+
   useEffect(() => {
     dispatch(getSingleOwnUser());
   }, [dispatch]);
-  const singleTeacherInfo = useSelector((state) => state.studentLogin.student);
-  return (
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.assign("http://localhost:3000/");
+  };
+  const singleStudentInfo = useSelector((state) => state.studentLogin.student);
+  return singleStudentInfo._id ? (
     <div className="">
       <Navbar
         collapseOnSelect
@@ -49,17 +51,46 @@ function TimNav() {
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="me-auto "></Nav>
             <Nav>
-              <NavLink to="/">Trang chủ</NavLink>
-              <NavLink to="/StudentUploadInfo"> Về chúng tôi</NavLink>
-              <NavLink to="/LoginPage">Đăng nhập</NavLink>
-              <NavLink to="/RegisterPage">Đăng ký</NavLink>
-              <NavLink to="/RegisterPage">
+              <Nav.Link
+                as={Link}
+                to="/"
+                style={{ color: "white", paddingRight: "20px" }}
+              >
+                Trang chủ
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/AboutUs"
+                style={{ color: "white", paddingRight: "20px" }}
+              >
+                {" "}
+                Về chúng tôi
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to={"/CardPage/" + singleStudentInfo._id}
+                style={{ color: "white", paddingRight: "20px" }}
+              >
+                {" "}
+                Giỏ hàng{" "}
+              </Nav.Link>
+              <div
+                style={{
+                  color: "white",
+                  paddingRight: "20px",
+                  marginTop: "6px",
+                }}
+                onClick={handleLogout}
+              >
+                Logout
+              </div>
+              <NavLink to={"/StudentDetailPage/" + singleStudentInfo._id}>
                 <div>
                   <OverlayTrigger
                     placement="bottom"
                     overlay={
                       <Tooltip id="button-tooltip-2">
-                        Xin chào {singleTeacherInfo.username}{" "}
+                        <div>Xin chào {singleStudentInfo.username} </div>
                       </Tooltip>
                     }
                   >
@@ -68,15 +99,60 @@ function TimNav() {
                         ref={ref}
                         {...triggerHandler}
                         roundedCircle
-                        src={singleTeacherInfo.profilePicture}
+                        src={singleStudentInfo.profilePicture}
                         height={30}
                         width={30}
                       />
                     )}
                   </OverlayTrigger>
                   <span className="visually-hidden">unread messages</span>
-                  {singleTeacherInfo.lastName}{" "}
+                  {singleStudentInfo.lastName}{" "}
                 </div>
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  ) : (
+    <div className="">
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="active">
+        <Container className="">
+          <Navbar.Brand href="/">
+            <img src={logo} height={45} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav  " />
+          <Navbar.Collapse id="responsive-navbar-nav ">
+            <Nav className="me-auto "></Nav>
+            <Nav>
+              <NavLink
+                to="/"
+                as={Link}
+                style={{ color: "white", paddingRight: "20px" }}
+              >
+                Trang chủ
+              </NavLink>
+              <NavLink
+                as={Link}
+                style={{ color: "white", paddingRight: "20px" }}
+                to="/StudentUploadInfo"
+              >
+                {" "}
+                Về chúng tôi
+              </NavLink>
+              <NavLink
+                as={Link}
+                style={{ color: "white", paddingRight: "20px" }}
+                to="/LoginPage"
+              >
+                Đăng nhập
+              </NavLink>
+              <NavLink
+                as={Link}
+                style={{ color: "white", paddingRight: "20px" }}
+                to="/RegisterPage"
+              >
+                Đăng ký
               </NavLink>
             </Nav>
           </Navbar.Collapse>
