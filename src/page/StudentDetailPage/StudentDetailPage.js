@@ -19,10 +19,10 @@ function StudentDetailPage() {
   console.log("singleStudentInfo", singleStudentInfo);
   return (
     <div>
-      <div className="py-5 body-height">
+      <div className="py-5 body-height studentBg">
         <div className="container px-5 my-5">
           <div className="row gx-5">
-            <div className="col-lg-2">
+            <div className="col-lg-2 ">
               <Profile
                 singleTeacherInfoAll={{
                   singleTeacherInfo: singleStudentInfo,
@@ -30,12 +30,12 @@ function StudentDetailPage() {
                 }}
               />
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7 ">
               {" "}
               <Introduction singleTeacherInfo={singleStudentInfo} />
               <TableToBookClass />
             </div>
-            <div className="col-lg-3 ">
+            <div className="col-lg-3 box">
               <NotifyClass />{" "}
             </div>
           </div>

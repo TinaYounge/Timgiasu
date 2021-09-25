@@ -8,11 +8,11 @@ function HowItWork() {
           <div className="col-lg-8 order-lg-1 mb-5 mb-lg-0">
             <div className="container-fluid px-5">
               <div className="row gx-5">
-                <div className="col-md-6 mb-5">
+                <div className="col-md-6 mb-5 ">
                   <div className="text-center">
-                    <i className="bi-phone icon-feature text-gradient d-block mb-3"></i>
-                    <h3 className="font-alt">Giáo viên uy tín</h3>
-                    <p className="text-muted mb-0">
+                    <i className="bi-phone icon-feature text-gradient d-block mb-3 "></i>
+                    <h3 className="font-alt ">Giáo viên uy tín</h3>
+                    <p className="text-muted mb-0 ">
                       Với đội ngũ giáo viên đã được xét duyệt và có bằng cấp
                       liên quan.
                     </p>

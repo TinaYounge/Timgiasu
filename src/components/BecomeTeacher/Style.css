@@ -1,6 +1,6 @@
 .teacher {
   /* clip-path: circle(25% at 75% 50%); */
-  background-image: url("https://source.unsplash.com/u8Jn2rzYIps/900x900") !important;
+  /* background-image: url("https://source.unsplash.com/u8Jn2rzYIps/900x900") !important; */
   z-index: 1;
 }
 .text-gradient {

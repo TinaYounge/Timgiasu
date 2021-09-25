@@ -1,39 +1,47 @@
 .bg-img {
-  background-image: url("../../Images/girl-vietnam.png"),
-    url("../../Images/flower-sakura.png");
+  /* background-image: url("../../Images/girl-vietnam.png"),
+    url("../../Images/flower-sakura.png"); */
 
-  background-position: bottom -80px right 100px, bottom 50px right 100px, 0;
+  /* background-position: bottom -80px right 100px, bottom 50px right 100px, 0; */
   background-repeat: no-repeat;
-  /* background-size: 100vw; */
+  background-size: 100vw 100vh;
 
-  background-image: url("../../Images/girl-vietnam.png"),
+  background-position: bottom -80px;
+
+  /* background-image: url("../../Images/girl-vietnam.png"),
     url("../../Images/flower-sakura.png"),
     linear-gradient(
       105.5deg,
       rgba(31, 212, 248, 1) 11%,
       rgba(218, 15, 183, 1) 74.9%
-    );
-  /* background-image: url("../../Images/whiteHair.jpg"); */
-  /* background-color: rgb(95, 63, 211) !important; */
-}
+    ); */
 
+  background-image: url("../../Images/whiteHair.jpg");
+  background-color: #fa709a;
+}
+.box {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 @media only screen and (max-width: 600px) {
   .res {
-    background-image: linear-gradient(
-      105.5deg,
-      rgba(31, 212, 248, 1) 11%,
-      rgba(218, 15, 183, 1) 74.9%
-    );
+    background: linear-gradient(
+      to right,
+      #fdc830,
+      #f37335
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     background-position: center bottom;
-    background-size: 60vh;
   }
   .box {
-    margin-left: "";
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0px 0px 0 rgb(0, 0, 0) !important;
   }
 }
 .btn-pink {
-  color: #ffffff;
+  color: #ffffffff;
   background-image: linear-gradient(to right, #da22ff 0%, #9733ee 100%);
   border: 1px solid #a511b0;
 }
@@ -43,9 +51,9 @@
 .btn-pink:active,
 .btn-pink.active,
 .open .dropdown-toggle.btn-pink {
-  color: #ffffff;
+  color: #a511b0;
   background-image: none;
-  border-color: #ffffff;
+  border-color: #a511b0;
 }
 
 .btn-pink:active,

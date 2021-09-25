@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import RenderBox from "../TimeBox/RenderBox";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function MyVerticallyCenteredModal(props) {
   const singleTeacherInfo = props.singleTeacherInfo;
@@ -27,21 +29,29 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function ModalTim({ singleTeacherInfo }) {
-  let availableTime = singleTeacherInfo.availableTime;
-  console.log("kekekeke", availableTime);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSingleUser(singleTeacherInfo));
+  }, [dispatch, singleTeacherInfo]);
+  const state = useSelector((state) => state.singleUserInfo);
   const [modalShow, setModalShow] = React.useState(false);
-
-  return (
+  return state.user[singleTeacherInfo] ? (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <div
+        className="btn-grad"
+        style={{ padding: "5px" }}
+        onClick={() => setModalShow(true)}
+      >
         Book lịch
-      </Button>
+      </div>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        singleTeacherInfo={singleTeacherInfo}
+        singleTeacherInfo={state.user[singleTeacherInfo]}
       />
     </>
+  ) : (
+    <div>hhahah</div>
   );
 }
 export default ModalTim;

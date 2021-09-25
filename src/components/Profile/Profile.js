@@ -15,9 +15,7 @@ function Profile({ singleTeacherInfoAll }) {
             className="img-fluid rounded-circle img-thumbnail"
             src={singleTeacherInfo.profilePicture}
             alt="profile"
-            style={{ height: "186px" }}
           />
-          {/* <UploadPic id={singleTeacherInfoAll.id} /> */}
 
           <div className="d-flex justify-content-center small text-warning mb-2">
             <div className="bi-star-fill"></div>

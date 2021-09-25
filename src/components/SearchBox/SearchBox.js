@@ -1,12 +1,11 @@
 import React from "react";
-
+import "./Style.css";
 function SearchBox() {
   return (
     <div>
       <div
-        className="bg-info bg-gradient
-
-"
+        className=" bg-gradient bg-grad
+        "
       >
         <aside class="  rounded-3  p-sm-2 ">
           <div

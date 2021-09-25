@@ -15,8 +15,9 @@ function TeacherCard({ teacherInfo }) {
         padding: "2px 10px",
         borderRadius: 3,
         width: "18rem",
-        height: "520px",
+        height: "420px",
         ...props.style,
+        backgroundColor: "lightblue",
       }}
     >
       <Popover.Header as="h3" style={{ backgroundColor: "transparent" }}>
@@ -36,7 +37,7 @@ function TeacherCard({ teacherInfo }) {
         overlay={renderTooltip}
       >
         <div className="  mt-4 px-2 ">
-          <div className="card     res2  ">
+          <div className="card     res2  bg-grey">
             <div style={{ width: "100%", height: "180px" }}>
               {" "}
               <img

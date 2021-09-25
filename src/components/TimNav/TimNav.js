@@ -7,12 +7,16 @@ import {
   Image,
   OverlayTrigger,
   Tooltip,
+  NavDropdown,
+  Form,
+  FormControl,
 } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Link, NavLink } from "react-router-dom";
 import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
+import Button from "@restart/ui/esm/Button";
 
 function TimNav() {
   // const [navbar, setNavbar] = useState(false);
@@ -47,40 +51,74 @@ function TimNav() {
           <Navbar.Brand href="/">
             <img src={logo} height={45} alt="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav  " />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav ">
-            <Nav className="me-auto "></Nav>
+            <NavDropdown
+              className="me-auto text "
+              title="Môn học"
+              id="basic-nav-dropdown"
+            >
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Tiếng%20Anh"
+              >
+                Tiếng Anh
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Lập%20trình"
+              >
+                Lập trình
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Toán"
+              >
+                Toán{" "}
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="AllTeacherPage?subjectFilter=Hóa">
+                Hóa{" "}
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="#action/3.4">
+                Môn khác{" "}
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav>
               <Nav.Link
                 as={Link}
+                className="text"
                 to="/"
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
               >
                 Trang chủ
               </Nav.Link>
               <Nav.Link
+                className="text"
                 as={Link}
                 to="/AboutUs"
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
               >
                 {" "}
                 Về chúng tôi
               </Nav.Link>
               <Nav.Link
+                className="text"
                 as={Link}
                 to={"/CardPage/" + singleStudentInfo._id}
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
               >
                 {" "}
-                Giỏ hàng{" "}
+                <i class="bi bi-cart3"></i>
               </Nav.Link>
               <div
                 style={{
-                  color: "white",
                   paddingRight: "20px",
                   marginTop: "6px",
+                  cursor: "pointer",
                 }}
                 onClick={handleLogout}
+                className="text"
               >
                 Logout
               </div>
@@ -126,30 +164,34 @@ function TimNav() {
             <Nav className="me-auto "></Nav>
             <Nav>
               <NavLink
+                className="text"
                 to="/"
                 as={Link}
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
               >
                 Trang chủ
               </NavLink>
               <NavLink
+                className="text"
                 as={Link}
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
                 to="/StudentUploadInfo"
               >
                 {" "}
                 Về chúng tôi
               </NavLink>
               <NavLink
+                className="text"
                 as={Link}
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
                 to="/LoginPage"
               >
                 Đăng nhập
               </NavLink>
               <NavLink
+                className="text"
                 as={Link}
-                style={{ color: "white", paddingRight: "20px" }}
+                style={{ color: "black", paddingRight: "20px" }}
                 to="/RegisterPage"
               >
                 Đăng ký

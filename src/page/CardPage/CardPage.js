@@ -14,15 +14,12 @@ function CardPage() {
   return (
     <div>
       <div>
-        <div className="py-5 bg-light">
+        <div className="py-5 bg-light bgPink">
           <div className=" px-5 my-5">
             <div className="row gx-5">
-              <div className="col-lg-2"></div>
-              <div className="col-lg-6">
+              <div className="col-lg-1"></div>
+              <div className="col-lg-11">
                 <CardItems singleStudentInfo={singleStudentInfo} />
-              </div>
-              <div className="col-lg-4">
-                <Total />
               </div>
             </div>
           </div>
