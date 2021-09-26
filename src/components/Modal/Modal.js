@@ -51,7 +51,7 @@ function ModalTim({ singleTeacherInfo }) {
       />
     </>
   ) : (
-    <div>hhahah</div>
+    <div></div>
   );
 }
 export default ModalTim;

@@ -42,8 +42,8 @@
 }
 .btn-pink {
   color: #ffffffff;
-  background-image: linear-gradient(to right, #da22ff 0%, #9733ee 100%);
-  border: 1px solid #a511b0;
+  background-image: linear-gradient(to right, #fdc830 0%, #f37335 100%);
+  border: 1px solid #f37335;
 }
 
 .btn-pink:hover,
@@ -51,9 +51,9 @@
 .btn-pink:active,
 .btn-pink.active,
 .open .dropdown-toggle.btn-pink {
-  color: #a511b0;
+  color: #f37335;
   background-image: none;
-  border-color: #a511b0;
+  border-color: #f37335;
 }
 
 .btn-pink:active,

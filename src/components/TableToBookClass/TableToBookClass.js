@@ -11,21 +11,20 @@ function TableToBookClass() {
     dispatch(GetCart());
   }, [dispatch]);
   const cartState = useSelector((state) => state.cart);
-  console.log("cartState", cartState);
 
   let RenderCard;
   if (cartState.cart[0]) {
     let cartArray = cartState.cart;
 
     RenderCard = cartArray.map((item) => {
-      console.log("item.userId", item.userId);
       return (
         <div className="cartBox row ">
           <div className="col-lg-3">
             <SmallPic userInfo={item.userId} />
           </div>
           <div className="col-lg-5">
-            Môn :<div>Số buổi có thể book:</div>
+            Môn: {item.subject}
+            <div>Số buổi có thể book: {item.classCanBook}</div>
           </div>
           <div className="col-3" style={{ color: "blueviolet" }}>
             <ModalTim singleTeacherInfo={item.userId} />

@@ -91,14 +91,7 @@ function Login() {
                       Đăng nhập{" "}
                     </div>
                     <ToastContainer />
-                    {/* <Button
-                      onClick={() => {
-                        dispatch(LoginStudentAction(userLoginState));
-                        // notify();
-                      }}
-                    >
-                      Đăng nhập{" "}
-                    </Button> */}
+
                     <br />
                     <p>
                       Bạn đã chưa tải khoản? Vui lòng{" "}

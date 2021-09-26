@@ -8,6 +8,7 @@ import { AddCartToStudent } from "../../redux/GetSingleStudent/GetSingleStudentA
 function ModalPrice({ priceInfo }) {
   const dispatch = useDispatch();
   const notifyFollowing = () => toast("Bạn đẫ follow giáo viên!");
+  const notifyAdded = () => toast("Bạn đẫ thêm lớp học thành công!");
 
   const [show, setShow] = useState(false);
   const [packet, setPacket] = useState({
@@ -16,6 +17,8 @@ function ModalPrice({ priceInfo }) {
     idPrice: "",
     value: 0,
     paid: "No",
+    subject: priceInfo.subject,
+    classCanBook: 1,
   });
   const handleClose = () => {
     setShow(false);
@@ -26,14 +29,33 @@ function ModalPrice({ priceInfo }) {
   const handleCloseAndYes = () => {
     setShow(false);
     dispatch(AddCartToStudent(packet));
+    notifyAdded();
   };
 
   const handleShow = (price) => () => {
+    let classCanBook = 0;
+    switch (price.idPrice) {
+      case "30":
+        classCanBook = 1;
+        break;
+      case "50":
+        classCanBook = 1;
+        break;
+      case "5x50":
+        classCanBook = 5;
+        break;
+      case "10x50":
+        classCanBook = 10;
+        break;
+      default:
+        classCanBook = 0;
+    }
     setShow(true);
     setPacket({
       ...packet,
       idPrice: price.idPrice,
       value: price.value,
+      classCanBook,
     });
   };
   console.log("packet", packet);
@@ -44,7 +66,10 @@ function ModalPrice({ priceInfo }) {
       return (
         <div
           className="btn-grad btn-lg"
-          onClick={handleShow({ idPrice: item.idPice, value: item.value })}
+          onClick={handleShow({
+            idPrice: item.idPice,
+            value: item.value,
+          })}
         >
           {item.value}VND/{item.idPice}
           phút

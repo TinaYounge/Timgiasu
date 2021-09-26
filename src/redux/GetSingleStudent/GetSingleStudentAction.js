@@ -54,6 +54,8 @@ export const AddCartToStudent = (state) => {
           value: state.value,
           paid: state.paid,
           userId: state.userId,
+          subject: state.subject,
+          classCanBook: state.classCanBook,
         });
         const data = await res.data;
         dispatch(getSingleStudentSuccess(data));

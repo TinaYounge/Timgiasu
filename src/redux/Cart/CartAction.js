@@ -1,4 +1,6 @@
 import { GET_CART_FAIL, GET_CART_REQUEST, GET_CART_SUCCESS } from "./CartType";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 import api from "../../App.api";
 
@@ -21,6 +23,8 @@ export const CartFail = () => {
     payload: Error,
   };
 };
+export const notifyFollowing = () =>
+  toast("Chúc mừng bạn thanh toán thành công!");
 
 export const CartUpdate = () => {
   return (dispatch) => {
@@ -30,6 +34,7 @@ export const CartUpdate = () => {
         const res = await api.put(`api/cartOfStudent/updateCart`);
         const data = await res.data;
         dispatch(CartSuccess(data));
+        notifyFollowing();
       } catch (error) {
         const errorMge = Error.message;
         dispatch(CartFail(errorMge));

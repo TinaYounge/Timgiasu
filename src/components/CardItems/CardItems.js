@@ -11,26 +11,27 @@ function CardItems({ singleStudentInfo }) {
 
   if (singleStudentInfo.cart) {
     RenderCard = singleStudentInfo.cart.map((item) => {
-      console.log("object,item", item.userId);
-      total += item.value;
-      return (
-        <div className="cartBox row ">
-          <div className="col-lg-2">
-            <SmallPic userInfo={item.userId} />
+      if (item.paid === "No") {
+        total += item.value;
+        return (
+          <div className="cartBox row ">
+            <div className="col-lg-2">
+              <SmallPic userInfo={item.userId} />
+            </div>
+            <div className="col-lg-6">
+              Sản phẩm :{item._id}
+              <div>Số buổi:{item.idPrice}</div>
+            </div>
+            <div className="col-3" style={{ color: "blueviolet" }}>
+              Trị giá :{item.value} VND
+            </div>
+            <div className="col">
+              <i class="bi bi-trash"></i>
+            </div>
+            <div></div>
           </div>
-          <div className="col-lg-6">
-            Sản phẩm :{item._id}
-            <div>Số buổi:{item.idPrice}</div>
-          </div>
-          <div className="col-3" style={{ color: "blueviolet" }}>
-            Trị giá :{item.value} VND
-          </div>
-          <div className="col">
-            <i class="bi bi-trash"></i>
-          </div>
-          <div></div>
-        </div>
-      );
+        );
+      }
     });
   } else {
     RenderCard = (
@@ -48,6 +49,7 @@ function CardItems({ singleStudentInfo }) {
         <div style={{ fontSize: "30px" }}>Tổng: {total} VND </div>
         <div
           className="btn-grad btn-lg"
+          style={{ cursor: "pointer" }}
           onClick={() => {
             dispatch(CartUpdate());
           }}

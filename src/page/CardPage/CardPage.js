@@ -13,14 +13,12 @@ function CardPage() {
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
   return (
     <div>
-      <div>
-        <div className="py-5 bg-light bgPink">
-          <div className=" px-5 my-5">
-            <div className="row gx-5">
-              <div className="col-lg-1"></div>
-              <div className="col-lg-11">
-                <CardItems singleStudentInfo={singleStudentInfo} />
-              </div>
+      <div className="py-5 bg-light bgPink" style={{ minHeight: "80vh" }}>
+        <div className=" px-5 my-5">
+          <div className="row gx-5">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-11">
+              <CardItems singleStudentInfo={singleStudentInfo} />
             </div>
           </div>
         </div>

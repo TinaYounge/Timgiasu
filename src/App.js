@@ -13,11 +13,14 @@ import StudentDetailPage from "./page/StudentDetailPage/StudentDetailPage";
 import StudentUploadInfo from "./page/StudentUploadInfo/StudentUploadInfo";
 import TeacherDetailPage from "./page/TeacherDetailPage/TeacherDetailPage";
 import UploadInfoPage from "./page/UploadInfoPage/UploadInfoPage";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <Router>
       <TimNav />
+      <ToastContainer />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route
