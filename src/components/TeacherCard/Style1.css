@@ -28,3 +28,6 @@
 .closebtn:hover {
   color: #000;
 }
+.js {
+  color: hsla(160, 3%, 21%, 0.651);
+}

@@ -16,7 +16,7 @@ function StudentDetailPage() {
   const singleStudentInfo = useSelector(
     (state) => state.singleStudentInfo.student
   );
-  console.log("singleStudentInfo", singleStudentInfo);
+  console.log("IFUIOSEF", singleStudentInfo);
   return (
     <div>
       <div className="py-5 body-height studentBg">
@@ -36,7 +36,7 @@ function StudentDetailPage() {
               <TableToBookClass />
             </div>
             <div className="col-lg-3 box">
-              <NotifyClass />{" "}
+              <NotifyClass singleStudentInfo={singleStudentInfo} />{" "}
             </div>
           </div>
         </div>

@@ -1,104 +1,26 @@
 import React, { useState } from "react";
-import moment from "moment";
+import DayBox from "./DayBox";
 
-function TimeBox({ timeAll }) {
-  const time = timeAll.timeItem;
-  const classIsBookWithDate = timeAll.classIsBookWithDate;
-  const [classIsBookWithDateAndTime, setClassIsBookWithDateAndTime] =
-    useState(classIsBookWithDate);
-  const getTime = (time) => {
-    setClassIsBookWithDateAndTime({
-      ...classIsBookWithDateAndTime,
-      timeId: time,
-    });
-  };
-  console.log("classIsBookWithDateAndTime", classIsBookWithDateAndTime);
-  return time.value === "1" ? (
-    <div>
-      <button
-        className=" btn mt-auto"
-        style={{ backgroundColor: "green", color: "white" }}
-        onClick={() => {
-          getTime(time.timeId);
-        }}
-      >
-        {time.timeId}
-      </button>
-    </div>
-  ) : (
-    <div>
-      <button
-        className=" btn mt-auto"
-        style={{ backgroundColor: "red", color: "white" }}
-      >
-        {time.timeId}
-      </button>
-    </div>
-  );
-}
+function RenderBox({ singleTeacherInfoAll }) {
+  const singleTeacherInfo = singleTeacherInfoAll.singleTeacherInfoWithId;
+  const cartId = singleTeacherInfoAll.eachCart;
+  const DayPerWeek = singleTeacherInfo.availableTime;
 
-function DayBox({ dayAndTime }) {
-  const classisBookCheck = dayAndTime.classIsBook;
-  const [classIsBookWithDate, setClassIsBookWithDate] =
-    useState(classisBookCheck);
-
-  const onlyTime = dayAndTime.item.time;
-
-  let RenderCard;
-  if (onlyTime) {
-    RenderCard = onlyTime.map((timeItem) => {
-      return (
-        <div>
-          <TimeBox timeAll={{ timeItem, classIsBookWithDate }} />
-        </div>
-      );
-    });
-  } else {
-    RenderCard = (
-      <div className="spinner-border text-primary" role="status">
-        <span className="sr-only">Loading...</span>
-      </div>
-    );
-  }
-  const getDate = (dateUpDate) => {
-    setClassIsBookWithDate({ ...classIsBookWithDate, day: dateUpDate });
-  };
-  console.log("classIsBookWithDate", classIsBookWithDate);
-  return (
-    <div>
-      <table className="table">
-        <thead>
-          <button
-            style={{ color: "grey", fontSize: "20px" }}
-            onClick={() => getDate(dayAndTime.item.day)}
-          >
-            {moment(dayAndTime.item.day).format("ddd Do")}
-          </button>
-        </thead>
-        <tbody>
-          <td class="table-primary"> {RenderCard}</td>
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function RenderBox({ singleTeacherInfo }) {
   const [classIsBook, setClassIsBook] = useState({
+    typeOfTeaching: "Trực tuyến",
     day: "",
     timeId: "",
-    classId: "",
+    classId: cartId.classId,
     userId: singleTeacherInfo._id,
     finished: "No",
-    typeOfTeaching: "",
-    billId: "",
+    billId: cartId._id,
     reviewFromTeacher: "",
     teacherAccept: "",
     teacherIsPay: "",
     linkStudy: "",
+    subject: cartId.subject,
   });
-  // console.log("singleTeacherInfoCHECK", singleTeacherInfo);
-  const DayPerWeek = singleTeacherInfo.availableTime;
+  console.log("JYHTGREFD", classIsBook);
   let RenderCard;
   if (DayPerWeek) {
     RenderCard = DayPerWeek.map((item) => {
@@ -141,15 +63,27 @@ function RenderBox({ singleTeacherInfo }) {
         >
           Giờ bận
         </button>
-        <div className="col">
+        <div className="form-group col-md-4">
+          {/* <label for="inputAddress" className=" col-form-label fw-bold">
+            Chọn phương pháp học{" "}
+          </label>{" "} */}
           <select id="inputState" className="form-control  ">
-            <option selected>Chọn phương pháp học...</option>
+            <option
+              selected
+              onChange={(e) =>
+                setClassIsBook({
+                  ...classIsBook,
+                  typeOfTeaching: e.target.value,
+                })
+              }
+            >
+              Chọn phương pháp...
+            </option>
             <option>Trực tuyến</option>
             <option>Tại nhà</option>
           </select>
         </div>
       </div>
-
       <div className="card-group container" style={{ background: "white" }}>
         {RenderCard}
       </div>

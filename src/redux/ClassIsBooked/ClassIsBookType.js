@@ -1,0 +1,3 @@
+export const GET_ClASS_REQUEST = "ClASS.GET_ClASS_REQUEST";
+export const GET_ClASS_SUCCESS = "ClASS.GET_ClASS_SUCCESS";
+export const GET_ClASS_FAIL = "ClASS.GET_ClASS_FAILURE";

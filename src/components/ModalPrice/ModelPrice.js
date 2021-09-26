@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AddCartToStudent } from "../../redux/GetSingleStudent/GetSingleStudentAction";
 
@@ -99,7 +99,6 @@ function ModalPrice({ priceInfo }) {
             {packet.idPrice} phút ?
           </p>
         </Modal.Body>
-        <ToastContainer />
 
         <Modal.Footer>
           <Button variant="secondary" onClick={followingTeacher}>

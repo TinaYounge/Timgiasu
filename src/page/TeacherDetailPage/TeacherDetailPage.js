@@ -43,7 +43,6 @@ function TeacherDetailPage() {
             </div>
             <div className="col-lg-6  ">
               <Introduction singleTeacherInfo={singleTeacherInfo[id]} />
-              <ModalTim singleTeacherInfo={singleTeacherInfo[id]} />
             </div>
 
             <div className="col-lg-4 ">

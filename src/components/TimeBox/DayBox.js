@@ -1,63 +1,43 @@
-// import moment from "moment";
-// import React from "react";
-// // import TimeBox from "./TimeBox";
+import moment from "moment";
+import React from "react";
+import TimeBox from "./TimeBox";
 
-// function TimeBox({ time }) {
-//   return time.value === "1" ? (
-//     <div>
-//       <button
-//         className=" btn mt-auto"
-//         style={{ backgroundColor: "green", color: "white" }}
-//       >
-//         {time.timeId}
-//       </button>
-//     </div>
-//   ) : (
-//     <div>
-//       <button
-//         className=" btn mt-auto"
-//         style={{ backgroundColor: "red", color: "white" }}
-//       >
-//         {time.timeId}
-//       </button>
-//     </div>
-//   );
-// }
+function DayBox({ dayAndTime }) {
+  const classisBookCheck = dayAndTime.classIsBook;
 
-// function DayBox({ dayAndTime }) {
-//   const onlyTime = dayAndTime.time;
+  const AllTimeOfDay = dayAndTime.item.time;
 
-//   let RenderCard;
-//   if (onlyTime) {
-//     RenderCard = onlyTime.map((item) => {
-//       return (
-//         <div>
-//           <TimeBox time={item} />
-//         </div>
-//       );
-//     });
-//   } else {
-//     RenderCard = (
-//       <div className="spinner-border text-primary" role="status">
-//         <span className="sr-only">Loading...</span>
-//       </div>
-//     );
-//   }
+  let RenderCard;
+  if (AllTimeOfDay) {
+    RenderCard = AllTimeOfDay.map((timeItem) => {
+      timeItem.date = dayAndTime.item.day;
+      return (
+        <div>
+          <TimeBox timeAll={{ timeItem, classisBookCheck }} />
+        </div>
+      );
+    });
+  } else {
+    RenderCard = (
+      <div className="spinner-border text-primary" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
 
-//   return (
-//     <div>
-//       <table className="table">
-//         <thead>
-//           <th style={{ color: "grey", fontSize: "20px" }}>
-//             {moment(dayAndTime.day).format("ddd Do")}
-//           </th>
-//         </thead>
-//         <tbody>
-//           <td class="table-primary"> {RenderCard}</td>
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }
-
-// export default DayBox;
+  return (
+    <div>
+      <table className="table">
+        <thead>
+          <th style={{ color: "grey", fontSize: "20px" }}>
+            {moment(dayAndTime.item.day).format("ddd Do")}
+          </th>
+        </thead>
+        <tbody>
+          <td class="table-primary"> {RenderCard}</td>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+export default DayBox;

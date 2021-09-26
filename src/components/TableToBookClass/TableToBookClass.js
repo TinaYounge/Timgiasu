@@ -27,7 +27,7 @@ function TableToBookClass() {
             <div>Số buổi có thể book: {item.classCanBook}</div>
           </div>
           <div className="col-3" style={{ color: "blueviolet" }}>
-            <ModalTim singleTeacherInfo={item.userId} />
+            <ModalTim eachCart={item} />
           </div>
           <div className="col">
             <i class="bi bi-calendar-check"></i>{" "}

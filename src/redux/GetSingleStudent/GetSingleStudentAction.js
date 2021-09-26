@@ -3,8 +3,13 @@ import {
   GET_SINGLE_STUDENT_REQUEST,
   GET_SINGLE_STUDENT_SUCCESS,
 } from "./GetSingleStudentType";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 import api from "../../App.api";
+
+export const notifyBookSuccess = () =>
+  toast("Chúc mừng bạn book lớp thành công!");
 
 export const getSingleStudentRequest = () => {
   return {
@@ -65,6 +70,36 @@ export const AddCartToStudent = (state) => {
       }
     };
 
+    UpdateResponse();
+  };
+};
+
+//Update info Student
+export const AddClassIsBookToStudent = (state) => {
+  console.log("satte", state);
+
+  return (dispatch) => {
+    dispatch(getSingleStudentRequest);
+    const UpdateResponse = async () => {
+      try {
+        const res = await api.put(`api/student/addClassIsBooked`, {
+          day: state.day,
+          timeId: state.timeId,
+          classId: state.classId,
+          userId: state.userId,
+          finished: "No",
+          typeOfTeaching: state.typeOfTeaching,
+          billId: state.billId,
+          subject: state.subject,
+        });
+        const data = await res.data;
+        dispatch(getSingleStudentSuccess(data));
+        notifyBookSuccess();
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(getSingleStudentFail(errorMge));
+      }
+    };
     UpdateResponse();
   };
 };

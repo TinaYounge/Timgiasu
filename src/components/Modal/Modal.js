@@ -19,7 +19,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <RenderBox singleTeacherInfo={singleTeacherInfo} />
+        <RenderBox singleTeacherInfoAll={singleTeacherInfo} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -28,12 +28,14 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function ModalTim({ singleTeacherInfo }) {
+function ModalTim({ eachCart }) {
+  const singleTeacherInfo = eachCart.userId;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSingleUser(singleTeacherInfo));
   }, [dispatch, singleTeacherInfo]);
   const state = useSelector((state) => state.singleUserInfo);
+  let singleTeacherInfoWithId = state.user[singleTeacherInfo];
   const [modalShow, setModalShow] = React.useState(false);
   return state.user[singleTeacherInfo] ? (
     <>
@@ -47,7 +49,7 @@ function ModalTim({ singleTeacherInfo }) {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        singleTeacherInfo={state.user[singleTeacherInfo]}
+        singleTeacherInfo={{ singleTeacherInfoWithId, eachCart }}
       />
     </>
   ) : (
