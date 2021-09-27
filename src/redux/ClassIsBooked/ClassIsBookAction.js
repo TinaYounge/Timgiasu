@@ -2,7 +2,7 @@ import {
   GET_CLASS_FAIL,
   GET_CLASS_REQUEST,
   GET_CLASS_SUCCESS,
-} from "./ClasIsBookType";
+} from "./ClassIsBookType";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 
@@ -50,15 +50,14 @@ export const ClassIsBookedUpdate = () => {
   };
 };
 
-export const GetClassIsBooked = () => {
+export const GetClassIsAccepted = () => {
   return (dispatch) => {
     dispatch(ClassIsBookedRequest);
     const ClassIsBookedResponse = async () => {
       try {
-        const res = await api.get(
-          `api/ClassIsBookedOfStudent/getAllClassIsBookedsPaidOfStudent`
-        );
+        const res = await api.get(`api/classIsBooked/teacherAccept`);
         const data = await res.data;
+        console.log("HSDHSDHSDHHJDS", data);
         dispatch(ClassIsBookedSuccess(data));
       } catch (error) {
         const errorMge = Error.message;

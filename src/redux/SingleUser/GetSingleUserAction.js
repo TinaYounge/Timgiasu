@@ -41,3 +41,20 @@ export const getSingleUser = (id) => {
     getSingleUserResponse();
   };
 };
+
+export const getSingleOwnTeacherUser = () => {
+  return (dispatch) => {
+    dispatch(getSingleUserRequest);
+    const getSingleUserResponse = async () => {
+      try {
+        const res = await api.get(`api/user/`);
+        const data = await res.data;
+        dispatch(getSingleUserSuccess(data));
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(getSingleUserFail(errorMge));
+      }
+    };
+    getSingleUserResponse();
+  };
+};

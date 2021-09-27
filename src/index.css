@@ -27,6 +27,7 @@ code {
     #f09819 51%,
     #ff512f 100%
   );
+  cursor: pointer;
 }
 .btn-grad {
   margin: 10px;

@@ -20,7 +20,7 @@ function StudentDetailPage() {
   return (
     <div>
       <div className="py-5 body-height studentBg">
-        <div className="container px-5 my-5">
+        <div className=" px-5 my-5">
           <div className="row gx-5">
             <div className="col-lg-2 ">
               <Profile
@@ -30,13 +30,13 @@ function StudentDetailPage() {
                 }}
               />
             </div>
-            <div className="col-lg-7 ">
+            <div className="col-lg-6 ">
               {" "}
               <Introduction singleTeacherInfo={singleStudentInfo} />
               <TableToBookClass />
             </div>
-            <div className="col-lg-3 box">
-              <NotifyClass singleStudentInfo={singleStudentInfo} />{" "}
+            <div className="col-lg-4 ">
+              <NotifyClass />{" "}
             </div>
           </div>
         </div>

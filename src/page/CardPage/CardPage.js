@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardItems from "../../components/CardItems/CardItems";
-import Total from "../../components/Total/Total";
 import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
 
 function CardPage() {
@@ -11,7 +10,8 @@ function CardPage() {
   }, [dispatch]);
 
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
-  return (
+  console.log("HAAAA", singleStudentInfo);
+  return singleStudentInfo._id ? (
     <div>
       <div className="py-5 bg-light bgPink" style={{ minHeight: "80vh" }}>
         <div className=" px-5 my-5">
@@ -24,6 +24,8 @@ function CardPage() {
         </div>
       </div>
     </div>
+  ) : (
+    <div>hahahah</div>
   );
 }
 

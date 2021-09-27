@@ -6,7 +6,7 @@ import {
 const loggedIn = !!localStorage.getItem("token");
 const initialState = {
   loading: false,
-  student: [],
+  student: {},
   error: "",
   loggedIn,
 };

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
 import { Link } from "react-router-dom";
-import { LoginStudentAction } from "../../redux/LoginStudent/LoginStudentAction";
+import { LoginAction } from "../../redux/LoginUser/LoginAction";
 
-function Login() {
+function LoginTeacher() {
   const dispatch = useDispatch();
 
   const [userLoginState, setUserLoginState] = useState({
@@ -16,12 +15,10 @@ function Login() {
     <div>
       <div className="py-5 ">
         <div className="container ">
-          <div className="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+          <div className="bgPink rounded-3 py-5 px-4 px-md-5 mb-5">
             <div className="text-center mb-5">
               <h1 className="fw-bolder">Đăng nhập</h1>
-              <p className="lead fw-normal text-muted mb-0">
-                Vui lòng điền thông tin đầy đủ{" "}
-              </p>
+              <p className="lead fw-normal text-muted mb-0">Bạn là gia sư? </p>
             </div>
             <div className="row gx-5 justify-content-center">
               <div className="col-lg-8 col-xl-6">
@@ -81,10 +78,10 @@ function Login() {
                     <div
                       className=" btn-grad btn-lg text-center"
                       onClick={() => {
-                        dispatch(LoginStudentAction(userLoginState));
+                        dispatch(LoginAction(userLoginState));
                       }}
                     >
-                      Đăng nhập{" "}
+                      Đăng nhập
                     </div>
 
                     <br />
@@ -103,4 +100,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginTeacher;

@@ -19,9 +19,9 @@ function LandingPage() {
                   <Link
                     className=" btn-pink btn-lg px-4 me-sm-3"
                     style={{ width: "" }}
-                    to="/RegisterPage"
+                    to="/TeacherLoginPage"
                   >
-                    Giáo viên{" "}
+                    Giáo viên
                   </Link>
                   <Link
                     className=" btn btn-outline-dark btn-lg px-4"

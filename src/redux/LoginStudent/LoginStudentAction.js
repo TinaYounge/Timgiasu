@@ -4,6 +4,10 @@ import {
   LOGIN_STUDENT_SUCCESS,
 } from "./LoginStudentType";
 import api from "../../App.api";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export const notify = () => toast("Chúc mừng bạn đăng nhập thành công!");
 
 export const LoginStudentRequest = () => {
   return {
@@ -36,9 +40,11 @@ export const LoginStudentAction = (state) => {
         });
 
         const data = await res.data;
-        dispatch(LoginStudentSuccess(data));
+        console.log("HAHAHAHA", data.accessToken);
         localStorage.setItem("token", data.accessToken);
-
+        api.defaults.headers["Authorization"] = "Bearer " + data.accessToken;
+        dispatch(LoginStudentSuccess(data));
+        notify();
         // JSON.parse(window.localStorage.getItem("token", data.token));
       } catch (error) {
         const errorMge = Error.message;

@@ -8,45 +8,33 @@ import {
   OverlayTrigger,
   Tooltip,
   NavDropdown,
-  Form,
-  FormControl,
 } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Link, NavLink } from "react-router-dom";
 import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
-import Button from "@restart/ui/esm/Button";
+import { getSingleOwnUserTeacher } from "../../redux/LoginUser/LoginAction";
 
 function TimNav() {
-  // const [navbar, setNavbar] = useState(false);
-  // const ChangeBackGround = () => {
-  //   if (window.scrollY >= 80) {
-  //     setNavbar(true);
-  //   } else {
-  //     setNavbar(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", ChangeBackGround);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getSingleOwnUser());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getSingleOwnUserTeacher());
+  }, [dispatch]);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.assign("http://localhost:3000/");
   };
+  const singleUserInfo = useSelector((state) => state.userLogin.user);
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
-  return singleStudentInfo._id ? (
+  console.log("singleUserInfo", singleUserInfo);
+  return singleStudentInfo ? (
     <div className="">
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        variant="dark"
-        // className={navbar ? "active fixed-top " : "active2  "}
-        className="active"
-      >
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="active">
         <Container className="">
           <Navbar.Brand href="/">
             <img src={logo} height={45} alt="logo" />
@@ -145,6 +133,106 @@ function TimNav() {
                   </OverlayTrigger>
                   <span className="visually-hidden">unread messages</span>
                   {singleStudentInfo.lastName}{" "}
+                </div>
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  ) : singleUserInfo._id ? (
+    <div className="">
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="active">
+        <Container className="">
+          <Navbar.Brand href="/">
+            <img src={logo} height={45} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav ">
+            <NavDropdown
+              className="me-auto text "
+              title="Môn học"
+              id="basic-nav-dropdown"
+            >
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Tiếng%20Anh"
+              >
+                Tiếng Anh
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Lập%20trình"
+              >
+                Lập trình
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="AllTeacherPage?subjectFilter=Toán"
+              >
+                Toán{" "}
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="AllTeacherPage?subjectFilter=Hóa">
+                Hóa{" "}
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="#action/3.4">
+                Môn khác{" "}
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav>
+              <Nav.Link
+                as={Link}
+                className="text"
+                to="/"
+                style={{ color: "black", paddingRight: "20px" }}
+              >
+                Trang chủ
+              </Nav.Link>
+              <Nav.Link
+                className="text"
+                as={Link}
+                to="/AboutUs"
+                style={{ color: "black", paddingRight: "20px" }}
+              >
+                {" "}
+                Về chúng tôi
+              </Nav.Link>
+
+              <div
+                style={{
+                  paddingRight: "20px",
+                  marginTop: "6px",
+                  cursor: "pointer",
+                }}
+                onClick={handleLogout}
+                className="text"
+              >
+                Logout
+              </div>
+              <NavLink to={"/PersonalTeacherPage/" + singleUserInfo._id}>
+                <div>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={
+                      <Tooltip id="button-tooltip-2">
+                        <div>Xin chào {singleUserInfo.username} </div>
+                      </Tooltip>
+                    }
+                  >
+                    {({ ref, ...triggerHandler }) => (
+                      <Image
+                        ref={ref}
+                        {...triggerHandler}
+                        roundedCircle
+                        src={singleUserInfo.profilePicture}
+                        height={30}
+                        width={30}
+                      />
+                    )}
+                  </OverlayTrigger>
+                  <span className="visually-hidden">unread messages</span>
+                  {singleUserInfo.lastName}{" "}
                 </div>
               </NavLink>
             </Nav>
