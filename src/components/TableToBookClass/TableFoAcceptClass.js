@@ -5,23 +5,24 @@ import { getSingleOwnTeacherUser } from "../../redux/SingleUser/GetSingleUserAct
 import SmallPic from "../CardItems/SmallPic";
 import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
+import { ClassIsBookedUpdate } from "../../redux/ClassIsBooked/ClassIsBookAction";
 
-function ExampleYes({ classIsBookId }) {
+function ExampleYes({ id }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [acceptState, setAcceptState] = useState({
+  const [state, setstate] = useState({
     teacherAccept: "",
     linkStudy: "",
   });
-  console.log("kakak", acceptState);
+  console.log("kakak", state);
   const handleClose = () => setShow(false);
   const handleCloseAndYes = () => {
     setShow(false);
-    // dispatch();
+    dispatch(ClassIsBookedUpdate({ id, state }));
   };
   const handleShow = () => {
     setShow(true);
-    setAcceptState({ ...acceptState, teacherAccept: "Yes" });
+    setstate({ ...state, teacherAccept: "Yes" });
   };
 
   return (
@@ -37,9 +38,7 @@ function ExampleYes({ classIsBookId }) {
         <Modal.Body>
           Link lớp học nếu online, Địa chỉ học nếu offline.
           <input
-            onChange={(e) =>
-              setAcceptState({ ...acceptState, linkStudy: e.target.value })
-            }
+            onChange={(e) => setstate({ ...state, linkStudy: e.target.value })}
           ></input>
         </Modal.Body>
         <Modal.Footer>
@@ -54,23 +53,23 @@ function ExampleYes({ classIsBookId }) {
     </>
   );
 }
-function ExampleNo({ classIsBookId }) {
+function ExampleNo({ id }) {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
-  const [refuseState, setRefuseState] = useState({
+  const [state, setstate] = useState({
     teacherAccept: "",
     reviewFromTeacher: "",
   });
   const handleClose = () => setShow(false);
   const handleCloseAndNo = () => {
     setShow(false);
-    // dispatch();
+    dispatch(ClassIsBookedUpdate({ id, state }));
   };
 
   const handleShow = () => {
     setShow(true);
-    setRefuseState({ ...refuseState, teacherAccept: "No" });
+    setstate({ ...state, teacherAccept: "Refuse" });
   };
 
   return (
@@ -87,8 +86,8 @@ function ExampleNo({ classIsBookId }) {
           Lý do bạn từ chối :{" "}
           <input
             onChange={(e) =>
-              setRefuseState({
-                ...refuseState,
+              setstate({
+                ...state,
                 reviewFromTeacher: e.target.value,
               })
             }
@@ -118,34 +117,75 @@ function TableFoAcceptClass() {
   let RenderCard;
 
   if (teacherState.user[id]) {
-    let cartArray = teacherState.user[id].classIsBooked;
-    RenderCard = cartArray.map((item) => {
-      return (
-        <div className="cartBox row ">
-          <div className="col-lg-2">
-            <SmallPic userInfo={item.studentId} />
-          </div>
-          <div className="col-lg-7">
-            Môn: {item.subject}
-            <div>
-              Thời gian: {moment(item.time.day).format("ddd Do")}-
-              {item.time.timeId}{" "}
+    let classArray = teacherState.user[id].classIsBooked;
+    RenderCard = classArray.map((item) => {
+      if (item.teacherAccept === "No") {
+        if (item.typeOfTeaching === "Trực tuyến") {
+          return (
+            <div className="cartBox row ">
+              <div className="col-lg-2">
+                <img
+                  className="rounded"
+                  src={item.studentProfilePicture}
+                  style={{ width: "90px" }}
+                  alt="student"
+                />
+              </div>
+              <div className="col-lg-7">
+                Môn: {item.subject}
+                <div>
+                  Thời gian: {moment(item.time.day).format("ddd Do")}-
+                  {item.time.timeId}{" "}
+                </div>
+                <div>Phương pháp học: {item.typeOfTeaching}</div>
+                <div>Mã số học sinh: {item.studentId}</div>
+                <div>Mã số lớp học: {item._id}</div>
+              </div>
+              <div className="col-lg-3 row">
+                <div className="col" style={{ marginBottom: "10px" }}>
+                  <ExampleYes id={item._id} />
+                </div>
+                <div className="col">
+                  <ExampleNo id={item._id} />
+                </div>
+              </div>
             </div>
-            <div>Phương pháp học: {item.typeOfTeaching}</div>
-            <div>StudentId: {item.studentId}</div>
-          </div>
-          <div className="col-lg-3 row">
-            <div className="col" style={{ marginBottom: "10px" }}>
-              {" "}
-              <ExampleYes classIsBookId={item._id} />
+          );
+        } else {
+          return (
+            <div className="cartBox row ">
+              <div className="col-lg-2">
+                <img
+                  className="rounded"
+                  src={item.studentProfilePicture}
+                  style={{ width: "90px" }}
+                  alt="student"
+                />
+              </div>
+              <div className="col-lg-7">
+                Môn: {item.subject}
+                <div>
+                  Thời gian: {moment(item.time.day).format("ddd Do")}-
+                  {item.time.timeId}
+                </div>
+                <div>Phương pháp học: {item.typeOfTeaching}</div>
+                <div>Địa chỉ: {item.studentPlace}</div>
+                <div>Điện thoại liên lạc: {item.studentPhone}</div>
+                <div>Mã số học sinh: {item.studentId}</div>
+                <div>Mã số lớp học: {item._id}</div>
+              </div>
+              <div className="col-lg-3 row">
+                <div className="col" style={{ marginBottom: "10px" }}>
+                  <ExampleYes id={item._id} />
+                </div>
+                <div className="col">
+                  <ExampleNo id={item._id} />
+                </div>
+              </div>
             </div>
-            <div className="col">
-              {" "}
-              <ExampleNo classIsBookId={item._id} />
-            </div>
-          </div>
-        </div>
-      );
+          );
+        }
+      }
     });
   } else {
     RenderCard = (

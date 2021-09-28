@@ -17,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import PersonalTeacherPage from "./page/PersonalTeacherPage/PersonalTeacherPage";
 import TeacherLoginPage from "./page/TeacherLoginPage/TeacherLoginPage";
+import TeacherUploadClassAndTimePage from "./page/TeacherUploadClassAndTimePage/TeacherUploadClassAndTimePage";
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
         <Route exact path="/TeacherLoginPage" component={TeacherLoginPage} />
         <Route exact path="/RegisterPage" component={RegisterPage} />
         <Route exact path="/UploadInfoPage/:id" component={UploadInfoPage} />
+        <Route
+          exact
+          path="/TeacherUploadClassAndTimePage/:id"
+          component={TeacherUploadClassAndTimePage}
+        />
+
         <Route
           exact
           path="/StudentDetailPage/:id"

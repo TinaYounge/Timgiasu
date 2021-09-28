@@ -5,7 +5,6 @@ function RenderBox({ singleTeacherInfoAll }) {
   const singleTeacherInfo = singleTeacherInfoAll.singleTeacherInfoWithId;
   const cartId = singleTeacherInfoAll.eachCart;
   const DayPerWeek = singleTeacherInfo.availableTime;
-
   const [classIsBook, setClassIsBook] = useState({
     typeOfTeaching: "Trực tuyến",
     day: "",
@@ -15,7 +14,7 @@ function RenderBox({ singleTeacherInfoAll }) {
     finished: "No",
     billId: cartId._id,
     reviewFromTeacher: "",
-    teacherAccept: "",
+    teacherAccept: "No",
     teacherIsPay: "",
     linkStudy: "",
     subject: cartId.subject,
@@ -67,20 +66,19 @@ function RenderBox({ singleTeacherInfoAll }) {
           {/* <label for="inputAddress" className=" col-form-label fw-bold">
             Chọn phương pháp học{" "}
           </label>{" "} */}
-          <select id="inputState" className="form-control  ">
-            <option
-              selected
-              onChange={(e) =>
-                setClassIsBook({
-                  ...classIsBook,
-                  typeOfTeaching: e.target.value,
-                })
-              }
-            >
-              Chọn phương pháp...
-            </option>
-            <option>Trực tuyến</option>
-            <option>Tại nhà</option>
+          <select
+            id="inputState"
+            className="form-control"
+            onChange={(e) =>
+              setClassIsBook({
+                ...classIsBook,
+                typeOfTeaching: e.target.value,
+              })
+            }
+          >
+            <option selected>Chọn phương pháp...</option>
+            <option value="Trực tuyến">Trực tuyến</option>
+            <option value="Tại nhà">Tại nhà</option>
           </select>
         </div>
       </div>

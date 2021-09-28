@@ -7,56 +7,44 @@ import {
   GetClassIsAccepted,
 } from "../../redux/ClassIsBooked/ClassIsBookAction";
 import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Example({ id }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [state, setstate] = useState({
-    reviewFromTeacher: "",
+    reviewFromStudent: "",
     teacherShow: "Yes",
-    studentShow: "Yes",
-    finished: "No",
   });
   const handleClose = () => setShow(false);
   const handleCloseAndTeacherNoShow = () => {
-    setstate({ ...state, teacherShow: "No", finished: "Yes" });
+    setstate({ ...state, teacherShow: "No" });
     setShow(false);
     dispatch(
       ClassIsBookedUpdateIsFinished({
         id,
-        state: { ...state, teacherShow: "No", finished: "Yes" },
-      })
-    );
-  };
-  const handleCloseAndStudentNoShow = () => {
-    setstate({ ...state, studentShow: "No", finished: "Yes" });
-    setShow(false);
-    dispatch(
-      ClassIsBookedUpdateIsFinished({
-        id,
-        state: { ...state, studentShow: "No", finished: "Yes" },
+        state: { ...state, teacherShow: "No" },
       })
     );
   };
 
   const handleCloseAndYes = () => {
-    setstate({ ...state, finished: "Yes" });
     setShow(false);
     dispatch(
       ClassIsBookedUpdateIsFinished({
         id,
-        state: { ...state, finished: "Yes" },
+        state,
       })
     );
   };
   const handleShow = () => {
     setShow(true);
   };
-  console.log("HDHDHD", state);
+  console.log("studentnot", state);
 
   return (
     <>
-      <Button className="btn-primary" onClick={handleShow}>
+      <Button className="btn-success" onClick={handleShow}>
         REVIEW
       </Button>
 
@@ -68,7 +56,7 @@ function Example({ id }) {
           Review lớp học và click Đã học xong:
           <input
             onChange={(e) =>
-              setstate({ ...state, reviewFromTeacher: e.target.value })
+              setstate({ ...state, reviewFromStudent: e.target.value })
             }
           ></input>
         </Modal.Body>
@@ -77,9 +65,7 @@ function Example({ id }) {
           <Button variant="warning" onClick={handleCloseAndTeacherNoShow}>
             Gia sư vắng mặt
           </Button>
-          <Button variant="danger" onClick={handleCloseAndStudentNoShow}>
-            Học sinh vắng mặt
-          </Button>
+
           <Button variant="success" onClick={handleCloseAndYes}>
             Đã học xong
           </Button>
@@ -89,7 +75,7 @@ function Example({ id }) {
   );
 }
 
-function NotifyClass() {
+function NotifyClassStudent() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetClassIsAccepted());
@@ -111,9 +97,14 @@ function NotifyClass() {
                   </div>
                 </div>
                 <div className="">Hình thức học: {item.typeOfTeaching}</div>
-                <div className="">Địa chỉ lớp học: {item.studentPlace}</div>
-                <div className="">Điện thoại liên lạc: {item.studentPhone}</div>
-                <div>Mã lớp học: {item._id}</div>
+                {/* <div>Mã lớp học: {item._id}</div> */}
+                {/* http://localhost:3000/TeacherDetailPage/ */}
+                <div>
+                  Gia sư:{" "}
+                  <Link to={"/TeacherDetailPage/" + item.userId}>
+                    Click vào đây
+                  </Link>
+                </div>
               </div>
               <div className="col-lg-3">
                 <Example id={item._id} />
@@ -142,7 +133,13 @@ function NotifyClass() {
                     Link
                   </a>
                 </div>
-                <div>Mã lớp học: {item._id}</div>
+                <div>
+                  Gia sư:{" "}
+                  <Link to={"/TeacherDetailPage/" + item.userId}>
+                    Click vào đây
+                  </Link>
+                </div>
+                {/* <div>Mã lớp học: {item._id}</div> */}
               </div>
               <div className="col-lg-3">
                 <Example id={item._id} />
@@ -168,4 +165,4 @@ function NotifyClass() {
   );
 }
 
-export default NotifyClass;
+export default NotifyClassStudent;

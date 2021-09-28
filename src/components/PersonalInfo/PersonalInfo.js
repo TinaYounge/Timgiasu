@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UploadPic from "../UploadPic/UploadPic";
 import Daypicker from "../Daypicker/Daypicker";
 import { useDispatch } from "react-redux";
-import Button from "@restart/ui/esm/Button";
+import { Button } from "react-bootstrap";
 import { UpdateInfoUser } from "../../redux/User/RegisterAction";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
@@ -190,9 +190,16 @@ function PersonalInfo({ id }) {
         </div>
         <br />
       </div>
-      <Button onClick={() => dispatch(UpdateInfoUser(userUpdateInfo, id))}>
-        test
-      </Button>
+      <br />
+      <center>
+        <Button
+          variant="outline-dark"
+          style={{ width: "200px" }}
+          onClick={() => dispatch(UpdateInfoUser(userUpdateInfo, id))}
+        >
+          LƯU
+        </Button>
+      </center>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +9,6 @@ import { AddClassIsBookToStudent } from "../../redux/GetSingleStudent/GetSingleS
 function MyVerticallyCenteredModal(props) {
   const dispatch = useDispatch();
   const classIsBooked = props.classIsBookedInfo;
-
   const YesAndClose = (e) => {
     dispatch(AddClassIsBookToStudent(e));
   };
@@ -33,19 +32,23 @@ function MyVerticallyCenteredModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => YesAndClose(classIsBooked)}>Close</Button>
+        <Button onClick={() => YesAndClose(classIsBooked)}>Đồng ý</Button>
       </Modal.Footer>
     </Modal>
   );
 }
+
 function TimeBox({ timeAll }) {
   const [modalShow, setModalShow] = React.useState(false);
-
   const notify = () => toast("Vui lòng chọn giờ khác");
   const time = timeAll.timeItem;
-  const classIsBookWithDate = timeAll.classisBookCheck;
-  const [classIsBookWithDateAndTime, setClassIsBookWithDateAndTime] =
-    useState(classIsBookWithDate);
+  useEffect(() => {
+    setClassIsBookWithDateAndTime(timeAll.classisBookCheck);
+  }, [timeAll]);
+  const [classIsBookWithDateAndTime, setClassIsBookWithDateAndTime] = useState(
+    timeAll.classisBookCheck
+  );
+  console.log("classIsBookWithDateAndTime", classIsBookWithDateAndTime);
   const getTime = (time) => {
     setClassIsBookWithDateAndTime({
       ...classIsBookWithDateAndTime,

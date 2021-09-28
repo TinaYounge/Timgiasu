@@ -76,8 +76,7 @@ export const AddCartToStudent = (state) => {
 
 //Update info Student
 export const AddClassIsBookToStudent = (state) => {
-  console.log("satte", state);
-
+  console.log("KKKKKK", state);
   return (dispatch) => {
     dispatch(getSingleStudentRequest);
     const UpdateResponse = async () => {
@@ -85,12 +84,13 @@ export const AddClassIsBookToStudent = (state) => {
         const res = await api.put(`api/student/addClassIsBooked`, {
           day: state.day,
           timeId: state.timeId,
-          classId: state.classId,
           userId: state.userId,
-          finished: "No",
+          classId: state.classId,
+          finished: state.finished,
           typeOfTeaching: state.typeOfTeaching,
           billId: state.billId,
           subject: state.subject,
+          teacherAccept: "No",
         });
         const data = await res.data;
         dispatch(getSingleStudentSuccess(data));

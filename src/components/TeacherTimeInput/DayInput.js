@@ -1,20 +1,13 @@
 import moment from "moment";
 import React from "react";
-import TimeBox from "./TimeBox";
 
-function DayBox({ dayAndTime }) {
-  const classisBookCheck = dayAndTime.classIsBook;
-  const AllTimeOfDay = dayAndTime.item.time;
+function DayInput({ day }) {
+  const AllTimeOfDay = day;
 
   let RenderCard;
   if (AllTimeOfDay) {
     RenderCard = AllTimeOfDay.map((timeItem) => {
-      timeItem.date = dayAndTime.item.day;
-      return (
-        <div>
-          <TimeBox timeAll={{ timeItem, classisBookCheck }} />
-        </div>
-      );
+      return <div>KAKAK </div>;
     });
   } else {
     RenderCard = (
@@ -28,9 +21,7 @@ function DayBox({ dayAndTime }) {
     <div>
       <table className="table">
         <thead>
-          <th style={{ color: "grey", fontSize: "20px" }}>
-            {moment(dayAndTime.item.day).format("ddd Do")}
-          </th>
+          <th style={{ color: "grey", fontSize: "20px" }}>hggg</th>
         </thead>
         <tbody>
           <td class="table-primary"> {RenderCard}</td>
@@ -39,4 +30,4 @@ function DayBox({ dayAndTime }) {
     </div>
   );
 }
-export default DayBox;
+export default DayInput;

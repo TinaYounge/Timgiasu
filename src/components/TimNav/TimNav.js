@@ -198,7 +198,15 @@ function TimNav() {
                 {" "}
                 Về chúng tôi
               </Nav.Link>
-
+              <Nav.Link
+                className="text"
+                as={Link}
+                to={"/UploadInfoPage/" + singleUserInfo._id}
+                style={{ color: "black", paddingRight: "20px" }}
+              >
+                {" "}
+                Cập nhật thông tin{" "}
+              </Nav.Link>
               <div
                 style={{
                   paddingRight: "20px",

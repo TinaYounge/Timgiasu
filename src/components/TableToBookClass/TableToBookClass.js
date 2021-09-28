@@ -17,22 +17,24 @@ function TableToBookClass() {
     let cartArray = cartState.cart;
 
     RenderCard = cartArray.map((item) => {
-      return (
-        <div className="cartBox row ">
-          <div className="col-lg-3">
-            <SmallPic userInfo={item.userId} />
-          </div>
-          <div className="col-lg-5">
-            Môn: {item.subject}
-            <div>Số buổi có thể book: {item.classCanBook}</div>
-          </div>
-          <div className="col-lg-4 " style={{ color: "blueviolet" }}>
-            <ModalTim eachCart={item} />
-          </div>
+      if (item.classCanBook > 0) {
+        return (
+          <div className="cartBox row ">
+            <div className="col-lg-3">
+              <SmallPic userInfo={item.userId} />
+            </div>
+            <div className="col-lg-5">
+              Môn: {item.subject}
+              <div>Số buổi có thể book: {item.classCanBook}</div>
+            </div>
+            <div className="col-lg-4 " style={{ color: "blueviolet" }}>
+              <ModalTim eachCart={item} />
+            </div>
 
-          <div></div>
-        </div>
-      );
+            <div></div>
+          </div>
+        );
+      }
     });
   } else {
     RenderCard = (

@@ -29,18 +29,21 @@ export const ClassIsBookedFail = () => {
 };
 export const notifyFollowing = () =>
   toast("Chúc mừng bạn book lớp thành công!");
+export const notifyUpdate = () => toast("Cảm ơn bạn đã cập nhật!");
 
-export const ClassIsBookedUpdate = () => {
+export const ClassIsBookedUpdate = ({ id, state }) => {
   return (dispatch) => {
     dispatch(ClassIsBookedRequest);
     const ClassIsBookedResponse = async () => {
       try {
-        const res = await api.put(
-          `api/ClassIsBookedOfStudent/updateClassIsBooked`
-        );
+        const res = await api.put(`api/classIsBooked/${id}/updateClassIsBook`, {
+          linkStudy: state.linkStudy,
+          teacherAccept: state.teacherAccept,
+          reviewFromTeacher: state.reviewFromTeacher,
+        });
         const data = await res.data;
         dispatch(ClassIsBookedSuccess(data));
-        notifyFollowing();
+        notifyUpdate();
       } catch (error) {
         const errorMge = Error.message;
         dispatch(ClassIsBookedFail(errorMge));
@@ -57,8 +60,34 @@ export const GetClassIsAccepted = () => {
       try {
         const res = await api.get(`api/classIsBooked/teacherAccept`);
         const data = await res.data;
-        console.log("HSDHSDHSDHHJDS", data);
         dispatch(ClassIsBookedSuccess(data));
+      } catch (error) {
+        const errorMge = Error.message;
+        dispatch(ClassIsBookedFail(errorMge));
+      }
+    };
+    ClassIsBookedResponse();
+  };
+};
+export const ClassIsBookedUpdateIsFinished = ({ id, state }) => {
+  console.log("Finished", { id, state });
+  return (dispatch) => {
+    dispatch(ClassIsBookedRequest);
+    const ClassIsBookedResponse = async () => {
+      try {
+        const res = await api.put(
+          `api/classIsBooked/${id}/updateClassIsBookFinished`,
+          {
+            finished: state.finished,
+            teacherShow: state.teacherShow,
+            studentShow: state.studentShow,
+            reviewFromStudent: state.reviewFromStudent,
+            reviewFromTeacher: state.reviewFromTeacher,
+          }
+        );
+        const data = await res.data;
+        dispatch(ClassIsBookedSuccess(data));
+        notifyUpdate();
       } catch (error) {
         const errorMge = Error.message;
         dispatch(ClassIsBookedFail(errorMge));

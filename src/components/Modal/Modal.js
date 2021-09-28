@@ -6,6 +6,7 @@ import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 
 function MyVerticallyCenteredModal(props) {
   const singleTeacherInfo = props.singleTeacherInfo;
+  console.log("props.onHide", props.onHide);
   return (
     <Modal
       {...props}
@@ -22,7 +23,7 @@ function MyVerticallyCenteredModal(props) {
         <RenderBox singleTeacherInfoAll={singleTeacherInfo} />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Đóng</Button>
       </Modal.Footer>
     </Modal>
   );

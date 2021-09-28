@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import Introduction from "../../components/Introduction/Introduction";
-import NotifyClass from "../../components/NotifyClass/NotifyClass";
+import NotifyClassStudent from "../../components/NotifyClass/NotiflyClassStudent";
 import Profile from "../../components/Profile/Profile";
 import TableToBookClass from "../../components/TableToBookClass/TableToBookClass";
 import { getSingleStudent } from "../../redux/GetSingleStudent/GetSingleStudentAction";
@@ -36,7 +36,7 @@ function StudentDetailPage() {
               <TableToBookClass />
             </div>
             <div className="col-lg-4 ">
-              <NotifyClass />{" "}
+              <NotifyClassStudent />{" "}
             </div>
           </div>
         </div>
