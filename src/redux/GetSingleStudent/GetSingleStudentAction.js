@@ -9,8 +9,15 @@ import { toast } from "react-toastify";
 import api from "../../App.api";
 
 export const notifyBookSuccess = () =>
-  toast("Chúc mừng bạn book lớp thành công!");
-
+  toast.success("Thông tin lớp bạn đăng kí sẽ gửi cho gia sư!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 export const getSingleStudentRequest = () => {
   return {
     type: GET_SINGLE_STUDENT_REQUEST,

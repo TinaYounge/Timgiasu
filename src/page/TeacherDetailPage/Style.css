@@ -1,6 +1,11 @@
 .teacherBg {
-  /* background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%); */
-  background-image: url("../../Images/bg.PNG");
+  background: linear-gradient(
+    to right,
+    #de1dde,
+    #128fde
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background-image: url("../../Images/pinkbg.PNG"); */
   background-repeat: no-repeat;
   background-size: 100vw 25vh;
   background-position: bottom -80px;

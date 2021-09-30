@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { OverlayTrigger, Popover } from "react-bootstrap";
+import { Card, OverlayTrigger, Placeholder, Popover } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSingleUser } from "../../redux/SingleUser/GetSingleUserAction";
 import "./StyleTeacherCard.css";
+import Logo from "../../Images/logo.png";
 function TestCardRender({ userIdOfSubject }) {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,7 +22,7 @@ function TestCardRender({ userIdOfSubject }) {
         borderRadius: 3,
         width: "18rem",
         height: "400px",
-        backgroundColor: "lightblue",
+        backgroundColor: "#F8F9F9",
         ...props.style,
       }}
     >
@@ -54,7 +55,10 @@ function TestCardRender({ userIdOfSubject }) {
               </div>
               <div className="card-body p-4 ">
                 <div className="text-center">
-                  <div class="badge bg-primary bg-gradient rounded-pill mb-1">
+                  <div
+                    class="badge  bg-gradient rounded-pill mb-1"
+                    style={{ backgroundColor: "#2898DE" }}
+                  >
                     {userInfo[userIdOfSubject].city}
                   </div>
                   <h5
@@ -91,7 +95,21 @@ function TestCardRender({ userIdOfSubject }) {
       </div>
     </div>
   ) : (
-    <div>Không</div>
+    <div>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={Logo} />
+        <Card.Body>
+          <Placeholder animation="glow">
+            <Placeholder xs={6} />
+          </Placeholder>
+          <Placeholder animation="glow">
+            <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
+            <Placeholder xs={6} /> <Placeholder xs={8} />
+          </Placeholder>
+          <Placeholder.Button variant="primary" xs={6} />
+        </Card.Body>
+      </Card>
+    </div>
   );
 
   // );

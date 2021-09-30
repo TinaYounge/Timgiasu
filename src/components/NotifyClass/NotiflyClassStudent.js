@@ -139,7 +139,6 @@ function NotifyClassStudent() {
                     Click vào đây
                   </Link>
                 </div>
-                {/* <div>Mã lớp học: {item._id}</div> */}
               </div>
               <div className="col-lg-3">
                 <Example id={item._id} />

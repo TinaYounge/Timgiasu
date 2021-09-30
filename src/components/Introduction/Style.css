@@ -1,0 +1,7 @@
+.big {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  display: block;
+  z-index: 999;
+}

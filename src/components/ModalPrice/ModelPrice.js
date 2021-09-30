@@ -8,7 +8,16 @@ import { AddCartToStudent } from "../../redux/GetSingleStudent/GetSingleStudentA
 function ModalPrice({ priceInfo }) {
   const dispatch = useDispatch();
   const notifyFollowing = () => toast("Bạn đẫ follow giáo viên!");
-  const notifyAdded = () => toast("Bạn đẫ thêm lớp học thành công!");
+  const notifyAdded = () =>
+    toast.success("Bạn đã thêm lớp học thành công", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const [show, setShow] = useState(false);
   const [packet, setPacket] = useState({

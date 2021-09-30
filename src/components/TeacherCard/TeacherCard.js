@@ -17,7 +17,7 @@ function TeacherCard({ teacherInfo }) {
         width: "18rem",
         height: "420px",
         ...props.style,
-        backgroundColor: "lightblue",
+        backgroundColor: "#F8F9F9",
       }}
     >
       <Popover.Header as="h3" style={{ backgroundColor: "transparent" }}>
@@ -38,18 +38,30 @@ function TeacherCard({ teacherInfo }) {
       >
         <div className="  mt-4 px-2 ">
           <div className="card     res2  bg-grey">
-            <div style={{ width: "100%", height: "180px" }}>
+            <div
+              style={{
+                width: "100%",
+                height: "180px",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
               {" "}
               <img
                 className="card-img-top "
                 src={teacherInfo.profilePicture}
                 alt="..."
-                height="180px"
+                // height="180px"
+                width="auto"
+                style={{ position: "absolute" }}
               />
             </div>
             <div className="card-body p-4">
               <div className="text-center">
-                <div class="badge bg-primary rounded-pill mb-1 ">
+                <div
+                  class="badge  rounded-pill mb-1 "
+                  style={{ backgroundColor: "#2898DE" }}
+                >
                   {teacherInfo.city}
                 </div>
                 <h5

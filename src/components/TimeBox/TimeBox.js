@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { AddClassIsBookToStudent } from "../../redux/GetSingleStudent/GetSingleStudentAction";
 
@@ -40,7 +40,17 @@ function MyVerticallyCenteredModal(props) {
 
 function TimeBox({ timeAll }) {
   const [modalShow, setModalShow] = React.useState(false);
-  const notify = () => toast("Vui lòng chọn giờ khác");
+  const notify = () =>
+    toast.warn("Vui lòng chọn giờ khác!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   const time = timeAll.timeItem;
   useEffect(() => {
     setClassIsBookWithDateAndTime(timeAll.classisBookCheck);
@@ -59,15 +69,16 @@ function TimeBox({ timeAll }) {
   };
   return time.value === "1" ? (
     <div>
-      <button
-        className=" btn mt-auto"
-        style={{ backgroundColor: "green", color: "white" }}
+      <Card
+        as="a"
+        className="btn-gradBlue"
+        style={{ fontSize: "18px", margin: "0" }}
         onClick={() => {
           getTime(time);
         }}
       >
         {time.timeId}
-      </button>
+      </Card>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -76,13 +87,14 @@ function TimeBox({ timeAll }) {
     </div>
   ) : (
     <div>
-      <button
-        className=" btn mt-auto"
-        style={{ backgroundColor: "red", color: "white" }}
+      <Card
+        as="a"
+        className="btn-gradRed"
+        style={{ fontSize: "18px", margin: "0" }}
         onClick={() => notify()}
       >
         {time.timeId}
-      </button>
+      </Card>
     </div>
   );
 }

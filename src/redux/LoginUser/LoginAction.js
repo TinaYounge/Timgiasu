@@ -36,7 +36,7 @@ export const LoginAction = (state) => {
         });
         const data = await res.data;
         dispatch(LoginSuccess(data));
-        localStorage.setItem("token", data.accessToken);
+        localStorage.setItem("userToken", data.accessToken);
         notify();
       } catch (error) {
         const errorMge = Error.message;
@@ -46,11 +46,14 @@ export const LoginAction = (state) => {
     loginResponse();
   };
 };
-export const getSingleOwnUserTeacher = () => {
+
+export const getSingleOwnUserTeacher = (accessToken) => {
   return (dispatch) => {
     dispatch(LoginRequest);
     const getSingleUserResponse = async () => {
       try {
+        if (accessToken)
+          api.defaults.headers["Authorization"] = "Bearer " + accessToken;
         const res = await api.get(`api/auth/me`);
         const data = await res.data;
         dispatch(LoginSuccess(data));

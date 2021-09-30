@@ -14,13 +14,14 @@ function CardItems({ singleStudentInfo }) {
       if (item.paid === "No") {
         total += item.value;
         return (
-          <div className="cartBox row ">
+          <div className="cartBox row " style={{ padding: "20px" }}>
             <div className="col-lg-2">
               <SmallPic userInfo={item.userId} />
             </div>
             <div className="col-lg-6">
-              Sản phẩm :{item._id}
               <div>Số buổi:{item.idPrice}</div>
+              <div>Môn học:{item.subject}</div>
+              Sản phẩm :{item._id}
             </div>
             <div className="col-3" style={{ color: "blueviolet" }}>
               Trị giá :{item.value} VND

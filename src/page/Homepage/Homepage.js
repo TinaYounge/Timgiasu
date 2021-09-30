@@ -5,6 +5,7 @@ import BecomeTeacher from "../../components/BecomeTeacher/BecomeTeacher.js";
 import HowItWork from "../../components/HowItWork/HowItWork.js";
 import LandingPage from "../../components/LandingPage/LandingPage.js";
 import Quote from "../../components/Quote/Quote.js";
+import Review from "../../components/Review/Review.js";
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import RenderSubject from "../../components/SubjectCard/RenderSubject.js";
 import RenderTeacherCard from "../../components/TeacherCard/RenderTeacherCard.js";
@@ -47,7 +48,7 @@ function Homepage() {
                       </i>
                     </div>
 
-                    <div className="col-lg-10">
+                    <div className="col-lg-10 ">
                       <RenderTeacherCard page={{ page, limit }} />
                     </div>
                     <div className="col-lg-1 align-self-center">
@@ -82,6 +83,7 @@ function Homepage() {
       </div>
       <BecomeTeacher />
       <Quote />
+      <Review />
     </div>
   );
 }

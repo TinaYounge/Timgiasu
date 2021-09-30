@@ -24,8 +24,15 @@ export const CartFail = () => {
   };
 };
 export const notifyFollowing = () =>
-  toast("Chúc mừng bạn thanh toán thành công!");
-
+  toast.success("Chúc mừng bạn thanh toán thành công!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 export const CartUpdate = () => {
   return (dispatch) => {
     dispatch(CartRequest);

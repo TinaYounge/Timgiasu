@@ -1,5 +1,6 @@
 import moment from "moment";
 import React from "react";
+import { Button } from "react-bootstrap";
 import DayInput from "./DayInput";
 function TeacherTimeInput({ singleUserInfo }) {
   const DayPerWeek = [
@@ -22,7 +23,11 @@ function TeacherTimeInput({ singleUserInfo }) {
   let RenderCard;
   if (DayPerWeek) {
     RenderCard = DayPerWeek.map((item) => {
-      return <div className="col">{item}</div>;
+      return (
+        <div className="col">
+          <DayInput day={item} />
+        </div>
+      );
     });
   } else {
     RenderCard = (
@@ -35,7 +40,6 @@ function TeacherTimeInput({ singleUserInfo }) {
   return (
     <div>
       <h2>Thêm thời gian biểu</h2>
-
       <div
         className="fs-3  px-5 text-center  py-5 "
         style={{ background: "rgb(248, 245, 238)" }}
@@ -44,26 +48,15 @@ function TeacherTimeInput({ singleUserInfo }) {
         <div style={{ marginBottom: "10px" }} className="row">
           <div className=" col"></div>
 
-          <button
-            className=" btn mt-auto col-2"
-            style={{
-              backgroundColor: "green",
-              marginRight: "5px",
-              color: "white",
-            }}
-          >
-            Giờ trống
-          </button>
-          <button
-            className=" btn mt-auto col-2"
-            style={{ backgroundColor: "red", color: "white" }}
-          >
-            Giờ bận
-          </button>
+          <div className=" btn-gradBlue mt-auto col-2">Giờ trống</div>
+          <div className=" btn-gradRed mt-auto col-2">Giờ bận</div>
         </div>
-        <div className="card-group container" style={{ background: "white" }}>
-          {RenderCard}
-        </div>
+        <div className="card-group container">{RenderCard}</div>
+        <center>
+          <div className="btn-gradBlue" style={{ width: "200px" }}>
+            Lưu
+          </div>
+        </center>
       </div>
     </div>
   );

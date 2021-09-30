@@ -16,7 +16,7 @@ function AllTeacherPage() {
   const [page, setPage] = useState(1);
   let queryFun = query.get("subjectFilter");
 
-  let limit = 12;
+  let limit = 14;
 
   const HandleNext = () => {
     setPage(page + 1);

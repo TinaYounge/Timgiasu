@@ -113,7 +113,7 @@ function NotifyClass() {
                 <div className="">Hình thức học: {item.typeOfTeaching}</div>
                 <div className="">Địa chỉ lớp học: {item.studentPlace}</div>
                 <div className="">Điện thoại liên lạc: {item.studentPhone}</div>
-                <div>Mã lớp học: {item._id}</div>
+                <div>Học sinh: {item.studentFullname}</div>
               </div>
               <div className="col-lg-3">
                 <Example id={item._id} />
@@ -142,7 +142,7 @@ function NotifyClass() {
                     Link
                   </a>
                 </div>
-                <div>Mã lớp học: {item._id}</div>
+                <div>Học sinh: {item.studentFullname}</div>
               </div>
               <div className="col-lg-3">
                 <Example id={item._id} />

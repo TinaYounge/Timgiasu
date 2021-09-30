@@ -41,7 +41,7 @@ export const LoginStudentAction = (state) => {
 
         const data = await res.data;
         console.log("HAHAHAHA", data.accessToken);
-        localStorage.setItem("token", data.accessToken);
+        localStorage.setItem("studentToken", data.accessToken);
         api.defaults.headers["Authorization"] = "Bearer " + data.accessToken;
         dispatch(LoginStudentSuccess(data));
         notify();
@@ -54,11 +54,13 @@ export const LoginStudentAction = (state) => {
     loginResponse();
   };
 };
-export const getSingleOwnUser = () => {
+export const getSingleOwnUser = (accessToken) => {
   return (dispatch) => {
     dispatch(LoginStudentRequest);
     const getSingleUserResponse = async () => {
       try {
+        if (accessToken)
+          api.defaults.headers["Authorization"] = "Bearer " + accessToken;
         const res = await api.get(`api/studentAuth/me`);
         const data = await res.data;
         dispatch(LoginStudentSuccess(data));

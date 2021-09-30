@@ -8,7 +8,6 @@ function SubjectAcc({ ClassesTeacherInfo }) {
     RenderCard = ClassesTeacherInfo.map((item, index) => {
       return (
         <div>
-          {" "}
           <Accordion.Item eventKey={index}>
             <Accordion.Header>
               {item.subject}-{item.grade}
@@ -29,8 +28,10 @@ function SubjectAcc({ ClassesTeacherInfo }) {
   }
 
   return (
-    <div>
-      {" "}
+    <div
+      className="box sticky-top"
+      style={{ padding: "20px", minHeight: "100px" }}
+    >
       <Accordion defaultActiveKey="0">{RenderCard} </Accordion>
     </div>
   );

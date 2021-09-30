@@ -1,9 +1,8 @@
 import React from "react";
 
-function Profile({ singleTeacherInfoAll }) {
+function ProfilePersonalPage({ singleTeacherInfoAll }) {
   const singleTeacherInfo1 = singleTeacherInfoAll.singleTeacherInfo;
   const singleTeacherInfo = singleTeacherInfo1;
-  // console.log(`object`, singleTeacherInfo[id1].profilePicture);
 
   return (
     <div className="">
@@ -13,20 +12,10 @@ function Profile({ singleTeacherInfoAll }) {
           src={singleTeacherInfo.profilePicture}
           alt="profile"
         />
-
-        <div className="d-flex justify-content-center small text-warning mb-2">
-          <div className="bi-star-fill"></div>
-          <div className="bi-star-fill"></div>
-          <div className="bi-star-fill"></div>
-          <div className="bi-star-fill"></div>
-        </div>
         <div className="ms-3">
           <div className="fw-bold text-center ">
             {singleTeacherInfo.highestCertificate}-
             {singleTeacherInfo.universityGotCert}
-          </div>
-          <div className="text-muted text-center">
-            {singleTeacherInfo.company}
           </div>
         </div>
       </div>
@@ -34,4 +23,4 @@ function Profile({ singleTeacherInfoAll }) {
   );
 }
 
-export default Profile;
+export default ProfilePersonalPage;

@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
 }
@@ -35,7 +36,7 @@ code {
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  box-: 0 0 20px #eee;
+  box-shadow: 0 0 20px #eee;
   border-radius: 5px;
   display: block;
 }
@@ -86,15 +87,13 @@ code {
   );
 }
 .btn-gradBlue {
-  cursor: pointer;
   margin: 10px;
-  padding: 5px 5px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
 }
 
@@ -102,4 +101,82 @@ code {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+.btn-gradRed {
+  background-image: linear-gradient(
+    to right,
+    #e43a15 0%,
+    #e65245 51%,
+    #e43a15 100%
+  );
+}
+.btn-gradRed {
+  margin: 10px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 5px;
+  display: block;
+}
+
+.btn-gradRed:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #02aab0 0%,
+    #00cdac 51%,
+    #02aab0 100%
+  );
+}
+.btn-gradRed:active {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #02aab0 0%,
+    #00cdac 51%,
+    #02aab0 100%
+  );
+}
+
+.btn-gradOlive {
+  background-image: linear-gradient(
+    to right,
+    #add100 0%,
+    #7b920a 51%,
+    #add100 100%
+  );
+}
+.btn-gradOlive {
+  cursor: pointer;
+  padding: 5px 5px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 5px;
+  display: block;
+}
+
+.btn-gradOlive:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.pagination {
+  justify-content: center;
+}
+.page-item.active .page-link {
+  background-color: #f09819;
+  border-color: #f09819;
+}
+.page-link {
+  color: black;
 }

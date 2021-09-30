@@ -36,7 +36,6 @@
   }
   .box {
     background-color: transparent;
-    color: white;
     box-shadow: 0 0px 0px 0 rgb(0, 0, 0) !important;
   }
 }

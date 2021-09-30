@@ -46,22 +46,24 @@ function RenderBox({ singleTeacherInfoAll }) {
       <div style={{ marginBottom: "10px" }} className="row">
         <div className=" col"></div>
 
-        <button
-          className=" btn mt-auto col-2"
+        <div
+          className=" btn-gradBlue mt-auto col-2"
           style={{
-            backgroundColor: "green",
             marginRight: "5px",
-            color: "white",
+            fontSize: "18px",
           }}
         >
           Giờ trống
-        </button>
-        <button
-          className=" btn mt-auto col-2"
-          style={{ backgroundColor: "red", color: "white" }}
+        </div>
+        <div
+          className=" btn-gradRed mt-auto col-2"
+          style={{
+            marginRight: "5px",
+            fontSize: "18px",
+          }}
         >
           Giờ bận
-        </button>
+        </div>
         <div className="form-group col-md-4">
           {/* <label for="inputAddress" className=" col-form-label fw-bold">
             Chọn phương pháp học{" "}

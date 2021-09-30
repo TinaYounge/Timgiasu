@@ -3,12 +3,11 @@ import {
   LOGIN_STUDENT_REQUEST,
   LOGIN_STUDENT_SUCCESS,
 } from "./LoginStudentType";
-const loggedIn = !!localStorage.getItem("token");
+
 const initialState = {
   loading: false,
   student: {},
   error: "",
-  loggedIn,
 };
 
 function LoginStudentReducer(state = initialState, action) {

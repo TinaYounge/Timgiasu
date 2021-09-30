@@ -121,6 +121,7 @@ function TableFoAcceptClass() {
     RenderCard = classArray.map((item) => {
       if (item.teacherAccept === "No") {
         if (item.typeOfTeaching === "Trực tuyến") {
+          console.log("kakaka", item);
           return (
             <div className="cartBox row ">
               <div className="col-lg-2">
@@ -138,8 +139,7 @@ function TableFoAcceptClass() {
                   {item.time.timeId}{" "}
                 </div>
                 <div>Phương pháp học: {item.typeOfTeaching}</div>
-                <div>Mã số học sinh: {item.studentId}</div>
-                <div>Mã số lớp học: {item._id}</div>
+                <div>Tên học sinh: {item.studentFullname}</div>
               </div>
               <div className="col-lg-3 row">
                 <div className="col" style={{ marginBottom: "10px" }}>
@@ -171,8 +171,7 @@ function TableFoAcceptClass() {
                 <div>Phương pháp học: {item.typeOfTeaching}</div>
                 <div>Địa chỉ: {item.studentPlace}</div>
                 <div>Điện thoại liên lạc: {item.studentPhone}</div>
-                <div>Mã số học sinh: {item.studentId}</div>
-                <div>Mã số lớp học: {item._id}</div>
+                <div>Tên học sinh: {item.studentFullname}</div>
               </div>
               <div className="col-lg-3 row">
                 <div className="col" style={{ marginBottom: "10px" }}>

@@ -11,28 +11,37 @@ import {
 } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
 import { getSingleOwnUserTeacher } from "../../redux/LoginUser/LoginAction";
 
 function TimNav() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getSingleOwnUser());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getSingleOwnUserTeacher());
-  }, [dispatch]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.assign("http://localhost:3000/");
-  };
   const singleUserInfo = useSelector((state) => state.userLogin.user);
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
   console.log("singleUserInfo", singleUserInfo);
-  return singleStudentInfo ? (
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    const studentToken = localStorage.getItem("studentToken");
+    const userToken = localStorage.getItem("userToken");
+
+    if (studentToken && studentToken !== "undefined") {
+      dispatch(getSingleOwnUser(studentToken));
+    } else {
+      if (userToken && userToken !== "undefined") {
+        dispatch(getSingleOwnUserTeacher(userToken));
+      }
+    }
+  }, [dispatch]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("studentToken");
+    localStorage.removeItem("userToken");
+    window.location.assign("https://timgiasu.netlify.app/");
+  };
+
+  return singleStudentInfo?._id ? (
     <div className="">
       <Navbar collapseOnSelect expand="lg" variant="dark" className="active">
         <Container className="">
