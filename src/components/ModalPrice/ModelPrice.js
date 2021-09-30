@@ -67,11 +67,13 @@ function ModalPrice({ priceInfo }) {
       classCanBook,
     });
   };
-  console.log("packet", packet);
-
+  let x;
   let RenderCard;
   if (priceInfo) {
     RenderCard = priceInfo.fullPackage.map((item) => {
+      x = item.value;
+      x = x.toLocaleString("it-IT", { style: "currency", currency: "VND" });
+
       return (
         <div
           className="btn-grad btn-lg"
@@ -80,7 +82,7 @@ function ModalPrice({ priceInfo }) {
             value: item.value,
           })}
         >
-          {item.value}VND/{item.idPice}
+          {x}/{item.idPice}
           phút
         </div>
       );
@@ -104,8 +106,7 @@ function ModalPrice({ priceInfo }) {
         </Modal.Header>
         <Modal.Body>
           <p>
-            Bạn chắc chắn thêm gói trị giá {packet.value}VND cho{" "}
-            {packet.idPrice} phút ?
+            Bạn chắc chắn thêm gói trị giá {x} cho {packet.idPrice} phút ?
           </p>
         </Modal.Body>
 

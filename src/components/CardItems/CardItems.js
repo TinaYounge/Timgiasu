@@ -8,11 +8,21 @@ function CardItems({ singleStudentInfo }) {
   console.log("singe,", singleStudentInfo.cart);
   let RenderCard;
   let total = 0;
-
+  let totaldot = 0;
   if (singleStudentInfo.cart) {
     RenderCard = singleStudentInfo.cart.map((item) => {
       if (item.paid === "No") {
         total += item.value;
+        totaldot = total;
+        totaldot = totaldot.toLocaleString("it-IT", {
+          style: "currency",
+          currency: "VND",
+        });
+        let value = item.value;
+        value = value.toLocaleString("it-IT", {
+          style: "currency",
+          currency: "VND",
+        });
         return (
           <div className="cartBox row " style={{ padding: "20px" }}>
             <div className="col-lg-2">
@@ -24,7 +34,7 @@ function CardItems({ singleStudentInfo }) {
               Sản phẩm :{item._id}
             </div>
             <div className="col-3" style={{ color: "blueviolet" }}>
-              Trị giá :{item.value} VND
+              Trị giá :{value}
             </div>
             <div className="col">
               <i class="bi bi-trash"></i>
@@ -47,7 +57,7 @@ function CardItems({ singleStudentInfo }) {
       <div className="col-lg-8  "> {RenderCard}</div>
       <div className="col-lg-1  "> </div>
       <div className="col-lg-3 total-box ">
-        <div style={{ fontSize: "30px" }}>Tổng: {total} VND </div>
+        <div style={{ fontSize: "30px" }}>Tổng: {totaldot} </div>
         <div
           className="btn-grad btn-lg"
           style={{ cursor: "pointer" }}
