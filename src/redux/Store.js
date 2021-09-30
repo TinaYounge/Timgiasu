@@ -29,4 +29,3 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(logger, thunk))
 );
 export default store;
-store.getState();
