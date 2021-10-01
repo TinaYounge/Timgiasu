@@ -8,7 +8,6 @@ function Daypicker(props) {
   const handleDayChange = (day) => {
     setSelectedDay(day);
   };
-  console.log("day time here:", selectedDay);
   return (
     <div>
       {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}

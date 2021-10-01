@@ -10,7 +10,6 @@ function CardPage() {
   }, [dispatch]);
 
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
-  console.log("HAAAA", singleStudentInfo);
   return singleStudentInfo._id ? (
     <div>
       <div className="py-5 bg-light bgPink" style={{ minHeight: "80vh" }}>

@@ -1,6 +1,5 @@
 import moment from "moment";
 import React from "react";
-import { Button } from "react-bootstrap";
 import DayInput from "./DayInput";
 function TeacherTimeInput({ singleUserInfo }) {
   const DayPerWeek = [
@@ -11,15 +10,7 @@ function TeacherTimeInput({ singleUserInfo }) {
     moment().add(4, "days").format("MMM Do YY"),
     moment().add(5, "days").format("MMM Do YY"),
     moment().add(6, "days").format("MMM Do YY"),
-    // moment().add(7, "days").format("MMM Do YY"),
-    // moment().add(8, "days").format("MMM Do YY"),
-    // moment().add(9, "days").format("MMM Do YY"),
-    // moment().add(10, "days").format("MMM Do YY"),
-    // moment().add(11, "days").format("MMM Do YY"),
-    // moment().add(12, "days").format("MMM Do YY"),
-    // moment().add(13, "days").format("MMM Do YY"),
   ];
-  console.log("JAJAA", moment().add(7, "days").toString());
   let RenderCard;
   if (DayPerWeek) {
     RenderCard = DayPerWeek.map((item) => {

@@ -52,7 +52,6 @@ function Example({ id }) {
   const handleShow = () => {
     setShow(true);
   };
-  console.log("HDHDHD", state);
 
   return (
     <>

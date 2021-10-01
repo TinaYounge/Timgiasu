@@ -3,7 +3,6 @@ import React from "react";
 function Profile({ singleTeacherInfoAll }) {
   const singleTeacherInfo1 = singleTeacherInfoAll.singleTeacherInfo;
   const singleTeacherInfo = singleTeacherInfo1;
-  // console.log(`object`, singleTeacherInfo[id1].profilePicture);
 
   return (
     <div className="">

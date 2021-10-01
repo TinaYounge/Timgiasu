@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getSingleOwnTeacherUser } from "../../redux/SingleUser/GetSingleUserAction";
-import SmallPic from "../CardItems/SmallPic";
 import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
 import { ClassIsBookedUpdate } from "../../redux/ClassIsBooked/ClassIsBookAction";
@@ -14,7 +13,6 @@ function ExampleYes({ id }) {
     teacherAccept: "",
     linkStudy: "",
   });
-  console.log("kakak", state);
   const handleClose = () => setShow(false);
   const handleCloseAndYes = () => {
     setShow(false);
@@ -129,7 +127,6 @@ function TableFoAcceptClass() {
     dispatch(getSingleOwnTeacherUser());
   }, [dispatch]);
   const teacherState = useSelector((state) => state.singleUserInfo);
-  console.log("teacherState", teacherState);
   let RenderCard;
 
   if (teacherState.user[id]) {

@@ -40,7 +40,6 @@ function Example({ id }) {
   const handleShow = () => {
     setShow(true);
   };
-  console.log("studentnot", state);
 
   return (
     <>

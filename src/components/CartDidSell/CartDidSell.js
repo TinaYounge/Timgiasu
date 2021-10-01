@@ -11,7 +11,6 @@ function CartDidSell() {
     dispatch(getSingleOwnTeacherUser());
   }, [dispatch]);
   const teacherState = useSelector((state) => state.singleUserInfo);
-  console.log("teacherState", teacherState);
   let RenderCard;
   let total = 0;
   let x = 0;

@@ -58,7 +58,6 @@ function TimeBox({ timeAll }) {
   const [classIsBookWithDateAndTime, setClassIsBookWithDateAndTime] = useState(
     timeAll.classisBookCheck
   );
-  console.log("classIsBookWithDateAndTime", classIsBookWithDateAndTime);
   const getTime = (time) => {
     setClassIsBookWithDateAndTime({
       ...classIsBookWithDateAndTime,

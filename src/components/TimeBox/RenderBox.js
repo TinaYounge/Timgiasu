@@ -19,7 +19,6 @@ function RenderBox({ singleTeacherInfoAll }) {
     linkStudy: "",
     subject: cartId.subject,
   });
-  console.log("JYHTGREFD", classIsBook);
   let RenderCard;
   if (DayPerWeek) {
     RenderCard = DayPerWeek.map((item) => {

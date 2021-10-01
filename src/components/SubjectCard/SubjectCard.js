@@ -1,11 +1,9 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Logo from "../../Images/Toan.jpg";
 import "./Style.css";
 
 function SubjectCard({ allSubjectsInfo }) {
-  console.log("object", allSubjectsInfo.url);
   return (
     <Link
       className="card-text"

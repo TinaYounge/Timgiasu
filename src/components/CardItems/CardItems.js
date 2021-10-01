@@ -5,7 +5,6 @@ import SmallPic from "./SmallPic";
 import "./Style.css";
 function CardItems({ singleStudentInfo }) {
   const dispatch = useDispatch();
-  console.log("singe,", singleStudentInfo.cart);
   let RenderCard;
   let total = 0;
   let totaldot = 0;
