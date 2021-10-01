@@ -1,6 +1,5 @@
 import React from "react";
 import SubjectCard from "./SubjectCard";
-import Logo from "../../Images/Toan.jpg";
 
 function RenderSubject() {
   const allSubjectsInfo = [

@@ -10,17 +10,13 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (request) => {
-    console.log("Starting Request", request);
     return request;
   },
-  function (error) {
-    console.log("REQUEST ERROR", error);
-  }
+  function (error) {}
 );
 
 api.interceptors.response.use(
   (response) => {
-    console.log("Response day: ", response);
     // if (response && response.data && response.data.accessToken) {
     //   localStorage.setItem("token", response.data.accessToken);
     // }
@@ -28,12 +24,7 @@ api.interceptors.response.use(
   },
   function (error) {
     error = error.response.data;
-    console.log("RESPONSE ERROR", error);
-    let errorMsg = error.message || "";
-    if (error.errors && error.errors.message)
-      errorMsg = errorMsg + ": " + error.errors.message;
-    // toast.error(errorMsg);
-    return Promise.reject(error);
+    if (error.errors && error.errors.message) return Promise.reject(error);
   }
 );
 

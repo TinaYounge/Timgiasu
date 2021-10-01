@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import Introduction from "../../components/Introduction/Introduction";
 import NotifyClassStudent from "../../components/NotifyClass/NotiflyClassStudent";
-import Profile from "../../components/Profile/Profile";
 import TableToBookClass from "../../components/TableToBookClass/TableToBookClass";
 import { getSingleStudent } from "../../redux/GetSingleStudent/GetSingleStudentAction";
 import "./Style3.css";
@@ -16,7 +15,6 @@ function StudentDetailPage() {
   const singleStudentInfo = useSelector(
     (state) => state.singleStudentInfo.student
   );
-  console.log("IFUIOSEF", singleStudentInfo);
   return (
     <div>
       <div className="py-5 body-height studentBg">

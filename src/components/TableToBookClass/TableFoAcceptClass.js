@@ -27,9 +27,13 @@ function ExampleYes({ id }) {
 
   return (
     <>
-      <Button className="btn-success" onClick={handleShow}>
+      <div
+        className="btn-gradBlue"
+        style={{ padding: "2px" }}
+        onClick={handleShow}
+      >
         Đồng ý
-      </Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -45,9 +49,13 @@ function ExampleYes({ id }) {
           <Button variant="secondary" onClick={handleClose}>
             Quay lại
           </Button>
-          <Button variant="primary" onClick={handleCloseAndYes}>
+          <div
+            className="btn-gradBlue"
+            style={{ padding: "7px", paddingRight: "10px" }}
+            onClick={handleCloseAndYes}
+          >
             Đồng ý{" "}
-          </Button>
+          </div>
         </Modal.Footer>
       </Modal>
     </>
@@ -74,9 +82,9 @@ function ExampleNo({ id }) {
 
   return (
     <>
-      <Button className="btn-danger" onClick={handleShow}>
+      <div className="btn-grad" style={{ padding: "3px" }} onClick={handleShow}>
         Từ chối
-      </Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -97,9 +105,17 @@ function ExampleNo({ id }) {
           <Button variant="secondary" onClick={handleClose}>
             Quay lại
           </Button>
-          <Button variant="primary" onClick={handleCloseAndNo}>
-            Đồng ý{" "}
-          </Button>
+          <div
+            className="btn-gradBlue"
+            style={{
+              padding: "7px",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+            onClick={handleCloseAndNo}
+          >
+            Gửi
+          </div>
         </Modal.Footer>
       </Modal>
     </>
@@ -121,7 +137,6 @@ function TableFoAcceptClass() {
     RenderCard = classArray.map((item) => {
       if (item.teacherAccept === "No") {
         if (item.typeOfTeaching === "Trực tuyến") {
-          console.log("kakaka", item);
           return (
             <div className="cartBox row ">
               <div className="col-lg-2">
@@ -197,7 +212,7 @@ function TableFoAcceptClass() {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: "10px" }}>
       <div>{RenderCard}</div>
     </div>
   );

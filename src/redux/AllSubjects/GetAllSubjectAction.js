@@ -27,8 +27,6 @@ export const getAllSubjectFail = () => {
 };
 
 export const getAllSubjects = ({ subjectFilter, page, limit }) => {
-  // console.log(object);
-  console.log(process.env.REACT_APP_BACKEND_API);
   return (dispatch) => {
     dispatch(getAllSubjectRequest);
     const getAllSubjectsResponse = async () => {

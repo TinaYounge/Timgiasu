@@ -17,9 +17,6 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.125);
   margin: 2vh;
 }
-.bg-light {
-  /* background-color: rgb(248, 245, 238) !important; */
-}
 
 .btn-grad {
   background-image: linear-gradient(

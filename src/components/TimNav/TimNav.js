@@ -11,16 +11,14 @@ import {
 } from "react-bootstrap";
 import logo from "../../Images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { getSingleOwnUser } from "../../redux/LoginStudent/LoginStudentAction";
 import { getSingleOwnUserTeacher } from "../../redux/LoginUser/LoginAction";
 
 function TimNav() {
   const singleUserInfo = useSelector((state) => state.userLogin.user);
   const singleStudentInfo = useSelector((state) => state.studentLogin.student);
-  console.log("singleUserInfo", singleUserInfo);
   const dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
     const studentToken = localStorage.getItem("studentToken");
@@ -38,7 +36,7 @@ function TimNav() {
   const handleLogout = () => {
     localStorage.removeItem("studentToken");
     localStorage.removeItem("userToken");
-    window.location.assign("https://timgiasu.netlify.app/");
+    window.location.assign("http://localhost:3000/");
   };
 
   return singleStudentInfo?._id ? (

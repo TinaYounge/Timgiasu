@@ -40,12 +40,10 @@ export const LoginStudentAction = (state) => {
         });
 
         const data = await res.data;
-        console.log("HAHAHAHA", data.accessToken);
         localStorage.setItem("studentToken", data.accessToken);
         api.defaults.headers["Authorization"] = "Bearer " + data.accessToken;
         dispatch(LoginStudentSuccess(data));
         notify();
-        // JSON.parse(window.localStorage.getItem("token", data.token));
       } catch (error) {
         const errorMge = Error.message;
         dispatch(LoginStudentFail(errorMge));

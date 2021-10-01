@@ -70,7 +70,6 @@ export const GetClassIsAccepted = () => {
   };
 };
 export const ClassIsBookedUpdateIsFinished = ({ id, state }) => {
-  console.log("Finished", { id, state });
   return (dispatch) => {
     dispatch(ClassIsBookedRequest);
     const ClassIsBookedResponse = async () => {

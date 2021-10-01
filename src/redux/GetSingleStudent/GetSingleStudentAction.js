@@ -83,7 +83,6 @@ export const AddCartToStudent = (state) => {
 
 //Update info Student
 export const AddClassIsBookToStudent = (state) => {
-  console.log("KKKKKK", state);
   return (dispatch) => {
     dispatch(getSingleStudentRequest);
     const UpdateResponse = async () => {
