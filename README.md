@@ -44,7 +44,6 @@ Tutor teacher can do:
 
 - Students in Vietnam ( Primary - Second - High)
 - The tutor is teachers, tutors (University, School, Institute)
-  ##Link :https://timgiasu.netlify.app/
 
 ## Package were used
 
